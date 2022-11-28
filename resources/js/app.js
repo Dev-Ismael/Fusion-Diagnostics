@@ -15,8 +15,19 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+
+
+/*======= import Vue router =======*/
+import router from './router/vue-router';
+app.use(router);
+
+
+
+import NavbarComponent from './Components/Navbar.vue';
+app.component('navbar-component', NavbarComponent);
+
+
+
 
 /**
  * The following block of code may be used to automatically register your
