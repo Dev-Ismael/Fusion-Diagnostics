@@ -132,7 +132,6 @@
 
 
 
-
     <!-- about-section -->
     <section class="about-section sec-pad-2">
         <div class="auto-container">
@@ -386,5 +385,4 @@
 
 
 
-    
 @endsection
