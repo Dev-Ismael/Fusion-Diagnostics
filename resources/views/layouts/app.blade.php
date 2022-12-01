@@ -13,7 +13,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href='{{ asset('front/images/favicon.ico') }}' type="image/x-icon">
+    <link rel="icon" href='{{ asset('front/images/favicon.png') }}' type="image/x-icon">
 
 
     <!-- Google Fonts -->
@@ -34,6 +34,7 @@
     <link href='{{ asset('front/css/color.css') }}' rel="stylesheet">
     <link href='{{ asset('front/css/style.css') }}' rel="stylesheet">
     <link href='{{ asset('front/css/responsive.css') }}' rel="stylesheet">
+    <link href='{{ asset('front/css/customize.css') }}' rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -116,7 +117,7 @@
             <div class="header-lower">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                        <figure class="logo"><a href="/"><img src="{{ asset('front/images/logo.png') }}" alt="fusion-logo"></a></figure>
                     </div>
                     <div class="menu-area clearfix">
                         <!--Mobile Navigation Toggler-->
@@ -157,9 +158,6 @@
                         <li class="search-btn">
                             <button type="button" class="search-toggler"><i class="icon-1"></i></button>
                         </li>
-                        <li class="btn-box">
-                            <a href="index-4.html" class="theme-btn-one">Request A Quote</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -174,13 +172,10 @@
                             </nav>
                         </div>
                         <ul class="menu-right-content pull-right clearfix">
-                        <li class="search-btn">
-                            <button type="button" class="search-toggler"><i class="icon-1"></i></button>
-                        </li>
-                        <li class="btn-box">
-                            <a href="index-4.html" class="theme-btn-one">Request A Quote</a>
-                        </li>
-                    </ul>
+                            <li class="search-btn">
+                                <button type="button" class="search-toggler"><i class="icon-1"></i></button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -225,8 +220,8 @@
         <footer class="main-footer bg-color-1">
             <div class="footer-top">
                 <div class="shape">
-                    <div class="shape-1 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div>
-                    <div class="shape-2 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div>
+                    {{-- <div class="shape-1 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div>
+                    <div class="shape-2 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div> --}}
                     <div class="shape-3"></div>
                     <div class="shape-4"></div>
                 </div>
@@ -235,7 +230,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget">
                                 <div class="footer-logo">
-                                    <figure class="logo"><a href="index.html"><img src="{{ asset("front/images/footer-logo.png") }}" alt=""></a></figure>
+                                    <figure class="logo"><a href="index.html"><img src="{{ asset('front/images/logo.png') }}" alt="fusion-logo"></a></figure>
                                 </div>
                                 <div class="text">
                                     <p>Nostrud exertation ullamco labor aliquip commodo duis.</p>

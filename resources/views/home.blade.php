@@ -3,15 +3,13 @@
 @section('content')
 
 
-
     <!-- banner-section -->
-    <section class="banner-section style-four" style="background-image: url(front/images/shape/shape-33.png);">
+    <section class="banner-section style-four mt-3" style="background-image: url(front/images/shape/shape-33.png);">
         <div class="pattern-layer" style="background-image: url(front/images/shape/shape-34.png);"></div>
         <div class="anim-icon">
             <div class="anim-icon-1" style="background-image: url(front/images/shape/shape-36.png);"></div>
             <div class="anim-icon-2" style="background-image: url(front/images/shape/shape-37.png);"></div>
-            <div class="anim-icon-3 rotate-me" style="background-image: url(front/images/shape/shape-38.png);">
-            </div>
+            <div class="anim-icon-3 rotate-me" style="background-image: url(front/images/shape/shape-38.png);"></div>
             <div class="anim-icon-4" style="background-image: url(front/images/shape/shape-39.png);"></div>
         </div>
         <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
@@ -21,8 +19,8 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
                                 <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia
-                                    deserunt mollit.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
+                                    mollit.</p>
                                 <div class="btn-box">
                                     <a href="research.html" class="theme-btn-one">Our Services</a>
                                     <a href="index-4.html" class="banner-btn">Discover</a>
@@ -37,9 +35,13 @@
                                     <div class="shape-2 rotate-me"
                                         style="background-image: url(front/images/shape/shape-35.png);"></div>
                                 </div>
-                                <figure class="image"><img src="{{ asset('front/images/banner/banner-img-7.png') }}"
+                                <figure class="image"><img src="{{ asset('front/images/banner/banner-1.png') }}"
                                         alt="">
                                 </figure>
+                                <div class="text">
+                                    <h3>15</h3>
+                                    <h4>Location Branchs</h4>
+                                </div>
                                 <div class="admin-box">
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
@@ -58,8 +60,8 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
                                 <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia
-                                    deserunt mollit.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
+                                    mollit.</p>
                                 <div class="btn-box">
                                     <a href="research.html" class="theme-btn-one">Our Services</a>
                                     <a href="index-4.html" class="banner-btn">Discover</a>
@@ -74,9 +76,13 @@
                                     <div class="shape-2 rotate-me"
                                         style="background-image: url(front/images/shape/shape-35.png);"></div>
                                 </div>
-                                <figure class="image"><img src="{{ asset('front/images/banner/banner-img-8.png') }}"
+                                <figure class="image"><img src="{{ asset('front/images/banner/banner-2.png') }}"
                                         alt="">
                                 </figure>
+                                <div class="text">
+                                    <h3>15</h3>
+                                    <h4>Location Branchs</h4>
+                                </div>
                                 <div class="admin-box">
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
@@ -95,8 +101,8 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
                                 <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia
-                                    deserunt mollit.</p>
+                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
+                                    mollit.</p>
                                 <div class="btn-box">
                                     <a href="research.html" class="theme-btn-one">Our Services</a>
                                     <a href="index-4.html" class="banner-btn">Discover</a>
@@ -111,9 +117,13 @@
                                     <div class="shape-2 rotate-me"
                                         style="background-image: url(front/images/shape/shape-35.png);"></div>
                                 </div>
-                                <figure class="image"><img src="{{ asset('front/images/banner/banner-img-9.png') }}"
+                                <figure class="image"><img src="{{ asset('front/images/banner/banner-3.png') }}"
                                         alt="">
                                 </figure>
+                                <div class="text">
+                                    <h3>15</h3>
+                                    <h4>Location Branchs</h4>
+                                </div>
                                 <div class="admin-box">
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
@@ -126,6 +136,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- banner-section end -->
@@ -181,6 +192,24 @@
         </div>
     </section>
     <!-- about-section end -->
+
+
+
+    <!-- video-style-two -->
+    <section class="video-style-two centred pb-5 pt-5 mt-5">
+        <div class="auto-container">
+            <div class="inner-box" style="background-image: url(assets/images/background/video-2.jpg);">
+                <div class="content-box">
+                    <div class="video-btn">
+                        <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image"
+                            data-caption=""><i class="icon-4"></i></a>
+                    </div>
+                    <h3>Lets Watch Our Recent Work</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- video-style-two end -->
 
 
 
@@ -381,7 +410,6 @@
         </div>
     </section>
     <!-- testimonial-section end -->
-
 
 
 
