@@ -20,5 +20,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+
+        \App\Models\Location::factory()->create([
+            'title' => 'title',
+            'street_view' => 'street_view',
+            'working_hours' => 'working_hours',
+        ]);
+
+        
     }
 }

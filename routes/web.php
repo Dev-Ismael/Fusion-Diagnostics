@@ -25,4 +25,4 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])
 
 
 
-
+Route::get('/admin/location', [App\Http\Controllers\Admin\LocationController::class, 'index']);
