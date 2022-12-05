@@ -211,7 +211,6 @@
         </div>
         <!-- End Mobile Menu -->
 
-
         <main>
             @yield('content')
         </main>

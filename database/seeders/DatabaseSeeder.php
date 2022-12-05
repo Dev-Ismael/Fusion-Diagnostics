@@ -22,12 +22,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        \App\Models\Location::factory()->create([
+        \App\Models\Location::factory(100)->create([
             'title' => 'title',
             'street_view' => 'street_view',
             'working_hours' => 'working_hours',
         ]);
 
-        
+
     }
 }

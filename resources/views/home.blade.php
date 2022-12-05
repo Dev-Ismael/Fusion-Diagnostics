@@ -136,11 +136,51 @@
                     </div>
                 </div>
             </div>
+            <div class="slide-item">
+                <div class="auto-container">
+                    <div class="row align-items-center clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                            <div class="content-box">
+                                <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
+                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
+                                    mollit.</p>
+                                <div class="btn-box">
+                                    <a href="research.html" class="theme-btn-one">Our Services</a>
+                                    <a href="index-4.html" class="banner-btn">Discover</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                            <div class="image-box">
+                                <div class="shape">
+                                    <div class="shape-1 rotate-me"
+                                        style="background-image: url(front/images/shape/shape-35.png);"></div>
+                                    <div class="shape-2 rotate-me"
+                                        style="background-image: url(front/images/shape/shape-35.png);"></div>
+                                </div>
+                                <figure class="image"><img src="{{ asset('front/images/banner/banner-4.png') }}"
+                                        alt="">
+                                </figure>
+                                <div class="text">
+                                    <h3>15</h3>
+                                    <h4>Location Branchs</h4>
+                                </div>
+                                <div class="admin-box">
+                                    <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
+                                            alt="">
+                                    </figure>
+                                    <h4>600+ Different Tests</h4>
+                                    <p>Experienced professionals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
     <!-- banner-section end -->
-
 
 
     <!-- about-section -->

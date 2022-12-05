@@ -43,7 +43,7 @@
 </head>
 
 <body class="with-welcome-text">
-    <div  class="container-scroller">
+    <div class="container-scroller">
 
         {{-- <admin_navbar></admin_navbar> --}}
         <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
