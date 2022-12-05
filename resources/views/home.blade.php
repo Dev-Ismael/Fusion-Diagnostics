@@ -4,7 +4,7 @@
 
 
     <!-- banner-section -->
-    <section class="banner-section style-four mt-3" style="background-image: url(front/images/shape/shape-33.png);">
+    <section class="banner-section style-four" style="background-image: url(front/images/shape/shape-33.png);">
         <div class="pattern-layer" style="background-image: url(front/images/shape/shape-34.png);"></div>
         <div class="anim-icon">
             <div class="anim-icon-1" style="background-image: url(front/images/shape/shape-36.png);"></div>
@@ -13,18 +13,14 @@
             <div class="anim-icon-4" style="background-image: url(front/images/shape/shape-39.png);"></div>
         </div>
         <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+
             <div class="slide-item">
                 <div class="auto-container">
                     <div class="row align-items-center clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
-                                    mollit.</p>
-                                <div class="btn-box">
-                                    <a href="research.html" class="theme-btn-one">Our Services</a>
-                                    <a href="index-4.html" class="banner-btn">Discover</a>
-                                </div>
+                                <h2>99% of tests performed in-house</h2>
+                                <p>See your healthcare provider regularly. Home use tests are intended to help you with your health care, but they should not replace periodic visits to your doctor. Most tests are best evaluated together with your medical history, a physical exam, and another testing.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
@@ -59,13 +55,8 @@
                     <div class="row align-items-center clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
-                                    mollit.</p>
-                                <div class="btn-box">
-                                    <a href="research.html" class="theme-btn-one">Our Services</a>
-                                    <a href="index-4.html" class="banner-btn">Discover</a>
-                                </div>
+                                <h2>Most Insurance Policies Accepted</h2>
+                                <p>The benefits of being in-network to give you access to advanced testing options and trusted results, Quest partners with some of the biggest names in health insurance.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
@@ -100,13 +91,10 @@
                     <div class="row align-items-center clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
-                                    mollit.</p>
-                                <div class="btn-box">
-                                    <a href="research.html" class="theme-btn-one">Our Services</a>
-                                    <a href="index-4.html" class="banner-btn">Discover</a>
-                                </div>
+                                <h2>Patients without health insurance will receive
+                                    discounted .</h2>
+                                {{-- <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
+                                    mollit.</p> --}}
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
@@ -141,13 +129,8 @@
                     <div class="row align-items-center clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>We’re Responsible for The Safety of Cosmetics Testing</h2>
-                                <p>Excepteur sint occaecat cupidatat non proident sunt <br />culpa qui officia deserunt
-                                    mollit.</p>
-                                <div class="btn-box">
-                                    <a href="research.html" class="theme-btn-one">Our Services</a>
-                                    <a href="index-4.html" class="banner-btn">Discover</a>
-                                </div>
+                                <h2>COVID-19 vaccines</h2>
+                                <p>Vaccines save millions of lives each year. The development of safe and effective COVID-19 vaccines is crucial in helping us get back to doing more of the things we enjoy with the people we love.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">

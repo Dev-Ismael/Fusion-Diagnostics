@@ -92,7 +92,7 @@
                     <form method="post" action="index.html">
                         <div class="form-group">
                             <fieldset>
-                                <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                                <input type="search" class="form-control" name="search-input" value="" placeholder="Search For Test" required >
                                 <input type="submit" value="Search Now!" class="theme-btn style-four">
                             </fieldset>
                         </div>

@@ -5643,7 +5643,7 @@ h4 a:hover{
   left: 0px;
   top: 0px;
   width: 100%;
-  background: #fff;
+  background: transparent;
   padding: 0px 70px;
 }
 
@@ -5669,7 +5669,6 @@ h4 a:hover{
 
 .main-header.style-four .menu-right-content li.search-btn{
   margin-right: 39px;
-  margin-top: 13px;
 }
 
 .main-header.style-four .menu-right-content li.search-btn button{
@@ -5688,10 +5687,6 @@ h4 a:hover{
 
 .main-header.style-four .menu-right-content li .theme-btn-one{
   padding: 12px 43px 13px 43px;
-}
-
-.main-header.style-four .menu-right-content{
-  padding-top: 7px;
 }
 
 
