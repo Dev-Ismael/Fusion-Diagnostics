@@ -17,19 +17,8 @@ class LocationController extends Controller
      */
     public function index()
     {
-        // $locations = Location::orderBy('id','desc')->paginate(10);
-        // return Inertia::render("Locations/Index", compact('locations'));
-
-        $locations = Location::paginate(15)->through(function ($location) {
-            return [
-                'id' => $location->id,
-                'title' => $location->title,
-                // etc
-            ];
-        });
-
-        return Inertia::render('Locations/Index', ['locations' => $locations]);
-
+        $locations = Location::orderBy('id','desc')->paginate(10);
+        return Inertia::render("Locations/Index", compact('locations'));
     }
 
     /**
