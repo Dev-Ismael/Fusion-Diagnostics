@@ -289,6 +289,7 @@
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
     <script src="{{ asset('admin/js/Chart.roundedBarCharts.js') }}"></script>
     <script src="{{ asset('admin/js/select2.js') }}"></script>
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
     <!-- End custom js for this page -->
 
 </body>

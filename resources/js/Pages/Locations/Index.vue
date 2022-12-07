@@ -8,8 +8,8 @@
                     <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Locations table</h4>
                 </div>
                 <div class="col-6 text-end">
-                    <a href="#" type="button" class="btn btn-danger btn-rounded btn-icon p-2" data-bs-toggle="modal"> Create
-                        New Location </a>
+                    <Link href="/admin/location/create" class="btn btn-danger btn-rounded btn-icon p-2"> Create
+                        New Location </Link>
                 </div>
             </div>
             <div class="row">

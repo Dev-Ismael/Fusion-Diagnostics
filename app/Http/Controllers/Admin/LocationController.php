@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Location;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreLocationRequest;
-use App\Http\Requests\UpdateLocationRequest;
+use App\Http\Requests\Location\StoreLocationRequest;
+use App\Http\Requests\Location\UpdateLocationRequest;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
 class LocationController extends Controller
@@ -17,7 +19,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::orderBy('id','desc')->paginate(10);
+        $locations = Location::orderBy('id','desc')->paginate(5);
         return Inertia::render("Locations/Index", compact('locations'));
     }
 
@@ -28,7 +30,7 @@ class LocationController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render("Locations/Create");
     }
 
     /**
@@ -39,7 +41,13 @@ class LocationController extends Controller
      */
     public function store(StoreLocationRequest $request)
     {
-        //
+
+
+        return response()->json([
+            "Status" => "Good"
+        ]);
+
+
     }
 
     /**

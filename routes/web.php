@@ -25,4 +25,14 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])
 
 
 
-Route::get('/admin/location', [App\Http\Controllers\Admin\LocationController::class, 'index']);
+
+
+/*===========================================================================
+========== Admin Routes =====================================================
+===========================================================================*/
+
+Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
+
+    Route::resource('location', App\Http\Controllers\Admin\LocationController::class);
+
+});

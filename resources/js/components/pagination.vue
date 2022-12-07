@@ -2,7 +2,9 @@
     <div v-if="links.length > 3">
         <ul id="pagination">
             <template v-for="(link, p) in links" :key="p">
-                <li>
+                <div v-if="link.url === null" class="d-none"
+                v-html="link.label" />
+                <li v-else>
                     <Link
                         class="mr-1 mb-1 px-4 py-3 text-sm leading-4 border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500"
                         :class="{ 'bg-blue-700 text-white active': link.active }" :href="link.url" v-html="link.label">
@@ -41,7 +43,7 @@
     #pagination li a {
         display: inline-block;
         text-decoration: none;
-        padding: 5px !important;
+        padding: 5px 10px !important;
         color: #000
     }
 
