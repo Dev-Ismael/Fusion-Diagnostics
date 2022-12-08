@@ -16,7 +16,8 @@
                                 Location
                             </label>
                             <input type="text" name="title" class="form-control" placeholder="Type Location Here..."
-                                v-model="location.title">
+                                v-model="location.title" :class=" errors.title ? 'border-danger' : ''  "
+                            >
                             <small class="text-danger" v-if="errors.title"> {{errors.title }}</small>
                         </div>
 
@@ -27,7 +28,7 @@
                                 Working Hours
                             </label>
                             <input type="text" name="working_hours" class="form-control"
-                                placeholder="Type Working Hours Here..." v-model="location.working_hours">
+                                placeholder="Type Working Hours Here..." v-model="location.working_hours" :class=" errors.working_hours ? 'border-danger' : ''  " >
                                 <small class="text-danger" v-if="errors.working_hours"> {{errors.working_hours }}</small>
                         </div>
 
@@ -38,12 +39,13 @@
                                 Street View
                             </label>
                             <input type="text" name="street_view" class="form-control"
-                                placeholder="Type Street View Here..." v-model="location.street_view">
+                                placeholder="Type Street View Here..." v-model="location.street_view" :class=" errors.street_view ? 'border-danger' : ''  " >
                                 <small class="text-danger" v-if="errors.street_view"> {{errors.street_view }}</small>
                         </div>
 
+                        <!------ Buttons ------->
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        <Link href="/admin/location"  class="btn btn-light">Cancel</Link>
 
                     </form>
                 </div>
@@ -53,7 +55,15 @@
 </template>
 
 <script>
+
+import { Link } from '@inertiajs/inertia-vue3'
+
+
+
 export default {
+    components: {
+        Link,
+    },
     props: {
         errors: Object,
     },
@@ -68,8 +78,8 @@ export default {
     },
     methods: {
         storeLocation() {
-            this.$inertia.post('/admin/location', this.location)
-        },
+            this.$inertia.post('/admin/location', this.location);
+        }
     },
 }
 </script>

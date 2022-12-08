@@ -43,9 +43,13 @@ class LocationController extends Controller
     {
 
 
-        return response()->json([
-            "Status" => "Good"
-        ]);
+        // save all request in one variable
+        $requestData = $request->all();
+
+
+        // store row in table
+        $location = Location::create( $requestData );
+
 
 
     }

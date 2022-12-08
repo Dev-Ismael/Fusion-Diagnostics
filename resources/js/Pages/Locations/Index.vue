@@ -12,6 +12,19 @@
                         New Location </Link>
                 </div>
             </div>
+
+
+            <div class="alert alert-fill-danger" role="alert">
+                <i class="ti-info-alt"></i>
+                Oh snap! Change a few things up and try submitting again.
+            </div>
+            <div class="alert alert-fill-success" role="alert">
+                <i class="ti-info-alt"></i>
+                Oh snap! Change a few things up and try submitting again.
+            </div>
+
+
+
             <div class="row">
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
