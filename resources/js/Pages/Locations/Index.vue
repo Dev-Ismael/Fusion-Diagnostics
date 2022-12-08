@@ -14,15 +14,10 @@
             </div>
 
 
-            <div class="alert alert-fill-danger" role="alert">
+            <div v-if="$page.props.flash.messege" :class=" 'alert alert-fill-' +  $page.props.flash.messege.status " role="alert">
                 <i class="ti-info-alt"></i>
-                Oh snap! Change a few things up and try submitting again.
+                {{ $page.props.flash.messege.txt }}
             </div>
-            <div class="alert alert-fill-success" role="alert">
-                <i class="ti-info-alt"></i>
-                Oh snap! Change a few things up and try submitting again.
-            </div>
-
 
 
             <div class="row">

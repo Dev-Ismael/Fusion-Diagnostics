@@ -42,15 +42,38 @@ class LocationController extends Controller
     public function store(StoreLocationRequest $request)
     {
 
-
         // save all request in one variable
         $requestData = $request->all();
 
+        // Store in DB
+        try {
 
-        // store row in table
-        $location = Location::create( $requestData );
+            // store row in table
+            $location = Location::create( $requestData );
 
+            // if not save in DB
+            if(!$location){
+                return Redirect::route("admin.location.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at store opration'
+                    ]);
+            }
 
+            // If Save Successfully
+            return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'success',
+                    "txt"    => "Location store successfully",
+                ]);
+
+        } catch (\Exception $e) {
+            return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at store opration'
+                ]);
+        }
 
     }
 
