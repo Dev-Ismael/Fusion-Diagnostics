@@ -4,7 +4,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred my-5" style="background-image: url(front/images/background/page-title.jpg);">
+    <section class="page-title centred mt-7" style="background-image: url(front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="shape" style="background-image: url(front/images/shape/shape-63.png);"></div>
@@ -29,7 +29,7 @@
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-23"></i></div>
                         <h4>Office Location</h4>
-                        <p>31 park street, 5th Avenue, Dhanmondy, Dhaka.</p>
+                        <p>210 malapardis rd, Cedar knolls, nj.</p>
                     </div>
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-59"></i></div>

@@ -5,16 +5,16 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred my-5" style="background-image: url(front/images/background/page-title.jpg);">
+    <section class="page-title centred mt-7" style="background-image: url(front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="shape" style="background-image: url(front/images/shape/shape-63.png);"></div>
                 <div class="title">
-                    <h1>About Laborex</h1>
+                    <h1>About Fusion</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
                     <li><a href="index.html">Home</a></li>
-                    <li>About Laborex</li>
+                    <li>About Fusion</li>
                 </ul>
             </div>
         </div>
@@ -154,6 +154,6 @@
     </section>
     <!-- funfact-style-two end -->
 
-    
+
 
 @endsection
