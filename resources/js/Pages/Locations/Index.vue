@@ -12,7 +12,17 @@
                         New Location </Link>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-md-4  ml-auto">
+                    <div id="order-listing_filter" class="dataTables_filter">
+                        <label class="w-100">
+                            <input type="text" class="form-control w-100" placeholder="Search By Title..."
+                            name="searchVal" v-model="search.value" @keyup="searchLocation()"
+                            maxlength="55" aria-controls="order-listing" autocomplete="nope" />
+                        </label>
+                    </div>
+                </div>
+            </div>
 
             <div v-if="$page.props.flash.messege" :class=" 'alert alert-fill-' +  $page.props.flash.messege.status " role="alert">
                 <i class="ti-info-alt"></i>
@@ -22,7 +32,9 @@
 
             <div class="row">
                 <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
+
+                    <!--------- Locations exist ----------->
+                    <div v-if="locations.data.length > 0 "  class="card">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
@@ -69,6 +81,14 @@
                         </div>
                         <pagination class="mt-6" :links="locations.links" />
                     </div>
+
+                    <div v-else  class="card">
+                        <div class="card-body text-center">
+                            <img src="/admin/images/nodata-found.png" alt="no-data">
+                            <h4> Sorry, No Data Found! </h4>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -94,15 +114,34 @@
         props: {
             locations: Object,
         },
+        data() {
+            return {
+                search: {
+                    value: ''
+                },
+                // multiAction: {
+                //     id: [],
+                //     action: ''
+                // },
+            }
+        },
         methods: {
-            deletePost(location){
 
+            deletePost(location){
                 let msg = "Are You Sure!";
                 if ( confirm(msg) == true ) {
                     this.$inertia.delete('/admin/location/' + location.id, location);
                 }
+            },
 
-            }
+
+            /*======================================================
+            ====== Search Location
+            ======================================================*/
+            searchLocation() {
+                this.$inertia.post('/admin/location/search', this.search);
+            },
+
         },
     }
 

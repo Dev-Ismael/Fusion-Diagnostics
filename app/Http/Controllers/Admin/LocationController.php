@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Location\StoreLocationRequest;
 use App\Http\Requests\Location\UpdateLocationRequest;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class LocationController extends Controller
@@ -154,7 +154,6 @@ class LocationController extends Controller
     public function destroy(Location $location)
     {
 
-
         // Delete Record from DB
         try {
 
@@ -188,4 +187,46 @@ class LocationController extends Controller
         }
 
     }
+
+
+
+    public function search(Request $request)
+    {
+
+
+        try {
+
+            // Find Matchs records
+            $locations = Location::where('title', 'like', "%{$request->value}%")->paginate( 10 );
+
+            // If Not Delete Record
+            if( !$locations ){
+
+                // If server error
+                return Redirect::route("admin.location.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at search opration'
+                    ]);
+            }
+
+            // Return search results in Index Page
+            return Inertia::render("Locations/Index", compact('locations'));
+
+        } catch (\Exception $e) {
+
+            // If server error
+            return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at search opration'
+                ]);
+
+        }
+
+    }
+
+
+
+
 }
