@@ -47,11 +47,10 @@
                                             </td>
                                             <td> {{ location.working_hours }} </td>
                                             <td>
-                                                <button type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#showDataModal" @click="showService(service)"
+                                                <Link :href="('/admin/location/'+location.id)"
                                                     class="btn btn-secondary btn-rounded btn-icon p-2">
                                                     <i class="mdi mdi-eye"></i>
-                                                </button>
+                                                </Link>
                                                 &nbsp;
                                                 <button type="button" data-bs-toggle="modal"
                                                     data-bs-target="#formModal" @click="editService(service)"
