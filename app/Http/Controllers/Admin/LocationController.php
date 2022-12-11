@@ -131,7 +131,7 @@ class LocationController extends Controller
             return Redirect::route("admin.location.index")
                 ->with('messege', [
                     'status' => 'success',
-                    "txt"    => "Location update successfully",
+                    "txt"    => "Location updated successfully",
                 ]);
 
         } catch (\Exception $e) {
@@ -153,6 +153,39 @@ class LocationController extends Controller
      */
     public function destroy(Location $location)
     {
-        //
+
+
+        // Delete Record from DB
+        try {
+
+            $delete = $location->delete();
+
+            // If Delete Error
+            if( !$delete ){
+                return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at delete opration'
+                ]);
+            }
+
+            // If Delete Succesffuly
+            return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'success',
+                    "txt"    => "Location deleted successfully",
+                ]);
+
+        } catch (\Exception $e) {
+
+            // If server error
+            return Redirect::route("admin.location.index")
+            ->with('messege', [
+                'status' => 'error',
+                'txt'    => 'Error at delete opration'
+            ]);
+
+        }
+
     }
 }

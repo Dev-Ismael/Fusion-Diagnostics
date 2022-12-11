@@ -57,7 +57,7 @@
                                                 <i class="ti-marker-alt"></i>
                                                 </Link>
                                                 &nbsp;
-                                                <button type="button" @click="deletePost(service)"
+                                                <button type="button" @click="deletePost(location)"
                                                     class="btn btn-danger btn-rounded btn-icon p-2">
                                                     <i class="ti-close"></i>
                                                 </button>
@@ -93,6 +93,16 @@
         },
         props: {
             locations: Object,
+        },
+        methods: {
+            deletePost(location){
+
+                let msg = "Are You Sure!";
+                if ( confirm(msg) == true ) {
+                    this.$inertia.delete('/admin/location/' + location.id, location);
+                }
+
+            }
         },
     }
 
