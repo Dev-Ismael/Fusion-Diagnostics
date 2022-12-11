@@ -162,10 +162,10 @@ class LocationController extends Controller
             // If Delete Error
             if( !$delete ){
                 return Redirect::route("admin.location.index")
-                ->with('messege', [
-                    'status' => 'error',
-                    'txt'    => 'Error at delete opration'
-                ]);
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at delete opration'
+                    ]);
             }
 
             // If Delete Succesffuly
@@ -179,10 +179,10 @@ class LocationController extends Controller
 
             // If server error
             return Redirect::route("admin.location.index")
-            ->with('messege', [
-                'status' => 'error',
-                'txt'    => 'Error at delete opration'
-            ]);
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at delete opration'
+                ]);
 
         }
 
@@ -192,7 +192,6 @@ class LocationController extends Controller
 
     public function search(Request $request)
     {
-
 
         try {
 
@@ -226,6 +225,53 @@ class LocationController extends Controller
 
     }
 
+
+
+
+
+    public function multiAction(Request $request)
+    {
+
+        // return response()->json([
+        //     "requestData" => $request->all(),
+        // ]);
+
+        // If Action is Delete
+        if( $request->action == "delete" ){
+
+            // $ids = explode(",", $request->id);
+
+            try {
+                $delete = Location::destroy( $request->id );
+
+                if( !$delete ){
+                    return Redirect::route("admin.location.index")
+                        ->with('messege', [
+                            'status' => 'error',
+                            'txt'    => 'Error at delete opration'
+                        ]);
+                }
+
+                // If Delete Succesffuly
+                return Redirect::route("admin.location.index")
+                    ->with('messege', [
+                        'status' => 'success',
+                        "txt"    => "Location deleted successfully",
+                    ]);
+
+            } catch (\Exception $e) {
+
+                // If server error
+                return Redirect::route("admin.location.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at delete opration'
+                    ]);
+
+            }
+        }
+
+    }
 
 
 

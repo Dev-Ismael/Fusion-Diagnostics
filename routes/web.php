@@ -37,6 +37,6 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     // Locations
     Route::resource('location', App\Http\Controllers\Admin\LocationController::class);
     Route::post('location/search' , [App\Http\Controllers\Admin\LocationController::class, 'search'])->name("location.search");
-    // Route::post('location/multiAction' , [App\Http\Controllers\Admin\LocationController::class, 'multiAction'])->name("location.multiAction");
+    Route::post('location/multiAction' , [App\Http\Controllers\Admin\LocationController::class, 'multiAction'])->name("location.multiAction");
 
 });

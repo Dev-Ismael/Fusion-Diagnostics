@@ -3,6 +3,8 @@
     <Head title=" Admin Panel | Locations" />
     <div class="card">
         <div class="card-body">
+
+
             <div class="row">
                 <div class="col-6">
                     <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Locations table</h4>
@@ -12,14 +14,38 @@
                         New Location </Link>
                 </div>
             </div>
+
+
             <div class="row">
-                <div class="col-md-4  ml-auto">
-                    <div id="order-listing_filter" class="dataTables_filter">
-                        <label class="w-100">
-                            <input type="text" class="form-control w-100" placeholder="Search By Title..."
-                            name="searchVal" v-model="search.value" @keyup="searchLocation()"
-                            maxlength="55" aria-controls="order-listing" autocomplete="nope" />
-                        </label>
+                <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer pt-3">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="form-group multi-action">
+                                <div class="input-group">
+                                    <select name="action" v-model="multiAction.action"
+                                        class="js-example-basic-single" style="margin-left:5px">
+                                        <option value="">Choose Action</option>
+                                        <option value="delete">Delete Location</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-facebook" type="button"
+                                            @click="ChooseMultiAction()">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                                <small class="text-danger"> </small>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 offset-md-6 ml-auto">
+                            <div id="order-listing_filter" class="dataTables_filter">
+                                <label class="w-100">
+                                    <input type="text" class="form-control w-100" placeholder="Search By Title..."
+                                    name="searchVal" v-model="search.value" @keyup="searchLocation()"
+                                    maxlength="55" aria-controls="order-listing" autocomplete="nope" />
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,6 +66,15 @@
                                 <table class="table">
                                     <thead class="text-center">
                                         <tr>
+                                            <th>
+                                                <div class="form-check mt-0 mb-0">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" id="main-ckecker" class="form-check-input"
+                                                            @change="ckeckboxClicked($event)" />
+                                                        <i class="input-helper"></i>
+                                                    </label>
+                                                </div>
+                                            </th>
                                             <th>Location</th>
                                             <th>Street View</th>
                                             <th>Working Hours</th>
@@ -48,6 +83,15 @@
                                     </thead>
                                     <tbody>
                                         <tr v-for="location in locations.data" :key="location.id">
+                                            <td class="jsgrid-cell" style="width: 100px;">
+                                                <div class="form-check mt-0">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input check-item"
+                                                        :value="location.id" v-model="multiAction.id" >
+                                                        <i class="input-helper"></i>
+                                                    </label>
+                                                </div>
+                                            </td>
                                             <td> {{ location.title.length > 20 ? location.title.slice(0, 20) + '...' :
                                                 location.title }} </td>
                                             <td>
@@ -119,14 +163,17 @@
                 search: {
                     value: ''
                 },
-                // multiAction: {
-                //     id: [],
-                //     action: ''
-                // },
+                multiAction: {
+                    id: [],
+                    action: ''
+                },
             }
         },
         methods: {
 
+            /*======================================================
+            ====== deletePost
+            ======================================================*/
             deletePost(location){
                 let msg = "Are You Sure!";
                 if ( confirm(msg) == true ) {
@@ -141,6 +188,49 @@
             searchLocation() {
                 this.$inertia.post('/admin/location/search', this.search);
             },
+
+
+            /*======================================================
+            ====== CheckBox
+            ======================================================*/
+            ckeckboxClicked(event) {
+                const checkItems = document.querySelectorAll(".check-item");
+                if (event.target.checked) { // check if main checker checked
+                    // Push all serivces id multiAction object
+                    this.locations.data.forEach( location => {
+                        this.multiAction.id.push(location.id)
+                    });
+                    // add checked to checkbox
+                    for (var i = 0; i < checkItems.length; i++) {
+                        checkItems[i].checked = true;
+                    }
+                } else {
+                    // empty Multi Action Id
+                    this.multiAction.id = [];
+                    // remove checked to checkbox
+                    for (var i = 0; i < checkItems.length; i++) {
+                        checkItems[i].checked = false;
+                    }
+                }
+            },
+
+
+            /*======================================================
+            ====== Multi Action
+            ======================================================*/
+            ChooseMultiAction() {
+                if (this.multiAction.action == '') {
+                    alert("Please Choose Action to do.")
+                } else if (this.multiAction.id == '' ) {
+                    alert("Please select locations.")
+                } else {
+                    let msg = "Are You Sure!";
+                    if ( confirm(msg) == true ) {
+                        this.$inertia.post('/admin/location/multiAction' , this.multiAction);
+                    }
+                }
+            }
+
 
         },
     }
