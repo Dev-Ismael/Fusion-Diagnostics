@@ -1,15 +1,12 @@
 <template>
-
     <Head title=" Admin Panel | Locations" />
     <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-0">Create form</h4>
-                    <p class="card-description">
-                        Add new branch Location
-                    </p>
-                    <form class="forms-sample" @submit.prevent="storeLocation()">
+                    <h4 class="card-title mb-0">Edit form</h4>
+                    <p class="card-description"> Update this branch Location </p>
+                    <form class="forms-sample" @submit.prevent="updateLocation()">
 
                         <!------ Title ------->
                         <div class="form-group">
@@ -46,7 +43,7 @@
                         </div>
 
                         <!------ Buttons ------->
-                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <button type="submit" class="btn btn-primary me-2">Save</button>
                         <Link href="/admin/location"  class="btn btn-light">Cancel</Link>
 
                     </form>
@@ -58,30 +55,21 @@
 
 <script>
 
-import { Link } from '@inertiajs/inertia-vue3'
+    import { Link, Head } from '@inertiajs/inertia-vue3'
+    export default {
+        components: {
+            Link,
+            Head,
+        },
+        props: {
+            errors: Object,
+            location: Object,
+        },
+        methods: {
+            updateLocation() {
+                this.$inertia.put('/admin/location/' + this.location.id, this.location);
+            }
+        },
+    }
 
-
-
-export default {
-    components: {
-        Link,
-    },
-    props: {
-        errors: Object,
-    },
-    data() {
-        return {
-            location: {
-                title: null,
-                working_hours: null,
-                street_view: null,
-            },
-        }
-    },
-    methods: {
-        storeLocation() {
-            this.$inertia.post('/admin/location', this.location);
-        }
-    },
-}
 </script>

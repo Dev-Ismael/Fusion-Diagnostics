@@ -19,7 +19,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::orderBy('id','desc')->paginate(5);
+        $locations = Location::orderBy('id','desc')->paginate(10);
         return Inertia::render("Locations/Index", compact('locations'));
     }
 
@@ -96,7 +96,7 @@ class LocationController extends Controller
      */
     public function edit(Location $location)
     {
-
+        return Inertia::render("Locations/Edit", compact('location'));
     }
 
     /**
@@ -108,7 +108,41 @@ class LocationController extends Controller
      */
     public function update(UpdateLocationRequest $request, Location $location)
     {
-        //
+
+        // save all request in one variable
+        $requestData = $request->all();
+
+        // Store in DB
+        try {
+
+            // store row in table
+            $update = $location-> update( $requestData );
+
+            // if not save in DB
+            if(!$update){
+                return Redirect::route("admin.location.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at update opration'
+                    ]);
+            }
+
+            // If Save Successfully
+            return Redirect::route("admin.location.index")
+                ->with('messege', [
+                    'status' => 'success',
+                    "txt"    => "Location update successfully",
+                ]);
+
+        } catch (\Exception $e) {
+            return Redirect::route("admin.location.index")
+            ->with('messege', [
+                'status' => 'error',
+                'txt'    => 'Error at update opration'
+            ]);
+        }
+
+
     }
 
     /**

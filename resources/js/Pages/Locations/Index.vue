@@ -52,11 +52,10 @@
                                                     <i class="mdi mdi-eye"></i>
                                                 </Link>
                                                 &nbsp;
-                                                <button type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#formModal" @click="editService(service)"
+                                                <Link :href="('/admin/location/'+location.id+'/edit')"
                                                     class="btn btn-primary btn-rounded btn-icon p-2">
-                                                    <i class="ti-marker-alt"></i>
-                                                </button>
+                                                <i class="ti-marker-alt"></i>
+                                                </Link>
                                                 &nbsp;
                                                 <button type="button" @click="deletePost(service)"
                                                     class="btn btn-danger btn-rounded btn-icon p-2">
