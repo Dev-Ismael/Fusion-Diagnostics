@@ -39,4 +39,10 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     Route::post('location/search' , [App\Http\Controllers\Admin\LocationController::class, 'search'])->name("location.search");
     Route::post('location/multiAction' , [App\Http\Controllers\Admin\LocationController::class, 'multiAction'])->name("location.multiAction");
 
+
+    // Service
+    Route::resource('service', App\Http\Controllers\Admin\ServiceController::class);
+    Route::post('service/search' , [App\Http\Controllers\Admin\ServiceController::class, 'search'])->name("service.search");
+    Route::post('service/multiAction' , [App\Http\Controllers\Admin\ServiceController::class, 'multiAction'])->name("service.multiAction");
+
 });

@@ -218,6 +218,65 @@
 
 
 
+    <!-- Service-section -->
+    <section class="sec-pad-2 bg-color-1">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="{{ asset("front/images/icons/icon-11.png") }}" alt="icon" width="80">
+                            </div>
+                            <h4><a href="index.html">Clinical <br>Microbiology Tests</a></h4>
+                            <p>Excepteur sint ocecat pro dent sunt in culpa.</p>
+                            <div class="btn-box"><a href="index.html" class="theme-btn-two">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="{{ asset("front/images/icons/icon-10.png") }}" alt="icon" width="80">
+                            </div>
+                            <h4><a href="index.html">Testing for <br>Traces &amp; Impurities</a></h4>
+                            <p>Excepteur sint ocecat pro dent sunt in culpa.</p>
+                            <div class="btn-box"><a href="index.html" class="theme-btn-two">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms; animation-name: fadeInUp;">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="{{ asset("front/images/icons/icon-08.png") }}" alt="icon" width="80">
+                            </div>
+                            <h4><a href="index.html">Clinical <br>Biochemistry Tests</a></h4>
+                            <p>Excepteur sint ocecat pro dent sunt in culpa.</p>
+                            <div class="btn-box"><a href="index.html" class="theme-btn-two">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInUp;">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="{{ asset("front/images/icons/icon-11.png") }}" alt="icon" width="80">
+                            </div>
+                            <h4><a href="index.html">Clinical <br>Histopatology Tests</a></h4>
+                            <p>Excepteur sint ocecat pro dent sunt in culpa.</p>
+                            <div class="btn-box"><a href="index.html" class="theme-btn-two">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service-section -->
+
+
+
     <!-- video-style-two -->
     <section class="video-style-two centred pb-5 pt-5 mt-5">
         <div class="auto-container">
