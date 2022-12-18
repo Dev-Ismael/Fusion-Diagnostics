@@ -27,7 +27,7 @@ class StoreServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'           => ['required', 'string', 'min:8', 'max:100', Rule::unique('services', 'title')->ignore($this->service)],
+            'title'           => ['required', 'string', 'max:100', Rule::unique('services', 'title')->ignore($this->service)],
             'summary'         => ['required', 'string', 'min:8'],
             'content'         => ['required', 'string'],
 

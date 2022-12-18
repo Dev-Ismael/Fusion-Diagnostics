@@ -28,6 +28,25 @@ class DatabaseSeeder extends Seeder
             'working_hours' => 'working_hours',
         ]);
 
+        \App\Models\Service::factory(100)->create([
+            'title' => 'title',
+            'slug' => 'slug',
+            'summary' => 'summary',
+            'content' => 'content',
+            'icon' => 'icon',
+            'img' => 'img',
+            'seo' => 'seo',
+        ]);
+
+        \App\Models\Test::factory(100)->create([
+            'service_id' => 1,
+            'title' => 'title',
+            'slug' => 'slug',
+            'summary' => 'summary',
+            'content' => 'content',
+            'seo' => 'seo',
+        ]);
+
 
     }
 }

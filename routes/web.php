@@ -45,4 +45,11 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     Route::post('service/search' , [App\Http\Controllers\Admin\ServiceController::class, 'search'])->name("service.search");
     Route::post('service/multiAction' , [App\Http\Controllers\Admin\ServiceController::class, 'multiAction'])->name("service.multiAction");
 
+
+    // Test
+    Route::resource('test', App\Http\Controllers\Admin\TestController::class);
+    Route::post('test/search' , [App\Http\Controllers\Admin\TestController::class, 'search'])->name("test.search");
+    Route::post('test/multiAction' , [App\Http\Controllers\Admin\TestController::class, 'multiAction'])->name("test.multiAction");
+
+
 });

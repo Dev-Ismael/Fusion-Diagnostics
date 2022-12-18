@@ -8,7 +8,6 @@
     <section class="page-title centred mt-7" style="background-image: url(front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <div class="shape" style="background-image: url(front/images/shape/shape-63.png);"></div>
                 <div class="title">
                     <h1>About Fusion</h1>
                 </div>

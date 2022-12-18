@@ -166,55 +166,62 @@
     <!-- banner-section end -->
 
 
-    <!-- about-section -->
-    <section class="about-section sec-pad-2">
-        <div class="auto-container">
-            <div class="row align-items-center clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div class="content_block_1">
-                        <div class="content-box">
-                            <div class="sec-title">
-                                <h6>About Research</h6>
-                                <h2>Reliable Journal of Medical Health Research.</h2>
-                            </div>
-                            <div class="bold-text">
-                                <p>Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit
-                                    anim id est laborum. sed spiciatis unde omnis natus error Inventore.</p>
-                            </div>
-                            <div class="text">
-                                <p>quasi architebeat vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptassit.
-                                </p>
-                                <ul class="list-style-one clearfix">
-                                    <li>The Mycobacteriology Section</li>
-                                    <li>The Aerobic Bacteriology Section</li>
-                                </ul>
-                            </div>
-                            <div class="btn-box">
-                                <a href="research.html" class="theme-btn-one">About Us</a>
+        <!-- about-style-four -->
+        <section class="about-style-four sec-pad">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image_block_5">
+                            <div class="image-box">
+                                <div class="shape">
+                                    <div class="shape-3" style="background-image: url(front/images/shape/shape-40.png);"></div>
+                                    <div class="shape-4" style="background-image: url(front/images/shape/shape-40.png);"></div>
+                                    <div class="shape-5" style="background-image: url(front/images/shape/shape-41.png);"></div>
+                                </div>
+                                <figure class="image image-1 paroller"><img src="front/images/resource/about-1.jpg" alt="about-us-image"></figure>
+                                <figure class="image image-2 paroller-2"><img src="front/images/resource/about-2.jpg" style="width: 240px !important" alt="about-us-image"></figure>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                    <div class="image_block_1">
-                        <div class="image-box">
-                            <div class="shape">
-                                <div class="shape-1" style="background-image: url(front/images/shape/shape-5.png);"></div>
-                                <div class="shape-2" style="background-image: url(front/images/shape/shape-2.png);"></div>
-                            </div>
-                            <figure class="image"><img src="{{ asset('front/images/resource/about-1.png') }}"
-                                    alt=""></figure>
-                            <div class="text">
-                                <h2>20</h2>
-                                <h5>Years of exps</h5>
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_1">
+                            <div class="content-box ml-70">
+                                <div class="sec-title">
+                                    <h6>About Research</h6>
+                                    <h2>Reliable Agroscience & Soil Analysis Research.</h2>
+                                </div>
+                                <div class="bold-text">
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum. sed  spiciatis unde omnis natus error Inventore.</p>
+                                </div>
+                                <div class="text">
+                                    <p>quasi architebeat vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptassit.</p>
+                                </div>
+                                <div class="singl-block centred">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                            <div class="single-item">
+                                                <div class="icon-box"><i class="icon-36"></i></div>
+                                                <h4>Medical Research</h4>
+                                                <p>Excepteur sint ocecat pro dent sunt in culpa qui.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                            <div class="single-item">
+                                                <div class="icon-box"><i class="icon-37"></i></div>
+                                                <h4>Blood Resources</h4>
+                                                <p>Excepteur sint ocecat pro dent sunt in culpa qui.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- about-section end -->
+        </section>
+        <!-- about-style-four end -->
+
 
 
 
@@ -280,7 +287,7 @@
     <!-- video-style-two -->
     <section class="video-style-two centred pb-5 pt-5 mt-5">
         <div class="auto-container">
-            <div class="inner-box" style="background-image: url(assets/images/background/video-2.jpg);">
+            <div class="inner-box" style="background-image: url(front/images/background/video-2.jpg);">
                 <div class="content-box">
                     <div class="video-btn">
                         <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image"

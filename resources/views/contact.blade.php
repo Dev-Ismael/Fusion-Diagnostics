@@ -7,7 +7,6 @@
     <section class="page-title centred mt-7" style="background-image: url(front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <div class="shape" style="background-image: url(front/images/shape/shape-63.png);"></div>
                 <div class="title">
                     <h1>Contact Us</h1>
                 </div>
@@ -34,14 +33,12 @@
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-59"></i></div>
                         <h4>Phone Number</h4>
-                        <p><a href="tel:316668880001">+31 666 888 0001</a><br /><a href="tel:316668880023">+31 666 888
-                                0023</a></p>
+                        <p><a href="tel:316668880001">+973-870-0080</a><br /><a href="tel:316668880023">+973-998-8189</a></p>
                     </div>
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-60"></i></div>
                         <h4>Email Address</h4>
-                        <p><a href="mailto:info@example.com">info@example.com</a><br /><a
-                                href="mailto:info@example.com">info@example.com</a></p>
+                        <p><a href="mailto:cs@fusiondiagnostics.com">cs@fusiondiagnostics.com</a><br />
                     </div>
                 </div>
             </div>

@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Test extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
+        'service_id',
         'title',
         'slug',
         'summary',
         'content',
         'seo',
-        'icon',
-        'img',
     ];
+
 
     protected $casts = [
         'seo' => 'array',
@@ -27,8 +26,8 @@ class Service extends Model
 
 
     ############################## Relations ################################
-    public function tests(){
-        return  $this -> hasMany("App\Models\Test") ;
+    public function service(){
+        return  $this -> belongsTo("App\Models\Service") ;
     }
 
 }
