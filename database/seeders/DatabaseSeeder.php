@@ -47,6 +47,11 @@ class DatabaseSeeder extends Seeder
             'seo' => 'seo',
         ]);
 
+        \App\Models\Testimonial::factory(100)->create([
+            'name' => 'name',
+            'content' => 'content',
+            'img' => 'img',
+        ]);
 
     }
 }
