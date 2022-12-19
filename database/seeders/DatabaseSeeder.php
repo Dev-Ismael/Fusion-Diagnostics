@@ -53,5 +53,13 @@ class DatabaseSeeder extends Seeder
             'img' => 'img',
         ]);
 
+        \App\Models\Messege::factory(100)->create([
+            'name' => 'name',
+            'email' => 'email',
+            'phone' => 'phone',
+            'subject' => 'subject',
+            'body' => 'body',
+        ]);
+
     }
 }

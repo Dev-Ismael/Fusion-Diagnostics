@@ -51,10 +51,17 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     Route::post('test/search' , [App\Http\Controllers\Admin\TestController::class, 'search'])->name("test.search");
     Route::post('test/multiAction' , [App\Http\Controllers\Admin\TestController::class, 'multiAction'])->name("test.multiAction");
 
+    
     // Testimonial
     Route::resource('testimonial', App\Http\Controllers\Admin\TestimonialController::class);
     Route::post('testimonial/search' , [App\Http\Controllers\Admin\TestimonialController::class, 'search'])->name("testimonial.search");
     Route::post('testimonial/multiAction' , [App\Http\Controllers\Admin\TestimonialController::class, 'multiAction'])->name("testimonial.multiAction");
+
+
+    // Messege
+    Route::resource('messege', App\Http\Controllers\Admin\MessegeController::class);
+    Route::post('messege/search' , [App\Http\Controllers\Admin\MessegeController::class, 'search'])->name("messege.search");
+    Route::post('messege/multiAction' , [App\Http\Controllers\Admin\MessegeController::class, 'multiAction'])->name("messege.multiAction");
 
 
 });
