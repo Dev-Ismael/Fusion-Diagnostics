@@ -61,5 +61,18 @@ class DatabaseSeeder extends Seeder
             'body' => 'body',
         ]);
 
+
+        \App\Models\Subscriber::factory(100)->create([
+            'email'      => 'a.ismael@bluskyint.com',
+        ]);
+
+
+        \App\Models\Newsletter::factory(100)->create([
+            'subject'      => 'subject',
+            'content'      => 'content',
+        ]);
+
+
+
     }
 }

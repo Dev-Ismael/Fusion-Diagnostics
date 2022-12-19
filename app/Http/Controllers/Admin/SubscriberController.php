@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Messege;
+use App\Models\Subscriber;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Messeges\StoreMessegeRequest;
-use App\Http\Requests\Messeges\UpdateMessegeRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Illuminate\Support\Str;
 
-class MessegeController extends Controller
+class SubscriberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,64 +17,53 @@ class MessegeController extends Controller
      */
     public function index()
     {
-        $messeges = Messege::orderBy('id','desc')->paginate(10);
-        return Inertia::render("Messeges/Index", compact('messeges'));
+        $subscribers = Subscriber::orderBy('id','desc')->paginate(10);
+        return Inertia::render("Subscribers/Index", compact('subscribers'));
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Messege  $messege
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Messege $messege)
-    {
-        return Inertia::render("Messeges/Show", compact("messege"));
-    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Messege  $messege
+     * @param  \App\Models\Subscriber  $subscriber
      * @return \Illuminate\Http\Response
      */
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Messege  $messege
+     * @param  \App\Models\Subscriber  $subscriber
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Messege $messege)
+    public function destroy(Subscriber $subscriber)
     {
 
         // Delete Record from DB
         try {
 
-            $delete = $messege->delete();
+            $delete = $subscriber->delete();
 
             // If Delete Error
             if( !$delete ){
-                return Redirect::route("admin.messege.index")
-                    ->with('messege', [
+                return Redirect::route("admin.subscriber.index")
+                    ->with('subscriber', [
                         'status' => 'error',
                         'txt'    => 'Error at delete opration'
                     ]);
             }
 
             // If Delete Succesffuly
-            return Redirect::route("admin.messege.index")
-                ->with('messege', [
+            return Redirect::route("admin.subscriber.index")
+                ->with('subscriber', [
                     'status' => 'success',
-                    "txt"    => "Messege deleted successfully",
+                    "txt"    => "Subscriber deleted successfully",
                 ]);
 
         } catch (\Exception $e) {
 
             // If server error
-            return Redirect::route("admin.messege.index")
-                ->with('messege', [
+            return Redirect::route("admin.subscriber.index")
+                ->with('subscriber', [
                     'status' => 'error',
                     'txt'    => 'Error at delete opration'
                 ]);
@@ -94,27 +80,27 @@ class MessegeController extends Controller
         try {
 
             // Find Matchs records
-            $messeges = Messege::where('email', 'like', "%{$request->value}%")->paginate( 10 );
+            $subscribers = Subscriber::where('email', 'like', "%{$request->value}%")->paginate( 10 );
 
             // If Not Delete Record
-            if( !$messeges ){
+            if( !$subscribers ){
 
                 // If server error
-                return Redirect::route("admin.messege.index")
-                    ->with('messege', [
+                return Redirect::route("admin.subscriber.index")
+                    ->with('subscriber', [
                         'status' => 'error',
                         'txt'    => 'Error at search opration'
                     ]);
             }
 
             // Return search results in Index Page
-            return Inertia::render("Messeges/Index", compact('messeges'));
+            return Inertia::render("Subscribers/Index", compact('subscribers'));
 
         } catch (\Exception $e) {
 
             // If server error
-            return Redirect::route("admin.messege.index")
-                ->with('messege', [
+            return Redirect::route("admin.subscriber.index")
+                ->with('subscriber', [
                     'status' => 'error',
                     'txt'    => 'Error at search opration'
                 ]);
@@ -140,28 +126,28 @@ class MessegeController extends Controller
             // $ids = explode(",", $request->id);
 
             try {
-                $delete = Messege::destroy( $request->id );
+                $delete = Subscriber::destroy( $request->id );
 
                 if( !$delete ){
-                    return Redirect::route("admin.messege.index")
-                        ->with('messege', [
+                    return Redirect::route("admin.subscriber.index")
+                        ->with('subscriber', [
                             'status' => 'error',
                             'txt'    => 'Error at delete opration'
                         ]);
                 }
 
                 // If Delete Succesffuly
-                return Redirect::route("admin.messege.index")
-                    ->with('messege', [
+                return Redirect::route("admin.subscriber.index")
+                    ->with('subscriber', [
                         'status' => 'success',
-                        "txt"    => "Messege deleted successfully",
+                        "txt"    => "Subscriber deleted successfully",
                     ]);
 
             } catch (\Exception $e) {
 
                 // If server error
-                return Redirect::route("admin.messege.index")
-                    ->with('messege', [
+                return Redirect::route("admin.subscriber.index")
+                    ->with('subscriber', [
                         'status' => 'error',
                         'txt'    => 'Error at delete opration'
                     ]);

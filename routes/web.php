@@ -51,7 +51,7 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     Route::post('test/search' , [App\Http\Controllers\Admin\TestController::class, 'search'])->name("test.search");
     Route::post('test/multiAction' , [App\Http\Controllers\Admin\TestController::class, 'multiAction'])->name("test.multiAction");
 
-    
+
     // Testimonial
     Route::resource('testimonial', App\Http\Controllers\Admin\TestimonialController::class);
     Route::post('testimonial/search' , [App\Http\Controllers\Admin\TestimonialController::class, 'search'])->name("testimonial.search");
@@ -62,6 +62,18 @@ Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
     Route::resource('messege', App\Http\Controllers\Admin\MessegeController::class);
     Route::post('messege/search' , [App\Http\Controllers\Admin\MessegeController::class, 'search'])->name("messege.search");
     Route::post('messege/multiAction' , [App\Http\Controllers\Admin\MessegeController::class, 'multiAction'])->name("messege.multiAction");
+
+
+    // Subscriber
+    Route::resource('subscriber', App\Http\Controllers\Admin\SubscriberController::class);
+    Route::post('subscriber/search' , [App\Http\Controllers\Admin\SubscriberController::class, 'search'])->name("subscriber.search");
+    Route::post('subscriber/multiAction' , [App\Http\Controllers\Admin\SubscriberController::class, 'multiAction'])->name("subscriber.multiAction");
+
+
+    // Newsletter
+    Route::resource('newsletter', App\Http\Controllers\Admin\NewsletterController::class);
+    Route::post('newsletter/search' , [App\Http\Controllers\Admin\NewsletterController::class, 'search'])->name("newsletter.search");
+    Route::post('newsletter/multiAction' , [App\Http\Controllers\Admin\NewsletterController::class, 'multiAction'])->name("newsletter.multiAction");
 
 
 });
