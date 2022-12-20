@@ -54,12 +54,9 @@ class ServiceController extends Controller
         $icon_extention = $request -> icon -> getClientOriginalExtension();
         $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 3623628.png
 
-        // Path
-        $path = "images/services" ;
-
         // Upload
-        $request -> img -> move( $path , $img_name );
-        $request -> icon -> move( $path , $icon_name );
+        $request -> img -> storeAs("public/images/services" , $img_name );
+        $request -> icon -> storeAs("public/images/services" , $icon_name );
 
 
         // Add images names in request array

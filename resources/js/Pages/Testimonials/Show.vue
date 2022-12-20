@@ -36,7 +36,7 @@
                             </label>
                         </div>
                         <div class="col-lg-8">
-                            <p> <img :src="'/images/testimonials/' + testimonial.img "
+                            <p> <img :src="'/storage/images/testimonials/' + testimonial.img "
                                 alt="testimonial-img" width="160"> </p>
                         </div>
                     </div>

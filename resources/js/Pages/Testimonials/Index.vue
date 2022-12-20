@@ -76,7 +76,7 @@
                                                 </div>
                                             </th>
                                             <th>Image</th>
-                                            <th>name</th>
+                                            <th>Name</th>
                                             <th>Content</th>
                                             <th>Actions</th>
                                         </tr>
@@ -93,7 +93,7 @@
                                                 </div>
                                             </td>
                                             <td class="py-1">
-                                                <img :src=" '/images/testimonials/'+ testimonial.icon " alt="image">
+                                                <img :src=" '/storage/images/testimonials/'+ testimonial.img " alt="image">
                                             </td>
                                             <td> {{ testimonial.name.length > 20 ? testimonial.name.slice(0, 20) + '...' :
                                                 testimonial.name }} </td>

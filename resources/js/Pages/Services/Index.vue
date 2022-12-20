@@ -93,7 +93,7 @@
                                                 </div>
                                             </td>
                                             <td class="py-1">
-                                                <img :src=" '/images/services/'+ service.icon " alt="image">
+                                                <img :src=" '/storage/images/services/'+ service.icon " alt="image">
                                             </td>
                                             <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' :
                                                 service.title }} </td>

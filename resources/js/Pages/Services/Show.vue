@@ -80,7 +80,7 @@
                             </label>
                         </div>
                         <div class="col-lg-8">
-                            <p> <img :src="'/images/services/' + service.icon "
+                            <p> <img :src="'/storage/images/services/' + service.icon " class="rounded"
                                 alt="service-img" width="160"> </p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             </label>
                         </div>
                         <div class="col-lg-8">
-                            <p> <img :src="'/images/services/' + service.img "
+                            <p> <img :src="'/storage/images/services/' + service.img " class="rounded"
                                 alt="service-img" width="160"> </p>
                         </div>
                     </div>
@@ -110,10 +110,11 @@
 </template>
 <script>
 
-import { Link } from '@inertiajs/inertia-vue3'
+import { Link, Head } from '@inertiajs/inertia-vue3'
 export default {
     components: {
         Link,
+        Head,
     },
     props: {
         service: Object,

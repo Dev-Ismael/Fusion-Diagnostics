@@ -14,11 +14,11 @@
                         <!------ Title ------->
                         <div class="form-group">
                             <label for="name">
-                                <i class="ti-testimonial-pin"></i>
+                                <i class="ti-service-pin"></i>
                                 Client Username
                             </label>
                             <input type="text" name="name" id="name" class="form-control"
-                                placeholder="Type Client Username Here..." v-model="testimonial.name"
+                                placeholder="Type Client Username Here..." v-model="form.name"
                                 :class="errors.name ? 'border-danger' : ''">
                             <small class="text-danger" v-if="errors.name"> {{ errors.name }}</small>
                         </div>
@@ -28,18 +28,16 @@
                         <div class="form-group">
                             <label for="content" class="col-form-label"> <i class="mdi mdi-format-align-left"></i>
                                 Testmonail Content </label>
-                            <textarea name="content" :class="errors.content ? 'border-danger' : ''" class="form-control" id="content"  v-model="testimonial.content" cols="30" rows="10"></textarea>
+                            <textarea name="content" :class="errors.content ? 'border-danger' : ''" class="form-control" id="content"  v-model="form.content" cols="30" rows="10"></textarea>
                             <small class="text-danger" v-if="errors.content"> {{ errors.content }} </small>
                         </div>
 
 
                         <!-- Image -->
                         <div class="form-group">
-                            <label for="img"> <i class="mdi mdi-file-image"></i> Upload Client Image
-                                <!-- &nbsp; &nbsp; <img :src=" '/images/testimonials/' + testimonial.img " class="img-testimonial" alt="img-testimonial" height="60" v-if="edit" > -->
-                            </label>
+                            <label for="img"> <i class="mdi mdi-file-image"></i> Upload Client Image </label>
                             <input type="file" class="form-control" name="img" id="img" placeholder="Upload Icon"
-                                @input="testimonial.img = $event.target.files[0]"
+                                @input="form.img = $event.target.files[0]"
                                 :class="errors.img ? 'border-danger' : ''">
                             <small class="text-danger" v-if="errors.img"> {{ errors.img }} </small>
                         </div>
@@ -69,7 +67,7 @@
         },
         data() {
             return {
-                testimonial: {
+                form: {
                     name: '',
                     content: '',
                     img: '',
@@ -78,7 +76,7 @@
         },
         methods: {
             storeTestimonial() {
-                this.$inertia.post('/admin/testimonial', this.testimonial);
+                this.$inertia.post('/admin/testimonial', this.form);
             }
         },
     }

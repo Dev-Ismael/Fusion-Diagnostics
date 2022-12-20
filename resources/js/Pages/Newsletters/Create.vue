@@ -14,11 +14,11 @@
                         <!------ Title ------->
                         <div class="form-group">
                             <label for="subject">
-                                <i class="ti-newsletter-pin"></i>
+                                <i class="ti-form-pin"></i>
                                 Newsletter Subject
                             </label>
                             <input type="text" name="subject" id="subject" class="form-control"
-                                placeholder="Type subject Here..." v-model="newsletter.subject"
+                                placeholder="Type subject Here..." v-model="form.subject"
                                 :class="errors.subject ? 'border-danger' : ''">
                             <small class="text-danger" v-if="errors.subject"> {{ errors.subject }}</small>
                         </div>
@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label for="message-text" class="col-form-label"> <i class="mdi mdi-format-align-left"></i>
                                 Content </label>
-                            <ckeditor :editor="editor" v-model="newsletter.content" name="content"></ckeditor>
+                            <ckeditor :editor="editor" v-model="form.content" name="content"></ckeditor>
                             <small class="text-danger" v-if="errors.content"> {{ errors.content }}
                             </small>
                         </div>
@@ -61,16 +61,16 @@
         data() {
             return {
                 editor: ClassicEditor,   // import ClassicEditor theme to use in checkEditor package
-                newsletter: {
-                    name: '',
-                    content: '',
-                    img: '',
+                form: {
+                    name: null,
+                    content: null,
+                    img: null,
                 },
             }
         },
         methods: {
             storeNewsletter() {
-                this.$inertia.post('/admin/newsletter', this.newsletter);
+                this.$inertia.post('/admin/newsletter', this.form);
             }
         },
     }

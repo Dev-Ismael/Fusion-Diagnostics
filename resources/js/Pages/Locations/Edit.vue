@@ -15,7 +15,7 @@
                                 Location
                             </label>
                             <input type="text" name="title" class="form-control" placeholder="Type Location Here..."
-                                v-model="location.title" :class=" errors.title ? 'border-danger' : ''  "
+                                v-model="form.title" :class=" errors.title ? 'border-danger' : ''  "
                             >
                             <small class="text-danger" v-if="errors.title"> {{errors.title }}</small>
                         </div>
@@ -27,7 +27,7 @@
                                 Working Hours
                             </label>
                             <input type="text" name="working_hours" class="form-control"
-                                placeholder="Type Working Hours Here..." v-model="location.working_hours" :class=" errors.working_hours ? 'border-danger' : ''  " >
+                                placeholder="Type Working Hours Here..." v-model="form.working_hours" :class=" errors.working_hours ? 'border-danger' : ''  " >
                                 <small class="text-danger" v-if="errors.working_hours"> {{errors.working_hours }}</small>
                         </div>
 
@@ -38,7 +38,7 @@
                                 Street View
                             </label>
                             <input type="text" name="street_view" class="form-control"
-                                placeholder="Type Street View Here..." v-model="location.street_view" :class=" errors.street_view ? 'border-danger' : ''  " >
+                                placeholder="Type Street View Here..." v-model="form.street_view" :class=" errors.street_view ? 'border-danger' : ''  " >
                                 <small class="text-danger" v-if="errors.street_view"> {{errors.street_view }}</small>
                         </div>
 
@@ -65,9 +65,19 @@
             errors: Object,
             location: Object,
         },
+        data() {
+            return {
+                form: {
+                    _method: 'put',   // PUT Method
+                    title: this.location.title,
+                    working_hours: this.location.working_hours,
+                    street_view: this.location.street_view,
+                },
+            }
+        },
         methods: {
             updateLocation() {
-                this.$inertia.put('/admin/location/' + this.location.id, this.location);
+                this.$inertia.post('/admin/location/' + this.location.id, this.form);
             }
         },
     }

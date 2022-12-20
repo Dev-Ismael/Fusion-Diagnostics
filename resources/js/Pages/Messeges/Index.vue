@@ -100,16 +100,6 @@
                                                     class="btn btn-secondary btn-rounded btn-icon p-2">
                                                     <i class="mdi mdi-eye"></i>
                                                 </Link>
-                                                &nbsp;
-                                                <Link :href="('/admin/messege/'+messege.id+'/edit')"
-                                                    class="btn btn-primary btn-rounded btn-icon p-2">
-                                                <i class="ti-marker-alt"></i>
-                                                </Link>
-                                                &nbsp;
-                                                <button type="button" @click="deletePost(messege)"
-                                                    class="btn btn-danger btn-rounded btn-icon p-2">
-                                                    <i class="ti-close"></i>
-                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>

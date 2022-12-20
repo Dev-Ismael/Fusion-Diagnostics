@@ -75,14 +75,14 @@
 </template>
 <script>
 
-import { Link } from '@inertiajs/inertia-vue3'
-export default {
-    components: {
-        Link,
-    },
-    props: {
-        messege: Object,
-    },
-}
+    import { Link } from '@inertiajs/inertia-vue3'
+    export default {
+        components: {
+            Link,
+        },
+        props: {
+            messege: Object,
+        },
+    }
 
 </script>

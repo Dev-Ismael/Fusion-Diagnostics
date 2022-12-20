@@ -52,7 +52,7 @@
                 <div class="preloader-close">Preloader Close</div>
                 <div id="handle-preloader" class="handle-preloader">
                     <div class="animation-preloader">
-                        <img src="{{ asset("front/images/logo-motion.gif") }}" alt="logo-animation" width="100">
+                        <img src="{{ asset("front/images/logo-motion.gif") }}" alt="logo-animation" width="180">
                     </div>
                 </div>
             </div>

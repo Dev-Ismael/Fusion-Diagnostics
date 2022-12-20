@@ -9,7 +9,7 @@ use App\Http\Requests\Testimonials\UpdateTestimonialRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -50,19 +50,11 @@ class TestimonialController extends Controller
         $img_extention = $request -> img -> getClientOriginalExtension();
         $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
-        // Path
-        $path = "images/testimonials" ;
-
         // Upload
-        $request -> img -> move( $path , $img_name );
+        $request -> img -> storeAs("public/images/testimonials" , $img_name );
 
         // Add images names in request array
         $requestData['img']  = $img_name;
-
-
-        // add slug in $requestData Array
-        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
-
 
         // Store in DB
         try {
@@ -127,81 +119,58 @@ class TestimonialController extends Controller
      */
     public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
-        return response()->json([
-            "status" => "connected"
-        ]);
 
-        // if( !$testimonial ){  // If Not Found
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'msg'    => '404 not found'
-        //     ]);
-        // }
+        // save all request in one variable
+        $requestData = $request->all();
 
-        // // save all request in one variable
-        // $requestData = $request->all();
+        if( $request -> hasFile("img") ){
 
-        // // Check If There Images Uploaded
-        // $path = "images/testimonials" ;
+            // Create img name
+            $img_extention = $request -> img -> getClientOriginalExtension();
+            $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
-        // if( $request -> hasFile("icon") ){
-        //     //  Upload image & Create name icon
-        //     $icon_extention = $request -> icon -> getClientOriginalExtension();
-        //     $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 3628.png
-        //     $request -> icon -> move( $path , $icon_name );
-        // }else{
-        //     $icon_name = $testimonial->icon;
-        // }
+            // Upload
+            $request -> img -> storeAs("public/images/testimonials" , $img_name );
 
-        // if( $request -> hasFile("img") ){
-        //     //  Upload image & Create name img
-        //     $img_extention = $request -> img -> getClientOriginalExtension();
-        //     $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 3628.png
-        //     $request -> img -> move( $path , $img_name );
-        // }else{
-        //     $img_name = $testimonial->img;
-        // }
+            // Delete Old Img
+            Storage::delete('public/images/testimonials/'. $testimonial->img );
 
-        // // Add images names in request array
-        // $requestData['img']  = $img_name;
-        // $requestData['icon'] = $icon_name;
+        }else{
+            $img_name = $testimonial->img;
+        }
 
+        // Add images names in request array
+        $requestData['img']  = $img_name;
 
-        // // add slug in $requestData Array
-        // $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+        // Update in DB
+        try {
 
+            // update row in table
+            $update = $testimonial-> update( $requestData );
 
-        // // return response()->json([
-        // //     'requestData' => $requestData,
-        // // ]);
+            // if not update in DB
+            if(!$update){
+                return Redirect::route("admin.testimonial.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at update opration'
+                    ]);
+            }
 
-        // // Store in DB
-        // try {
+            // If Found Success
+            return Redirect::route("admin.testimonial.index")
+                ->with('messege', [
+                    'status' => 'success',
+                    'txt'    => 'Testimonial updated successfully'
+                ]);
 
-        //     // store row in table
-        //     $update = $testimonial-> update( $requestData );
-
-        //     // if not save in DB
-        //     if(!$update){
-        //         return response()->json([
-        //             'status' => 'error',
-        //             'msg'    => 'Error at update opration'
-        //         ]);
-        //     }
-
-        //     // If Found Success
-        //     return response()->json([
-        //         'status' => 'success',
-        //         "msg"    => "Testimonial updated successfully",
-        //     ]);
-
-        // } catch (\Exception $e) {
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'msg'    => 'server error'
-        //     ]);
-        // }
-
+        } catch (\Exception $e) {
+            return Redirect::route("admin.testimonial.index")
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at update opration'
+                ]);
+        }
 
     }
 
@@ -217,7 +186,11 @@ class TestimonialController extends Controller
         // Delete Record from DB
         try {
 
+            // Delete DB Record
             $delete = $testimonial->delete();
+
+            // Delete Img
+            Storage::delete('public/images/testimonials/'. $testimonial->img );
 
             // If Delete Error
             if( !$delete ){
@@ -256,7 +229,7 @@ class TestimonialController extends Controller
         try {
 
             // Find Matchs records
-            $testimonials = Testimonial::where('title', 'like', "%{$request->value}%")->paginate( 10 );
+            $testimonials = Testimonial::where('name', 'like', "%{$request->value}%")->paginate( 10 );
 
             // If Not Delete Record
             if( !$testimonials ){
@@ -299,10 +272,15 @@ class TestimonialController extends Controller
         // If Action is Delete
         if( $request->action == "delete" ){
 
-            // $ids = explode(",", $request->id);
+            $testimonials = Testimonial::whereIn('id', $request->id)->get();
 
             try {
                 $delete = Testimonial::destroy( $request->id );
+
+                // Delete Img
+                for ( $row=0; $row < count($testimonials); $row++ ) {
+                    Storage::delete('public/images/testimonials/'. $testimonials[$row]['img'] );
+                }
 
                 if( !$delete ){
                     return Redirect::route("admin.testimonial.index")
