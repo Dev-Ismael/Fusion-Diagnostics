@@ -186,11 +186,11 @@ class TestimonialController extends Controller
         // Delete Record from DB
         try {
 
-            // Delete DB Record
-            $delete = $testimonial->delete();
-
             // Delete Img
             Storage::delete('public/images/testimonials/'. $testimonial->img );
+
+            // Delete DB Record
+            $delete = $testimonial->delete();
 
             // If Delete Error
             if( !$delete ){
@@ -275,12 +275,14 @@ class TestimonialController extends Controller
             $testimonials = Testimonial::whereIn('id', $request->id)->get();
 
             try {
-                $delete = Testimonial::destroy( $request->id );
 
                 // Delete Img
                 for ( $row=0; $row < count($testimonials); $row++ ) {
                     Storage::delete('public/images/testimonials/'. $testimonials[$row]['img'] );
                 }
+
+                // Delete DB Records
+                $delete = Testimonial::destroy( $request->id );
 
                 if( !$delete ){
                     return Redirect::route("admin.testimonial.index")

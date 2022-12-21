@@ -45,7 +45,6 @@ div.dataTables_wrapper div.dataTables_filter input{
 }
 .table td img, .jsgrid .jsgrid-table td img {
     padding: 5px;
-    border-radius: 0 !important;
     box-shadow: 0px 0px 11px 0px #0000001a;
 }
 .form-group label

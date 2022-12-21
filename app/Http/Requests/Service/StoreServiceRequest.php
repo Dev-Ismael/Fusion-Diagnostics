@@ -36,8 +36,8 @@ class StoreServiceRequest extends FormRequest
             'seo.description' => ['required', 'string', 'distinct', 'max:500'],
             'seo.keywords'    => ['required', 'string', 'distinct', 'max:500'],
 
-            'icon'            => ['required', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
-            'img'             => ['required', 'mimes:jpeg,png,jpg,gif', 'max:4096'],
+            'icon'            => ['required' , 'mimes:jpeg,png,jpg' , 'max:2048'],
+            'img'             => ['required' , 'mimes:jpeg,png,jpg' , 'max:4096'],
         ];
     }
 }

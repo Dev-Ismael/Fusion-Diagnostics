@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
@@ -58,7 +59,6 @@ class ServiceController extends Controller
         $request -> img -> storeAs("public/images/services" , $img_name );
         $request -> icon -> storeAs("public/images/services" , $icon_name );
 
-
         // Add images names in request array
         $requestData['img']  = $img_name;
         $requestData['icon'] = $icon_name;
@@ -66,10 +66,6 @@ class ServiceController extends Controller
 
         // add slug in $requestData Array
         $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
-
-        // return response()->json([
-        //     "requestData" => $requestData,
-        // ]);
 
         // Store in DB
         try {
@@ -134,80 +130,78 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        return response()->json([
-            "status" => "connected"
-        ]);
 
-        // if( !$service ){  // If Not Found
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'msg'    => '404 not found'
-        //     ]);
-        // }
+        // save all request in one variable
+        $requestData = $request->all();
 
-        // // save all request in one variable
-        // $requestData = $request->all();
+        // IF Icon Exist
+        if( $request -> hasFile("icon") ){
+            // Create img name
+            $icon_extention = $request -> icon -> getClientOriginalExtension();
+            $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 32632.png
 
-        // // Check If There Images Uploaded
-        // $path = "images/services" ;
+            // Upload Icon
+            $request -> icon -> storeAs("public/images/services" , $icon_name );
 
-        // if( $request -> hasFile("icon") ){
-        //     //  Upload image & Create name icon
-        //     $icon_extention = $request -> icon -> getClientOriginalExtension();
-        //     $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 3628.png
-        //     $request -> icon -> move( $path , $icon_name );
-        // }else{
-        //     $icon_name = $service->icon;
-        // }
+            // Delete Old Icon
+            Storage::delete('public/images/services/'. $service->icon );
+        }else{
+            $icon_name = $service->icon;
+        }
 
-        // if( $request -> hasFile("img") ){
-        //     //  Upload image & Create name img
-        //     $img_extention = $request -> img -> getClientOriginalExtension();
-        //     $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 3628.png
-        //     $request -> img -> move( $path , $img_name );
-        // }else{
-        //     $img_name = $service->img;
-        // }
+        // IF Img Exist
+        if( $request -> hasFile("img") ){
+            // Create img name
+            $img_extention = $request -> img -> getClientOriginalExtension();
+            $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
-        // // Add images names in request array
-        // $requestData['img']  = $img_name;
-        // $requestData['icon'] = $icon_name;
+            // Upload Img
+            $request -> img -> storeAs("public/images/services" , $img_name );
 
+            // Delete Old Img
+            Storage::delete('public/images/services/'. $service->img );
+        }else{
+            $img_name = $service->img;
+        }
 
-        // // add slug in $requestData Array
-        // $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+        // Add images names in request array
+        $requestData['img']  = $img_name;
+        $requestData['icon'] = $icon_name;
 
 
-        // // return response()->json([
-        // //     'requestData' => $requestData,
-        // // ]);
+        // add slug in $requestData Array
+        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
 
-        // // Store in DB
-        // try {
 
-        //     // store row in table
-        //     $update = $service-> update( $requestData );
+        // Store in DB
+        try {
 
-        //     // if not save in DB
-        //     if(!$update){
-        //         return response()->json([
-        //             'status' => 'error',
-        //             'msg'    => 'Error at update opration'
-        //         ]);
-        //     }
+            // store row in table
+            $update = $service-> update( $requestData );
 
-        //     // If Found Success
-        //     return response()->json([
-        //         'status' => 'success',
-        //         "msg"    => "Service updated successfully",
-        //     ]);
+            // if not save in DB
+            if(!$update){
+                return Redirect::route("admin.service.index")
+                    ->with('messege', [
+                        'status' => 'error',
+                        'txt'    => 'Error at update opration'
+                    ]);
+            }
 
-        // } catch (\Exception $e) {
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'msg'    => 'server error'
-        //     ]);
-        // }
+            // If Found Success
+            return Redirect::route("admin.service.index")
+                ->with('messege', [
+                    'status' => 'success',
+                    'txt'    => 'Service updated successfully'
+                ]);
+
+        } catch (\Exception $e) {
+            return Redirect::route("admin.service.index")
+                ->with('messege', [
+                    'status' => 'error',
+                    'txt'    => 'Error at update opration'
+            ]);
+        }
 
 
     }
@@ -221,8 +215,13 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
 
-        // Delete Record from DB
         try {
+
+            // Delete Img
+            Storage::delete('public/images/services/'. $service->img );
+
+            // Delete Icon
+            Storage::delete('public/images/services/'. $service->icon );
 
             $delete = $service->delete();
 
@@ -299,17 +298,24 @@ class ServiceController extends Controller
     public function multiAction(Request $request)
     {
 
-        // return response()->json([
-        //     "requestData" => $request->all(),
-        // ]);
-
         // If Action is Delete
         if( $request->action == "delete" ){
 
-            // $ids = explode(",", $request->id);
+            $services = Service::whereIn('id', $request->id)->get();
 
             try {
+
+                // Delete Img
+                for ( $row=0; $row < count($services); $row++ ) {
+                    //Delete Img
+                    Storage::delete('public/images/services/'. $services[$row]['img'] );
+                    //Delete Icon
+                    Storage::delete('public/images/services/'. $services[$row]['icon'] );
+                }
+
+                // Delete DB Records
                 $delete = Service::destroy( $request->id );
+
 
                 if( !$delete ){
                     return Redirect::route("admin.service.index")

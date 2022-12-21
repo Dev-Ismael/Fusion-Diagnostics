@@ -1,6 +1,16 @@
 <template>
 
     <Head title=" Admin Panel | Subscribers" />
+
+    <div class="container-scroller">
+        <admin_navbar></admin_navbar>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+
+            <admin_sidebar></admin_sidebar>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
     <div class="card">
         <div class="card-body">
 
@@ -122,19 +132,16 @@
 
 
     </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
 </template>
 <script>
 
-    import Pagination from '../../components/pagination.vue'
-    import { Link, Head } from '@inertiajs/inertia-vue3'
 
     export default {
-        components: {
-            Link,
-            Head,
-            Pagination
-        },
         props: {
             subscribers: Object,
         },
