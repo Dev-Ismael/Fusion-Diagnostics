@@ -44,7 +44,10 @@
 <body>
     <div id="app" class="boxed_wrapper">
 
-
+        @php
+            $services = App\Models\Service::get();
+            $locations = App\Models\location::get();
+        @endphp
 
         <!-- preloader -->
         <div class="loader-wrap">
@@ -108,22 +111,18 @@
                                 <ul class="navigation clearfix">
                                     <li><a href="{{ route("home") }}">Home</a></li>
                                     <li><a href="{{ route("about") }}">About</a></li>
-                                    <li class="dropdown"><a href="index.html">Services</a>
+                                    <li class="dropdown"><a href="#">Services</a>
                                         <ul>
-                                            <li><a href="index.html">Service</a></li>
-                                            <li><a href="index-2.html">Service</a></li>
-                                            <li><a href="index-3.html">Service</a></li>
-                                            <li><a href="index-4.html">Service</a></li>
-                                            <li><a href="index-5.html">Service</a></li>
+                                            @foreach ( $services as $service )
+                                                <li><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="index.html">locations</a>
+                                    <li class="dropdown"><a href="#">locations</a>
                                         <ul>
-                                            <li><a href="index.html">Location</a></li>
-                                            <li><a href="index-2.html">Location</a></li>
-                                            <li><a href="index-3.html">Location</a></li>
-                                            <li><a href="index-4.html">Location</a></li>
-                                            <li><a href="index-5.html">Location</a></li>
+                                            @foreach ( $locations as $location )
+                                                {{-- <li><a href="{{ route("location.show", $location->slug ) }}"> {{ $location->title }} </a></li> --}}
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="{{ route("contact") }}">Contact</a></li>
@@ -196,8 +195,8 @@
         <footer class="main-footer bg-color-1">
             <div class="footer-top">
                 <div class="shape">
-                    {{-- <div class="shape-1 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div>
-                    <div class="shape-2 rotate-me" style="background-image: url(front/images/shape/shape-14.png);"></div> --}}
+                    {{-- <div class="shape-1 rotate-me" style="background-image: url(/front/images/shape/shape-14.png);"></div>
+                    <div class="shape-2 rotate-me" style="background-image: url(/front/images/shape/shape-14.png);"></div> --}}
                     <div class="shape-3"></div>
                     <div class="shape-4"></div>
                 </div>

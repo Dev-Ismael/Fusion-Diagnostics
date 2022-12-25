@@ -5,7 +5,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred mt-7" style="background-image: url(front/images/background/page-title.jpg);">
+    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
@@ -25,8 +25,8 @@
     <!-- research-style-two -->
     <section class="research-style-two centred bg-color-1">
         <div class="pattern-layer">
-            <div class="pattern-1" style="background-image: url(front/images/shape/shape-65.png);"></div>
-            <div class="pattern-2" style="background-image: url(front/images/shape/shape-66.png);"></div>
+            <div class="pattern-1" style="background-image: url(/front/images/shape/shape-65.png);"></div>
+            <div class="pattern-2" style="background-image: url(/front/images/shape/shape-66.png);"></div>
         </div>
         <div class="auto-container">
             <div class="sec-title centred">
@@ -34,7 +34,7 @@
                 <h2>Medical, Medicine and Health <br />Science Topic</h2>
             </div>
             <div class="inner-content">
-                <div class="shape" style="background-image: url(front/images/shape/shape-64.png);"></div>
+                <div class="shape" style="background-image: url(/front/images/shape/shape-64.png);"></div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 research-block">
                         <div class="research-block-two wow fadeInUp animated" data-wow-delay="00ms"
@@ -101,7 +101,7 @@
 
 
     <!-- funfact-style-two -->
-    <section class="funfact-style-two" style="background-image: url(front/images/background/funfact-1.jpg);">
+    <section class="funfact-style-two" style="background-image: url(/front/images/background/funfact-1.jpg);">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
