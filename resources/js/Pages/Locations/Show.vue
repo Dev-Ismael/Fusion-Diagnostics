@@ -33,6 +33,17 @@
                                         <div class="col-lg-3">
                                             <label class="card-title">
                                                 <i class="mdi mdi-alarm"></i>
+                                                Location Map
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <a :href="location.location_map" target="_blank"> Click Here </a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3">
+                                            <label class="card-title">
+                                                <i class="mdi mdi-alarm"></i>
                                                 Working Hours
                                             </label>
                                         </div>
@@ -48,7 +59,7 @@
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ location.street_view }} </p>
+                                            <a :href="location.street_view" target="_blank"> Click Here </a>
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -2,27 +2,6 @@
 
 @section('content')
 
-
-
-
-    <!-- Page Title -->
-    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
-        <div class="auto-container">
-            <div class="content-box">
-                <div class="title">
-                    <h1> Fusion Services</h1>
-                </div>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">Home</a></li>
-                    <li>{{ $service->title }}</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- End Page Title -->
-
-
-
     <section class="event-details sec-pad-2">
         <div class="auto-container">
             <div class="row clearfix">

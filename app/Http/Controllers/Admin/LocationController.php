@@ -9,6 +9,7 @@ use App\Http\Requests\Location\UpdateLocationRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
 
 class LocationController extends Controller
 {
@@ -44,6 +45,11 @@ class LocationController extends Controller
 
         // save all request in one variable
         $requestData = $request->all();
+
+
+        // add slug in $requestData Array
+        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+
 
         // Store in DB
         try {
@@ -112,6 +118,11 @@ class LocationController extends Controller
         // save all request in one variable
         $requestData = $request->all();
 
+
+        // add slug in $requestData Array
+        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+
+        
         // Store in DB
         try {
 

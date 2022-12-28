@@ -35,7 +35,7 @@
                                         alt="">
                                 </figure>
                                 <div class="text">
-                                    <h3>15</h3>
+                                    <h3> {{ $locations_count }} </h3>
                                     <h4>Location Branchs</h4>
                                 </div>
                                 <div class="admin-box">
@@ -71,7 +71,7 @@
                                         alt="">
                                 </figure>
                                 <div class="text">
-                                    <h3>15</h3>
+                                    <h3> {{ $locations_count }} </h3>
                                     <h4>Location Branchs</h4>
                                 </div>
                                 <div class="admin-box">
@@ -109,7 +109,7 @@
                                         alt="">
                                 </figure>
                                 <div class="text">
-                                    <h3>15</h3>
+                                    <h3> {{ $locations_count }} </h3>
                                     <h4>Location Branchs</h4>
                                 </div>
                                 <div class="admin-box">
@@ -145,7 +145,7 @@
                                         alt="">
                                 </figure>
                                 <div class="text">
-                                    <h3>15</h3>
+                                    <h3> {{ $locations_count }} </h3>
                                     <h4>Location Branchs</h4>
                                 </div>
                                 <div class="admin-box">
@@ -165,6 +165,43 @@
     </section>
     <!-- banner-section end -->
 
+    <!-- feature-section strat -->
+    <section class="feature-section alternat-2 centred">
+        <div class="auto-container">
+            <div class="inner-content">
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-31"></i></div>
+                                <h4><a href="index-2.html">Laboratory Services</a></h4>
+                                <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-32"></i></div>
+                                <h4><a href="index-2.html">Professionals Area</a></h4>
+                                <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-33"></i></div>
+                                <h4><a href="index-2.html">Opening Hours</a></h4>
+                                <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- feature-section end -->
 
     <!-- about-style-four -->
     <section class="about-style-four sec-pad">
@@ -225,7 +262,6 @@
 
     <!-- Services-section -->
     @if ( count( $services ) > 0 )
-        <!-- service-section -->
         <section class="service-section section-padding">
             <div class="pattern-layer">
                 <div class="pattern-1 wow zoomIn animated" data-wow-delay="00ms" data-wow-duration="1500ms"
@@ -233,23 +269,21 @@
                 <div class="pattern-2  wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms"
                     style="background-image: url(/front/images/shape/shape-4.png);"></div>
             </div>
+            <div class="sec-title centred">
+                <h6>Laboratory Services</h6>
+                <h2>Reliable & High-Quality <br />Laboratory Service</h2>
+            </div>
             <div class="auto-container">
-                <div class="sec-title centred">
-                    <h6>Laboratory Services</h6>
-                    <h2>Reliable & High-Quality <br />Laboratory Service</h2>
-                </div>
-                <div class="row clearfix">
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                     @foreach ( $services as $service )
-                        <div class="col-lg-3 col-md-6 col-sm-12 service-block">
-                            <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
-                                <div class="inner-box">
-                                    <div class="icon-box">
-                                        <img src="{{ asset("storage/images/services/".$service->icon) }}" alt="icon" width="80">
-                                    </div>
-                                    <h4><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></h4>
-                                    <p class="service-summary"> {{ $service->summary }} </p>
-                                    <div class="btn-box"><a href="{{ route("service.show", $service->slug ) }}" class="theme-btn-two">Read More</a></div>
+                        <div class="service-block-one mb-5">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <img src="{{ asset("storage/images/services/".$service->icon) }}" alt="icon" width="80">
                                 </div>
+                                <h4 class="service-title"><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></h4>
+                                <p class="service-summary"> {{ $service->summary }} </p>
+                                <div class="btn-box"><a href="{{ route("service.show", $service->slug ) }}" class="theme-btn-two">Read More</a></div>
                             </div>
                         </div>
                     @endforeach
@@ -258,7 +292,6 @@
         </section>
         <!-- service-section end -->
     @endif
-
 
 
     <!-- testimonial-section -->

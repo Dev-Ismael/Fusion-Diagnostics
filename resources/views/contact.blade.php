@@ -11,7 +11,8 @@
                     <h1>Contact Us</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">Home</a></li>
+                                        <li><a href="{{ route("home") }}">Home</a></li>
+</li>
                     <li>Contact Us</li>
                 </ul>
             </div>
@@ -82,5 +83,6 @@
     </section>
     <!-- contact-style-two end -->
 
+    
 
 @endsection

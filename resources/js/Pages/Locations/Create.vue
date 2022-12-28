@@ -48,6 +48,19 @@
                                                 {{ errors.working_hours }}</small>
                                         </div>
 
+                                        <!------ location_map ------->
+                                        <div class="form-group">
+                                            <label for="location_map">
+                                                <i class="mdi mdi-alarm"></i>
+                                                Location Map
+                                            </label>
+                                            <input type="text" name="location_map" class="form-control"
+                                                placeholder="Type Location Link Here..." v-model="form.location_map"
+                                                :class="errors.location_map ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.location_map">
+                                                {{ errors.location_map }}</small>
+                                        </div>
+
                                         <!------ Street View ------->
                                         <div class="form-group">
                                             <label for="street_view">
@@ -89,6 +102,7 @@ export default {
         return {
             form: {
                 title: null,
+                location_map: null,
                 working_hours: null,
                 street_view: null,
             },

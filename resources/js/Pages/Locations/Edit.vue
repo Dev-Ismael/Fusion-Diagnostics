@@ -33,6 +33,20 @@
                                             <small class="text-danger" v-if="errors.title"> {{ errors.title }}</small>
                                         </div>
 
+
+                                        <!------ location_map ------->
+                                        <div class="form-group">
+                                            <label for="location_map">
+                                                <i class="mdi mdi-alarm"></i>
+                                                Location Map
+                                            </label>
+                                            <input type="text" name="location_map" class="form-control"
+                                                placeholder="Type Location Link Here..." v-model="form.location_map"
+                                                :class="errors.location_map ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.location_map">
+                                                {{ errors.location_map }}</small>
+                                        </div>
+
                                         <!------ working_hours ------->
                                         <div class="form-group">
                                             <label for="working_hours">
@@ -86,6 +100,7 @@ export default {
             form: {
                 _method: 'put',   // PUT Method
                 title: this.location.title,
+                location_map: this.location.location_map,
                 working_hours: this.location.working_hours,
                 street_view: this.location.street_view,
             },

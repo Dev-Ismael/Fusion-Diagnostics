@@ -19,8 +19,104 @@
 .section-padding{
     padding: 120px 0px;
 }
+.section-margin{
+    margin: 120px 0px;
+}
 
 
+
+
+
+
+
+
+/*=======================================================
+============ service-Block
+========================================================*/
+.service-block-one .inner-box h4{
+    height: 50px;
+}
+
+
+
+
+
+/*=======================================================
+============ Location Search
+========================================================*/
+
+.location-search input{
+    padding: 12px !important;
+    background-color: transparent;
+    border-radius: 5px;
+    color:  rgb(225, 225, 225) !important;
+    font-size: 20px;
+    border: 1px solid  rgb(225, 225, 225);
+}
+.location-search input::-webkit-input-placeholder {
+    color: rgb(150, 150, 150) !important;
+}
+
+.location-search input:focus {
+    background-color: transparent;
+    border: 1px solid  #0065cb;
+    color: rgb(150, 150, 150) !important;
+}
+.location-search button{
+    border: 1px solid rgb(225, 225, 225) !important;
+    height: 100%;
+    font-size: 18px;
+}
+.location-search.cta-section .inner-box{
+    padding: 80px;
+    border-radius: 0px;
+}
+.location-search.cta-section .inner-box .title{
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+}
+
+
+
+/*=======================================================
+============ Login Page
+========================================================*/
+.error-section .inner-box h2 {
+    font-size: 80px;
+    font-weight: 700;
+    color: #0065cb;
+}
+.error-section .inner-box input{
+    padding: 12px !important;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid  #0065cb
+}
+.error-section .inner-box label{
+    color: rgb(24, 24, 24);
+    font-size: 20px;
+    margin-bottom: -5px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.error-section .inner-box label i {
+    color: #0065cb;
+}
+/*=======================================================
+============ Location Page
+========================================================*/
+.google-map-section a.theme-btn-two {
+    background-color: black !important;
+    color: #fff !important;
+    border-radius: 15px;
+    padding: 7px 15px;
+}
+.image-box iframe{
+    border-radius: 20px;
+    box-shadow: 0px 0px 18px 3px #b3b3b3bd;
+}
 
 
 

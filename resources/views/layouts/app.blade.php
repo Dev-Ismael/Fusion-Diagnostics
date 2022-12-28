@@ -15,6 +15,8 @@
     <!-- Fav Icon -->
     <link rel="icon" href='{{ asset('front/images/favicon.png') }}' type="image/x-icon">
 
+    <!----- Font-awesome ----->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Fonts -->
     <link
@@ -118,13 +120,6 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">locations</a>
-                                        <ul>
-                                            @foreach ( $locations as $location )
-                                                {{-- <li><a href="{{ route("location.show", $location->slug ) }}"> {{ $location->title }} </a></li> --}}
-                                            @endforeach
-                                        </ul>
-                                    </li>
                                     <li><a href="{{ route("contact") }}">Contact</a></li>
                                 </ul>
                             </div>
@@ -132,7 +127,11 @@
                     </div>
                     <ul class="menu-right-content clearfix">
                         <li class="search-btn">
-                            <button type="button" class="search-toggler"><i class="icon-1"></i></button>
+                            <button type="button" class="search-toggler">
+                                Test Directory
+                                &nbsp;
+                                <i class="icon-1"></i>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -149,7 +148,11 @@
                         </div>
                         <ul class="menu-right-content pull-right clearfix">
                             <li class="search-btn">
-                                <button type="button" class="search-toggler"><i class="icon-1"></i></button>
+                                <button type="button" class="search-toggler">
+                                    Test Directory
+                                    &nbsp;
+                                    <i class="icon-1"></i>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -191,6 +194,41 @@
             @yield('content')
         </main>
 
+
+        <!------- location-search ------->
+        <section class="cta-section location-search">
+            <div class="inner-box clearfix">
+                <div class="auto-container">
+                    <div class="row d-flex h-100">
+                        <div class="col-md-6 justify-content-center align-self-center">
+                            <div class="search-location-box p-3 rounded text-center">
+                                <h3 class="font-weight-bold"> Search Nearest Location To Visit  </h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6 justify-content-center align-self-center">
+                            <form action="{{ route("location.search") }}" method="POST" >
+                                @csrf
+                                <div class="row d-flex h-100">
+                                    <div class="col-md-8 justify-content-center align-self-center">
+                                        <div class="input__box">
+                                            <input type="text"  name="search" class="w-100" placeholder="Type Location Title Here..." autocomplete="nope" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 justify-content-center align-self-center">
+                                        <button type="submit" class="theme-btn-one">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Footer -->
         <footer class="main-footer bg-color-1">
             <div class="footer-top">
@@ -205,7 +243,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget">
                                 <div class="footer-logo">
-                                    <figure class="logo"><a href="index.html"><img src="{{ asset('front/images/logo.png') }}" alt="fusion-logo"></a></figure>
+                                    <figure class="logo"><a href="{{ route("home") }}"><img src="{{ asset('front/images/logo.png') }}" alt="fusion-logo"></a></figure>
                                 </div>
                                 <div class="text">
                                     <p>Nostrud exertation ullamco labor aliquip commodo duis.</p>

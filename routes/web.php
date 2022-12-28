@@ -27,6 +27,7 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])
 Route::get('/service/{slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
 
 // Location
+Route::post('/location', [App\Http\Controllers\LocationController::class, 'search'])->name('location.search');
 Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 'show'])->name('location.show');
 
 
@@ -35,7 +36,8 @@ Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 
 ========== Admin Routes =====================================================
 ===========================================================================*/
 
-Route::group([ "prefix" => "admin" , "as" => "admin." ] , function(){
+
+Route::group([ "prefix" => "admin" ,  "middleware" => "auth" , "as" => "admin." ] , function(){
 
 
     // Locations

@@ -17,13 +17,16 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        //     'name' => 'Fusion Admin ',
+        //     'email' => 'admin@fusion.com',
+        //     'password' => 'password',
         // ]);
 
 
         \App\Models\Location::factory(100)->create([
             'title' => 'title',
+            'slug' => 'slug',
+            'location_map' => 'location_map',
             'street_view' => 'street_view',
             'working_hours' => 'working_hours',
         ]);

@@ -12,7 +12,8 @@
                     <h1>About Fusion</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">Home</a></li>
+                                        <li><a href="{{ route("home") }}">Home</a></li>
+</li>
                     <li>About Fusion</li>
                 </ul>
             </div>
