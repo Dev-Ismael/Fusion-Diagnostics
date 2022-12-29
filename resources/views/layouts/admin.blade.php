@@ -34,7 +34,7 @@
     <link rel="stylesheet" id="stylesheet" href="{{ asset('admin/css/vertical-layout-light/style.css') }}">
     <link rel="stylesheet" id="stylesheet" href="{{ asset('admin/css/custom.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <link rel="shortcut icon" href="/front/images/favicon.png" />
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

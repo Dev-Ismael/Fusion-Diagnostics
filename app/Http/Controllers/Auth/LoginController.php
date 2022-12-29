@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,4 +40,32 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+
+
+    /*======================================================
+    ====== Overwrite Login Function
+    ======================================================*/
+    public function logout(Request $request)
+    {
+        try {
+
+            Auth::logout();
+
+            return response() -> json([
+                "status" => 'success' ,
+                'msg'    => 'logout successfully',
+            ]);
+
+        } catch (\Exception $e) {
+
+            return response() -> json([
+                "status" => 'error' ,
+                'msg'    => 'logout failed',
+            ]);
+
+        }
+    }
+
 }

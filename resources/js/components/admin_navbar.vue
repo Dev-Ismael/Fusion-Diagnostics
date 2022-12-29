@@ -1,7 +1,6 @@
 <template>
 
 
-
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -12,17 +11,17 @@
             </div>
             <div>
                 <a class="navbar-brand brand-logo" href="/">
-                    <img src="/images/BlueSky-Logo.png" alt="logo" />
+                    <img src="/front/images/logo.png" alt="logo" />
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="/">
-                    <img src="/images/favicon.png" alt="logo" />
+                    <img src="/front/images/favicon.png" alt="logo" />
                 </a>
             </div>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
                 <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{  }}</span></h1>
+                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ admin.name }}</span></h1>
                     <h3 class="welcome-sub-text">Your Dashoard For Manage Website Data </h3>
                 </li>
             </ul>
@@ -110,15 +109,13 @@
                 </li> -->
                 <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png"
-                            alt="Profile image">
+                        <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png" alt="Profile image">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png"
-                                alt="Profile image">
-                            <p class="mb-1 mt-3 font-weight-semibold">{{  }}</p>
-                            <p class="fw-light text-muted mb-0">{{  }}</p>
+                            <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png" alt="Profile image">
+                            <p class="mb-1 mt-3 font-weight-semibold">{{ admin.name }}</p>
+                            <p class="fw-light text-muted mb-0">{{ admin.email }}</p>
                         </div>
                         <router-link to="/admin/profile" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
@@ -127,11 +124,10 @@
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
                             Messages</router-link>
 
-                        <form @submit.prevent="logout()" enctype="multipart/form-data" id="logout-form"
-                            action="/logout" method="POST">
-                            <button type="submit" class="dropdown-item"><i
-                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
-                                Out</button>
+                            <form @submit.prevent="logout() "
+                                    enctype="multipart/form-data" id="logout-form" action="/logout" method="POST">
+                            <button type="submit" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                            Out</button>
                         </form>
                     </div>
                 </li>
@@ -147,11 +143,11 @@
 
 <script>
 
+import axios from 'axios';
 export default {
     data() {
         return {
-
-
+            admin: {}
         }
     },
     mounted() {
@@ -164,15 +160,45 @@ export default {
         ====== Get Admin Information
         ======================================================*/
         getAdminInfo() {
-
+            axios.get("/api/admin/info")
+            .then(
+                response => {
+                    // console.log(response.data.admin);
+                    this.admin = response.data.admin
+                }
+            )
+            .catch(error => console.log(error))
         },
 
 
         /*======================================================
         ====== Logout opration
         ======================================================*/
-        logout() {
-
+        logout(){
+            // Set Config var to send it with data request
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                }
+            }
+            // Send request with axios
+            axios.post("/logout" , config )
+                .then(
+                    response => {  // if there success request
+                        // console.log(response.data);
+                        // if response status
+                        if (response.data.status == "success") {
+                            window.location.href = '/';
+                        }
+                        // if Settings not Found
+                        else if (response.data.status == "error") {
+                            // Sweet Alert
+                            alert("Error")
+                        }
+                    }
+                )
+                .catch(error => console.log(error));
         }
 
     }

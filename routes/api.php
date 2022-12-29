@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+/*===========================================================
+====== Admin APIs
+============================================================*/
+Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
+
+    // Admin Info
+    Route::get('info',  [\App\Http\Controllers\Admin\AdminController::class, 'getAuthInfo']);
+    Route::post('update-info',  [\App\Http\Controllers\Admin\AdminController::class, 'updateAdminInfo']);
+
+});
