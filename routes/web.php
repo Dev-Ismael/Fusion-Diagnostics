@@ -88,7 +88,7 @@ Route::group([ "prefix" => "admin" ,  "middleware" => "auth" , "as" => "admin." 
 
 
     // Setting
-    Route::resource('setting', App\Http\Controllers\Admin\SeoManagementController::class)->except('index','show','create','store','destroy');
+    Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->except('index','show','create','store','destroy');
 
 
 });

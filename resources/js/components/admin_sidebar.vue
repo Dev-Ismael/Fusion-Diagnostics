@@ -66,7 +66,7 @@
                 </Link>
             </li>
             <li class="nav-item">
-                <Link href="/admin/settings" class="nav-link" >
+                <Link href="/admin/settings/1/edit" class="nav-link" >
                     <i class="mdi mdi-settings menu-icon"></i>
                     <span class="menu-title"> Setting </span>
                 </Link>

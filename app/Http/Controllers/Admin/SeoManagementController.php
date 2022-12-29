@@ -34,7 +34,6 @@ class SeoManagementController extends Controller
     {
         $requestData = $request->all();
 
-
         // Update in DB
         try {
 
@@ -54,7 +53,7 @@ class SeoManagementController extends Controller
             return Redirect::route("admin.seo-management.edit", 1)
                 ->with('messege', [
                     'status' => 'success',
-                    "txt"    => "SEO store successfully",
+                    "txt"    => "SEO Update successfully",
                 ]);
 
         } catch (\Exception $e) {
