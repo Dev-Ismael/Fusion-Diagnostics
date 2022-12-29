@@ -60,7 +60,7 @@
             </li>
             <li class="nav-item nav-category">Help</li>
             <li class="nav-item">
-                <Link href="/admin/seo-managment" class="nav-link" >
+                <Link href="/admin/seo-management/1/edit" class="nav-link" >
                     <i class="mdi mdi-file-find menu-icon"></i>
                     <span class="menu-title"> SEO Management </span>
                 </Link>

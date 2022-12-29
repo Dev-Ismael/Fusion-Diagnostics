@@ -83,4 +83,12 @@ Route::group([ "prefix" => "admin" ,  "middleware" => "auth" , "as" => "admin." 
     Route::post('newsletter/multiAction' , [App\Http\Controllers\Admin\NewsletterController::class, 'multiAction'])->name("newsletter.multiAction");
 
 
+    // SeoManagement
+    Route::resource('seo-management', App\Http\Controllers\Admin\SeoManagementController::class)->except('index','show','create','store','destroy');
+
+
+    // Setting
+    Route::resource('setting', App\Http\Controllers\Admin\SeoManagementController::class)->except('index','show','create','store','destroy');
+
+
 });
