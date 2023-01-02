@@ -9,9 +9,11 @@ use App\Models\Newsletter;
 use App\Models\Service;
 use App\Models\Subscriber;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\UpdateAdminInfoRequest;
+use App\Models\Location;
+use App\Models\Test;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Hash;
+use Inertia\Inertia;
 
 class AdminController extends Controller
 {
@@ -23,27 +25,28 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $services     = Service::count();
+        $tests        = Test::count();
+        $locations    = Location::count();
+        $messeges     = Messege::count();
+        $testimonials = Testimonial::count();
+        $subscribers  = Subscriber::count();
+        $newsletter   = Newsletter::count();
 
-        return view('layouts.admin');
+        $statistics = [
+            'services'    => $services,
+            'tests'       => $tests,
+            'locations'   => $locations,
+            'messeges'    => $messeges,
+            'testimonials'=> $testimonials,
+            'subscribers' => $subscribers,
+            'newsletter'  => $newsletter,
+        ];
+
+        return Inertia::render("Dashboard", compact('statistics') );
 
     }
 
-    public function statistics()
-    {
-        $services    = Service::count();
-        $messeges    = Messege::count();
-        $subscribers = Subscriber::count();
-        $newsletter  = Newsletter::count();
-
-
-        return response()->json([
-            "services"    => $services ,
-            "messeges"    => $messeges ,
-            "subscribers" => $subscribers ,
-            "newsletter"  => $newsletter ,
-        ]);
-
-    }
 
     public function getAuthInfo()
     {

@@ -29669,7 +29669,8 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item .nav-link .menu-title {
   color: inherit;
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1;
   vertical-align: middle;
 }

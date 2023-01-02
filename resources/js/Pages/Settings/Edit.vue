@@ -1,6 +1,6 @@
 <template>
 
-    <Head title=" Admin Panel | SEO Management" />
+    <Head title=" Admin Panel | Settings" />
 
     <div class="container-scroller">
         <admin_navbar></admin_navbar>
@@ -25,7 +25,7 @@
                             <div class="col-md-12 col-xl-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Fusion Settings</h4>
+                                        <h4 class="card-title"> <i class="mdi mdi-settings menu-icon"></i> Fusion Settings </h4>
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="genral-tab" data-bs-toggle="tab" href="#genral-setting"

@@ -90,5 +90,8 @@ Route::group([ "prefix" => "admin" ,  "middleware" => "auth" , "as" => "admin." 
     // Setting
     Route::resource('settings', App\Http\Controllers\Admin\SettingController::class)->except('index','show','create','store','destroy');
 
+    // Dashboard
+    Route::get('dashboard' , [App\Http\Controllers\Admin\AdminController::class, 'index'])->name("dashboard");
+
 
 });

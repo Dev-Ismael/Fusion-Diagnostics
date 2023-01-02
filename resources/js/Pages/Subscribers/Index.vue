@@ -17,7 +17,7 @@
 
             <div class="row">
                 <div class="col-6">
-                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Subscribers table</h4>
+                    <h4 class="card-title"> <i class="mdi mdi-human-greeting"></i> Subscribers table</h4>
                 </div>
                 <div class="col-6 text-end">
                     <!-- <Link href="/admin/subscriber/create" class="btn btn-danger btn-rounded btn-icon p-2"> Create

@@ -17,7 +17,7 @@
 
                             <div class="row">
                                 <div class="col-6">
-                                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Newsletters
+                                    <h4 class="card-title"> <i class="mdi mdi-email-open"></i> Newsletters
                                         table</h4>
                                 </div>
                                 <div class="col-6 text-end">

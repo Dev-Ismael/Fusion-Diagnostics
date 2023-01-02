@@ -18,7 +18,7 @@
 
                             <div class="row">
                                 <div class="col-6">
-                                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Services
+                                    <h4 class="card-title"> <i class="mdi mdi-tune"></i> Services
                                         table</h4>
                                 </div>
                                 <div class="col-6 text-end">
