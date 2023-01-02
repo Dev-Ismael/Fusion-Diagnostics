@@ -8,25 +8,6 @@ use App\Http\Requests\UpdateSubscriberRequest;
 
 class SubscriberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,51 +17,29 @@ class SubscriberController extends Controller
      */
     public function store(StoreSubscriberRequest $request)
     {
-        //
+
+        // save all request in one variable
+        $requestData = $request->all();
+
+
+        try {
+
+            // store row in table
+            $subscriber = Subscriber::create( $requestData );
+
+            // if not save in DB
+            if(!$subscriber){
+                return abort(500, 'Whatever you were looking for, look somewhere else');
+            }
+
+            return view('submission', [
+                'messege' => 'Thanks, Your submission sent successfully!',
+                'link' => 'home'
+            ]);
+
+        } catch (\Exception $e) {
+            return abort(500, 'Whatever you were looking for, look somewhere else');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Subscriber  $subscriber
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Subscriber $subscriber)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Subscriber  $subscriber
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Subscriber $subscriber)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateSubscriberRequest  $request
-     * @param  \App\Models\Subscriber  $subscriber
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateSubscriberRequest $request, Subscriber $subscriber)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Subscriber  $subscriber
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Subscriber $subscriber)
-    {
-        //
-    }
 }

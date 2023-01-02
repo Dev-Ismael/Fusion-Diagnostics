@@ -31,6 +31,9 @@ Route::post('/location', [App\Http\Controllers\LocationController::class, 'searc
 Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 'show'])->name('location.show');
 
 
+// Subscriber
+Route::post('/subscriber', [App\Http\Controllers\SubscriberController::class, 'store'])->name('subscriber.store');
+
 
 
 /*===========================================================================

@@ -3164,13 +3164,13 @@ div#mCSB_1_container{
 
 .footer-top{
   position: relative;
-  padding: 120px 0px 75px 0px;
+  padding: 75px 0px 50px 0px;
   border-bottom: 1px solid #e3e4e6;
 }
 
 .footer-top .logo-widget .footer-logo{
   position: relative;
-  margin-bottom: 33px;
+  margin-bottom: 10px;
 }
 
 .footer-top .logo-widget .footer-logo .logo{
@@ -3234,7 +3234,7 @@ div#mCSB_1_container{
 .footer-top .widget-title{
   position: relative;
   display: block;
-  margin-bottom: 39px;
+  margin-bottom: 20px;
 }
 
 .footer-top .widget-title h4{
@@ -3307,7 +3307,7 @@ div#mCSB_1_container{
 }
 
 .footer-top .subscribe-widget .widget-content p{
-  margin-bottom: 38px;
+  margin-bottom: 20px;
 }
 
 .footer-top .subscribe-widget .widget-content .subscribe-form .form-group{

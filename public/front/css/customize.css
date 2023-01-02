@@ -104,6 +104,19 @@
 .error-section .inner-box label i {
     color: #0065cb;
 }
+
+
+/*=======================================================
+============ Submission Page
+========================================================*/
+#submission-page .error-section .inner-box h1{
+    font-size: 160px;
+}
+#submission-page .error-section .inner-box h2{
+    font-size: 46px;
+}
+
+
 /*=======================================================
 ============ Location Page
 ========================================================*/
