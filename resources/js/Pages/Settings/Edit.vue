@@ -97,10 +97,17 @@
                                                         </small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="facebook">facebook</label>
+                                                        <label for="facebook">Facebook</label>
                                                         <input type="text" v-model="form.facebook" class="form-control" name="facebook"
                                                             id="facebook" placeholder="Type Facebook Link...." :class=" errors.facebook ? 'border-danger' : ''  " >
                                                         <small class="text-danger" v-if="errors.facebook"> {{errors.facebook }}
+                                                        </small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="instagram">Instagram</label>
+                                                        <input type="text" v-model="form.instagram" class="form-control" name="instagram"
+                                                            id="instagram" placeholder="Type Facebook Link...." :class=" errors.instagram ? 'border-danger' : ''  " >
+                                                        <small class="text-danger" v-if="errors.instagram"> {{errors.instagram }}
                                                         </small>
                                                     </div>
                                                     <div class="form-group">
@@ -152,6 +159,7 @@ export default {
                 phone_formatted: this.setting.phone_formatted,
                 linkedin: this.setting.linkedin,
                 facebook: this.setting.facebook,
+                instagram: this.setting.instagram,
                 twitter: this.setting.twitter,
                 youtube: this.setting.youtube,
             },

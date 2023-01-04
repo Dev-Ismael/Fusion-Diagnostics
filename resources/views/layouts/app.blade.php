@@ -72,10 +72,11 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form method="post" action="index.html">
+                    <form action="{{ route("test.search") }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <fieldset>
-                                <input type="search" class="form-control" name="search-input" value="" placeholder="Search For Test" required >
+                                <input type="search" class="form-control" name="search" placeholder="Search For Test..." required/>
                                 <input type="submit" value="Search Now!" class="theme-btn style-four">
                             </fieldset>
                         </div>
@@ -173,9 +174,8 @@
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li> <i class="icon-26"></i> <a href="{{ $settings->location }}"> {{ $settings->address }} </a>  </li>
+                        <li> <i class="icon-24"></i> <a href="tel:{{ $settings->phone_formatted }}">{{ $settings->phone }}</a> </li>
                     </ul>
                 </div>
                 <div class="social-links">
@@ -249,9 +249,9 @@
                                 <div class="text">
                                     {{-- <p>A state of the art, quality oriented, full services medical laboratory.</p> --}}
                                     <ul class="info clearfix">
-                                        <li><i class="icon-26"></i>{{ $settings->address }}</li>
-                                        <li><i class="icon-24"></i>Call Us: <a href="tel:{{ $settings->phone_formatted }}">{{ $settings->phone }}</a></li>
-                                        <li><i class="icon-25"></i><a href="mailto:{{ $settings->email }}">{{  $settings->email }}</a></li>
+                                        <li><i class="icon-26"></i> <a href="{{ $settings->location }}"> {{ $settings->address }} </a> </li>
+                                        <li><i class="icon-24"></i> Call Us: <a href="tel:{{ $settings->phone_formatted }}">{{ $settings->phone }}</a> </li>
+                                        <li><i class="icon-25"></i> <a href="mailto:{{ $settings->email }}">{{  $settings->email }}</a> </li>
                                     </ul>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@
                 <div class="auto-container">
                     <div class="copyright">
                         <p>
-                            <a href="{{ route("home") }}">Fusion</a> ©
+                            <a href="{{ route("home") }}"> Fusion Diagnostics </a> ©
                             {{ \Carbon\Carbon::now()->format('Y') }}
                             All Right Reserved
                         </p>

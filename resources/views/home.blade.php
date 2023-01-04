@@ -42,7 +42,7 @@
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
                                     </figure>
-                                    <h4>600+ Different Tests</h4>
+                                    <h4>{{ $tests_count }}+ Different Tests</h4>
                                     <p>Experienced professionals</p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
                                     </figure>
-                                    <h4>600+ Different Tests</h4>
+                                    <h4>{{ $tests_count }}+ Different Tests</h4>
                                     <p>Experienced professionals</p>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
                                     </figure>
-                                    <h4>600+ Different Tests</h4>
+                                    <h4>{{ $tests_count }}+ Different Tests</h4>
                                     <p>Experienced professionals</p>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                                     <figure class="admin-thumb"><img src="{{ asset('front/images/banner/admin-1.png') }}"
                                             alt="">
                                     </figure>
-                                    <h4>600+ Different Tests</h4>
+                                    <h4>{{ $tests_count }}+ Different Tests</h4>
                                     <p>Experienced professionals</p>
                                 </div>
                             </div>

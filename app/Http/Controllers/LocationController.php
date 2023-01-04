@@ -34,7 +34,7 @@ class LocationController extends Controller
             'search'     =>  ['required', 'string', 'max:55'],
         ]);
 
-        $locations   = Location::where('title', 'like', "%{$request->search}%")->paginate( 10 );
+        $locations     = Location::where('title', 'like', "%{$request->search}%")->paginate( 10 );
 
         $all_locations = Location::get();
 

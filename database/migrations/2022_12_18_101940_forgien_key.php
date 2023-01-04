@@ -14,14 +14,6 @@ return new class extends Migration
     public function up()
     {
 
-        ################ Test ###################
-        Schema::table('tests', function (Blueprint $table) {
-            $table->foreign("service_id")
-            ->references('id')
-            ->on("services")
-            ->onDelete("cascade")
-            ->onUpdate("cascade");
-        });
     }
 
     /**

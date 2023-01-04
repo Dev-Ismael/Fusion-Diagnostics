@@ -58,7 +58,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="pagination-wrapper">
+                            <div class="pagination-wrapper text-center">
                                 <ul class="pagination clearfix">
                                     {{ $locations->links('pagination::bootstrap-4') }}
                                 </ul>

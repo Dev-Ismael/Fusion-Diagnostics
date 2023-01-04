@@ -41,14 +41,6 @@ class DatabaseSeeder extends Seeder
             'seo' => 'seo',
         ]);
 
-        \App\Models\Test::factory(100)->create([
-            'service_id' => 1,
-            'title' => 'title',
-            'slug' => 'slug',
-            'summary' => 'summary',
-            'content' => 'content',
-            'seo' => 'seo',
-        ]);
 
         \App\Models\Testimonial::factory(100)->create([
             'name' => 'name',

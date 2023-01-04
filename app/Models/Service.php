@@ -25,10 +25,4 @@ class Service extends Model
     ];
 
 
-
-    ############################## Relations ################################
-    public function tests(){
-        return  $this -> hasMany("App\Models\Test") ;
-    }
-
 }

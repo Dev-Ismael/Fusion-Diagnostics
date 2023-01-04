@@ -17,6 +17,7 @@ class Setting extends Model
         'phone_formatted',
         'linkedin',
         'facebook',
+        'instagram',
         'twitter',
         'youtube',
     ];

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
     <!-- Page Title -->
     <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
         <div class="auto-container">
@@ -11,8 +9,7 @@
                     <h1>Contact Us</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
-                                        <li><a href="{{ route("home") }}">Home</a></li>
-</li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li>Contact Us</li>
                 </ul>
             </div>
@@ -29,17 +26,24 @@
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-23"></i></div>
                         <h4>Office Location</h4>
-                        <p>210 malapardis rd, Cedar knolls, nj.</p>
+                        <p><a href="{{ $settings->location }}"> {{ $settings->address }} </a> </p>
                     </div>
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-59"></i></div>
                         <h4>Phone Number</h4>
-                        <p><a href="tel:316668880001">+973-870-0080</a><br /><a href="tel:316668880023">+973-998-8189</a></p>
+                        <p>
+                            <a href="tel:{{ $settings->phone_formatted }}">{{ $settings->phone }}</a>
+                            <br/>
+                            <a href="tel:+19739988189">973-998-8189</a>
+                        </p>
                     </div>
                     <div class="single-info-box">
                         <div class="icon-box"><i class="icon-60"></i></div>
                         <h4>Email Address</h4>
-                        <p><a href="mailto:cs@fusiondiagnostics.com">cs@fusiondiagnostics.com</a><br />
+                        <p>
+                            <a href="mailto:{{ $settings->email }}">{{ $settings->email }}</a>
+                            <br/>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -74,7 +78,7 @@
                             <textarea name="message" placeholder="Your Message"></textarea>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
-                            <button class="theme-btn-one" type="submit" name="submit-form">Send Message</button>
+                            <button class="theme-btn-one" type="submit" name="submit-form"> Send Message </button>
                         </div>
                     </div>
                 </form>
@@ -83,6 +87,6 @@
     </section>
     <!-- contact-style-two end -->
 
-    
+
 
 @endsection

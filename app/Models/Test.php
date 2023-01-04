@@ -10,11 +10,14 @@ class Test extends Model
     use HasFactory;
 
     protected $fillable = [
-        'service_id',
         'title',
         'slug',
-        'summary',
-        'content',
+        'code',
+        'time',
+        'components',
+        'specimen',
+        'instructions',
+        'billing_codes',
         'seo',
     ];
 
@@ -23,11 +26,5 @@ class Test extends Model
         'seo' => 'array',
     ];
 
-
-
-    ############################## Relations ################################
-    public function service(){
-        return  $this -> belongsTo("App\Models\Service") ;
-    }
 
 }
