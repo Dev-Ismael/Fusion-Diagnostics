@@ -25,16 +25,14 @@ class StoreTestRequest extends FormRequest
     */
     public function rules()
     {
-    return [
-        'title'           => ['required', 'string', 'max:100', Rule::unique('services', 'title')->ignore($this->service)],
-        'service_id'      => ['required' , 'numeric'],
-        'summary'         => ['required', 'string', 'min:8'],
-        'content'         => ['required', 'string'],
-
-        // SEO Array
-        'seo.title'       => ['required', 'string', 'distinct', 'max:100'],
-        'seo.description' => ['required', 'string', 'distinct', 'max:500'],
-        'seo.keywords'    => ['required', 'string', 'distinct', 'max:500'],
-    ];
+        return [
+            'title'           => ['nullable', 'string', 'max:100', Rule::unique('services', 'title')->ignore($this->service)],
+            'code'            => ['nullable', 'string', 'max:100'],
+            'time'            => ['nullable', 'string', 'max:100'],
+            'components'      => ['nullable', 'string', 'max:255'],
+            'specimen'        => ['nullable', 'string', 'max:100'],
+            'instructions'    => ['nullable', 'string', 'max:1000'],
+            'billing_codes'   => ['nullable', 'string', 'max:100'],
+        ];
     }
 }

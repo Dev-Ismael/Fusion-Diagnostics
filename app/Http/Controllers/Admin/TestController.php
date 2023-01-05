@@ -6,7 +6,6 @@ use App\Models\Test;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Test\StoreTestRequest;
 use App\Http\Requests\Test\UpdateTestRequest;
-use App\Models\Service;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -32,8 +31,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        $services = Service::get();
-        return Inertia::render("Tests/Create",compact("services"));
+        return Inertia::render("Tests/Create");
     }
 
     /**
@@ -47,11 +45,6 @@ class TestController extends Controller
 
         // save all request in one variable
         $requestData = $request->all();
-
-
-        // add slug in $requestData Array
-        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
-
 
 
         // Store in DB
@@ -94,10 +87,7 @@ class TestController extends Controller
      */
     public function show(Test $test)
     {
-        return Inertia::render("Tests/Show", [
-            'test' => $test,
-            'service' => $test->service,  // parent With Relation
-        ]);
+        return Inertia::render("Tests/Show", compact("test"));
     }
 
     /**
@@ -108,8 +98,7 @@ class TestController extends Controller
      */
     public function edit(Test $test)
     {
-        $services = Service::get();
-        return Inertia::render("Tests/Edit",compact('test',"services"));
+        return Inertia::render("Tests/Edit",compact('test'));
     }
 
     /**
@@ -124,10 +113,6 @@ class TestController extends Controller
 
         // save all request in one variable
         $requestData = $request->all();
-
-        // add slug in $requestData Array
-        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
-
 
         // Store in DB
         try {

@@ -15,83 +15,99 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-5">Show Test</h4>
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
                                                 <i class="mdi mdi-format-title"></i>
-                                                Test title
+                                                title
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
                                             <p> {{ test.title }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-title"></i>
-                                                Service title
+                                                <i class="fa-solid fa-hashtag"></i>
+                                                code
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ service.title }} </p>
+                                            <p> {{ test.code }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
-                                                SEO Title
+                                                <i class="fa-solid fa-clock"></i>
+                                                time
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ test.seo.title }} </p>
+                                            <p> {{ test.time }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
-                                                SEO Description
+                                                <i class="fa-solid fa-flask"></i>
+                                                components
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ test.seo.description }} </p>
+                                            <p> {{ test.components }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
-                                                SEO Keywords
+                                                <i class="fa-solid fa-vials"></i>
+                                                specimen
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ test.seo.keywords }} </p>
+                                            <p> {{ test.specimen }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-align-left"></i>
-                                                Summary
+                                                <i class="fa-brands fa-42-group"></i>
+                                                instructions
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p> {{ test.summary }} </p>
+                                            <p> {{ test.instructions }} </p>
                                         </div>
                                     </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-align-left"></i>
-                                                Content
+                                                <i class="fa-solid fa-money-bill-wave"></i>
+                                                billing_codes
                                             </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p v-html="test.content"></p>
+                                            <p> {{ test.billing_codes }} </p>
                                         </div>
                                     </div>
+
+
+
                                     <div class="form-group row">
                                         <div class="col-lg-2">
                                             <!------ Buttons ------->

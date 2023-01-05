@@ -19,6 +19,7 @@
                                     <p class="card-description"> Update this branch Test </p>
                                     <form class="forms-sample" @submit.prevent="updateTest()">
 
+
                                         <!------ Title ------->
                                         <div class="form-group">
                                             <label for="title">
@@ -31,87 +32,87 @@
                                             <small class="text-danger" v-if="errors.title"> {{ errors.title }}</small>
                                         </div>
 
-                                        <!------ service_id ------->
+                                        <!------ Code ------->
                                         <div class="form-group">
-                                            <label for="service_id">
+                                            <label for="code">
                                                 <i class="ti-test-pin"></i>
-                                                Parent Service
+                                                Code
                                             </label>
-                                            <select name="service_id" id="service_id" class="form-control"
-                                                v-model="form.service_id"
-                                                :class="errors.service_id ? 'border-danger' : ''">
-                                                <option disabled value="">Please select Service</option>
-                                                <option v-for="service in services" :value="service.id">
-                                                    {{ service.title }}</option>
-                                            </select>
-                                            <small class="text-danger" v-if="errors.service_id"> {{ errors.service_id
-                                            }}</small>
+                                            <input type="text" name="code" id="code" class="form-control"
+                                                placeholder="Type Test Code Here..." v-model="form.code"
+                                                :class="errors.code ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.code"> {{ errors.code }}</small>
                                         </div>
 
-                                        <!-- summary -->
+
+                                        <!------ time ------->
                                         <div class="form-group">
-                                            <label for="summary" class="col-form-label"> <i
-                                                    class="mdi mdi-format-align-left"></i> Summary </label>
-                                            <textarea name="summary" id="summary" v-model="form.summary"
-                                                class="form-control" :class="errors.summary ? 'border-danger' : ''"
-                                                rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.summary"> {{ errors.summary }}
-                                            </small>
+                                            <label for="time">
+                                                <i class="ti-test-pin"></i>
+                                                Time
+                                            </label>
+                                            <input type="text" name="time" id="time" class="form-control"
+                                                placeholder="Type Test time Here..." v-model="form.time"
+                                                :class="errors.time ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.time"> {{ errors.time }}</small>
                                         </div>
 
-                                        <!-- content -->
+
+                                        <!------ components ------->
                                         <div class="form-group">
-                                            <label for="content" class="col-form-label"> <i
-                                                    class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="form.content" name="content"
-                                                id="content"></ckeditor>
-                                            <small class="text-danger" v-if="errors.content"> {{ errors.content }}
-                                            </small>
+                                            <label for="components">
+                                                <i class="ti-test-pin"></i>
+                                                Components
+                                            </label>
+                                            <input type="text" name="components" id="components" class="form-control"
+                                                placeholder="Type Test Components Here..." v-model="form.components"
+                                                :class="errors.components ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.components"> {{ errors.components }}</small>
                                         </div>
 
 
-                                        <!-- seo_title -->
+
+                                        <!------ specimen ------->
                                         <div class="form-group">
-                                            <label for="seo_title" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Title </label>
-                                            <textarea name="seo[title]" v-model="form.seo.title" class="form-control"
-                                                :class="errors[`seo.title`] ? 'border-danger' : ''" id="seo_title"
-                                                placeholder="Type SEO Keywords..." rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors[`seo.title`]"> {{ errors[`seo.title`]
-                                            }}
-                                            </small>
+                                            <label for="specimen">
+                                                <i class="ti-test-pin"></i>
+                                                Specimen
+                                            </label>
+                                            <input type="text" name="specimen" id="specimen" class="form-control"
+                                                placeholder="Type Test specimen Here..." v-model="form.specimen"
+                                                :class="errors.specimen ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.specimen"> {{ errors.specimen }}</small>
                                         </div>
 
 
-                                        <!-- seo_keywords -->
+
+
+                                        <!------ instructions ------->
                                         <div class="form-group">
-                                            <label for="seo_keywords" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Keywords </label>
-                                            <textarea name="seo[keywords]" v-model="form.seo.keywords"
-                                                class="form-control"
-                                                :class="errors[`seo.keywords`] ? 'border-danger' : ''"
-                                                id="seo_keywords" placeholder="Type SEO Keywords..." rows="4"
-                                                cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors[`seo.keywords`]">
-                                                {{ errors[`seo.keywords`] }}
-                                            </small>
+                                            <label for="instructions">
+                                                <i class="ti-test-pin"></i>
+                                                Instructions
+                                            </label>
+                                            <input type="text" name="instructions" id="instructions" class="form-control"
+                                                placeholder="Type Test instructions Here..." v-model="form.instructions"
+                                                :class="errors.instructions ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.instructions"> {{ errors.instructions }}</small>
                                         </div>
 
 
-                                        <!-- seo_description -->
+
+                                        <!------ billing_codes ------->
                                         <div class="form-group">
-                                            <label for="seo_description" class="col-form-label"> <i
-                                                    class="ti-search"></i>
-                                                SEO Description </label>
-                                            <textarea name="seo[description]" v-model="form.seo.description"
-                                                class="form-control"
-                                                :class="errors[`seo.description`] ? 'border-danger' : ''"
-                                                id="seo_description" placeholder="Type SEO Keywords..." rows="4"
-                                                cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors[`seo.description`]">
-                                                {{ errors[`seo.description`] }}
-                                            </small>
+                                            <label for="billing_codes">
+                                                <i class="ti-test-pin"></i>
+                                                Billing Codes
+                                            </label>
+                                            <input type="text" name="billing_codes" id="billing_codes" class="form-control"
+                                                placeholder="Type Test billing_codes Here..." v-model="form.billing_codes"
+                                                :class="errors.billing_codes ? 'border-danger' : ''">
+                                            <small class="text-danger" v-if="errors.billing_codes"> {{ errors.billing_codes }}</small>
                                         </div>
+
 
 
                                         <!------ Buttons ------->
@@ -146,14 +147,12 @@ export default {
             form: {
                 _method: 'put',   // PUT Method
                 title: this.test.title,
-                service_id: this.test.service_id,
-                summary: this.test.summary,
-                content: this.test.content,
-                seo: {
-                    title: this.test.seo.title,
-                    keywords: this.test.seo.keywords,
-                    description: this.test.seo.description,
-                },
+                code: this.test.code,
+                time: this.test.time,
+                components: this.test.components,
+                specimen: this.test.specimen,
+                instructions: this.test.instructions,
+                billing_codes: this.test.billing_codes,
             },
         }
     },

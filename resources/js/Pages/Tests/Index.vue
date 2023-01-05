@@ -90,7 +90,7 @@
                                                                 </div>
                                                             </th>
                                                             <th>Title</th>
-                                                            <th>Summary</th>
+                                                            <th>Components</th>
                                                             <th>Actions</th>
                                                         </tr>
                                                     </thead>
@@ -111,9 +111,9 @@
                                                                     '...' :
                                                                     test.title
                                                             }} </td>
-                                                            <td> {{ test.summary.length > 20 ? test.summary.slice(0, 20)
+                                                            <td> {{ test.time.length > 20 ? test.time.slice(0, 20)
                                                                     + '...' :
-                                                                    test.summary
+                                                                    test.time
                                                             }} </td>
                                                             <td>
                                                                 <Link :href="('/admin/test/' + test.id)"

@@ -46,18 +46,21 @@
 <body>
     <div id="app" class="boxed_wrapper">
 
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close">Preloader Close</div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <img src="{{ asset("front/images/logo-motion.gif") }}" alt="logo-animation" width="180">
+        <!------- If Home Page ------>
+        @if(Route::is('home') )
+            <!-- preloader -->
+            <div class="loader-wrap">
+                <div class="preloader">
+                    <div class="preloader-close">Preloader Close</div>
+                    <div id="handle-preloader" class="handle-preloader">
+                        <div class="animation-preloader">
+                            <img src="{{ asset("front/images/logo-motion.gif") }}" alt="logo-animation" width="180">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- preloader end -->
+            <!-- preloader end -->
+        @endif
 
 
         <!-- search-popup -->
@@ -171,6 +174,7 @@
             </div>
         </header>
         <!-- main-header end -->
+
 
         <!-- Mobile Menu  -->
         <div class="mobile-menu">
@@ -308,6 +312,23 @@
         </footer>
         <!-- End Footer -->
 
+
+        <!-- Absolute Icons -->
+        <section id="absolute-icons">
+            <div class="arrow-icon">
+                <i class="fas fa-arrow-alt-circle-up" ></i>
+            </div>
+            <div class="contact-icons">
+                <a href="https://fusion.labsvc.net/patientportal" target="_blank">
+                    <i class="fa-solid fa-hospital-user"></i>
+                </a>
+                <a href="https://fusion.labsvc.net/labgen" target="_blank">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </a>
+            </div>
+        </section>
+
+        
     </div>
 
 

@@ -10,31 +10,38 @@
 /*=======================================================
 ============ Global Properties
 ========================================================*/
-.mt-7{
+.mt-7 {
     margin-top: 7rem;
 }
-.service-section{
+
+.service-section {
     padding: 0px;
 }
-.section-padding{
+
+.section-padding {
     padding: 120px 0px;
 }
-.section-margin{
+
+.section-margin {
     margin: 120px 0px;
 }
-@media (max-width: 768px)  {
-    .d-none-md{
+
+@media (max-width: 768px) {
+    .d-none-md {
         display: none !important;
     }
-    .d-block-md{
+
+    .d-block-md {
         display: block !important;
     }
 }
-@media (min-width: 769px)  {
-    .d-none-md{
+
+@media (min-width: 769px) {
+    .d-none-md {
         display: block !important;
     }
-    .d-block-md{
+
+    .d-block-md {
         display: none !important;
     }
 }
@@ -48,34 +55,84 @@
 /*=======================================================
 ============ layout
 ========================================================*/
-.menu-right-content{
+.menu-right-content {
     position: relative;
 }
-.menu-right-content input{
+
+.menu-right-content input {
     border: 2px solid #0065cb5e;
     padding: 7px 10px;
-    border-radius: 10px;
+    border-radius: 50px;
     min-width: 320px;
 }
-.menu-right-content i{
+
+.menu-right-content i {
     padding-top: 5px;
     color: rgb(75, 75, 75);
 }
 
 /*=== NavBar ===*/
-.main-header .main-menu .navigation > li > a.theme-btn-one{
+.main-header .main-menu .navigation>li>a.theme-btn-one {
     padding: 10px;
     margin-top: -10px;
 }
-.main-header.style-four .header-lower .main-menu .navigation > li{
+
+.main-header.style-four .header-lower .main-menu .navigation>li {
     padding: 0px !important;
 }
 
 
+/*=== Absolute-Icons ===*/
+#absolute-icons .fa-arrow-alt-circle-up {
+    z-index: 999;
+    cursor: pointer;
+    color: #2a8e82;
+    font-size: 50px;
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#absolute-icons .contact-icons {
+    z-index: 999999999;
+    position: fixed;
+    bottom: 8%;
+    right: 20px;
+}
+
+#absolute-icons .contact-icons a {
+    display: block;
+    margin: 20px 0px;
+    background-color: #0065cb;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px 0px #000000db;
+}
+
+
+/*====== Responsive ========*/
+@media (max-width: 576px) {
+    #absolute-icons .fa-arrow-alt-circle-up {
+        font-size: 35px;
+    }
+
+}
+
 /*=======================================================
 ============ service-Block
 ========================================================*/
-.service-block-one .inner-box h4{
+.service-block-one .inner-box h4 {
     height: 50px;
 }
 
@@ -87,32 +144,36 @@
 ============ Location Search
 ========================================================*/
 
-.location-search input{
+.location-search input {
     padding: 12px !important;
     background-color: transparent;
     border-radius: 5px;
-    color:  rgb(225, 225, 225) !important;
+    color: rgb(225, 225, 225) !important;
     font-size: 20px;
-    border: 1px solid  rgb(225, 225, 225);
+    border: 1px solid rgb(225, 225, 225);
 }
+
 .location-search input::-webkit-input-placeholder {
     color: rgb(150, 150, 150) !important;
 }
 
 .location-search input:focus {
     background-color: transparent;
-    border: 1px solid  #0065cb;
+    border: 1px solid #0065cb;
     color: rgb(150, 150, 150) !important;
 }
-.location-search button{
+
+.location-search button {
     border: 1px solid rgb(225, 225, 225) !important;
     height: 100%;
     font-size: 18px;
 }
-.location-search.cta-section .inner-box{
+
+.location-search.cta-section .inner-box {
     border-radius: 0px;
 }
-.location-search.cta-section .inner-box .title{
+
+.location-search.cta-section .inner-box .title {
     color: #fff;
     font-weight: 600;
     font-size: 34px;
@@ -128,20 +189,23 @@
     font-weight: 700;
     color: #0065cb;
 }
-.error-section .inner-box input{
+
+.error-section .inner-box input {
     padding: 12px !important;
     background-color: transparent;
     border-radius: 5px;
     font-size: 20px;
-    border: 1px solid  #0065cb
+    border: 1px solid #0065cb
 }
-.error-section .inner-box label{
+
+.error-section .inner-box label {
     color: rgb(24, 24, 24);
     font-size: 20px;
     margin-bottom: -5px;
     margin-top: 20px;
     font-weight: 600;
 }
+
 .error-section .inner-box label i {
     color: #0065cb;
 }
@@ -150,10 +214,11 @@
 /*=======================================================
 ============ Submission Page
 ========================================================*/
-#submission-page .error-section .inner-box h1{
+#submission-page .error-section .inner-box h1 {
     font-size: 160px;
 }
-#submission-page .error-section .inner-box h2{
+
+#submission-page .error-section .inner-box h2 {
     font-size: 46px;
 }
 
@@ -167,7 +232,8 @@
     border-radius: 15px;
     padding: 7px 15px;
 }
-.image-box iframe{
+
+.image-box iframe {
     border-radius: 20px;
     box-shadow: 0px 0px 18px 3px #b3b3b3bd;
 }
@@ -180,8 +246,8 @@
 /*=======================================================
 ============ Mob Sidebar
 ========================================================*/
-.mobile-menu .menu-box{
-    background:  #0065cb !important;
+.mobile-menu .menu-box {
+    background: #0065cb !important;
 }
 
 
@@ -193,14 +259,16 @@
 /*=======================================================
 ============ Service
 ========================================================*/
-.service-summary{
+.service-summary {
     font-size: 14px;
     line-height: 18px;
 }
+
 .event-details img {
     box-shadow: 0px 0px 18px 3px #d0d0d0bd;
 }
-.pad-service{
+
+.pad-service {
     padding-top: 120px;
 }
 
@@ -210,14 +278,16 @@
 /*=======================================================
 ============ Footer
 ========================================================*/
-.footer-top .logo-widget .footer-logo .logo{
+.footer-top .logo-widget .footer-logo .logo {
     max-width: inherit;
 }
-.footer-top .logo-widget .footer-logo .logo img{
+
+.footer-top .logo-widget .footer-logo .logo img {
     width: 280px !important;
 }
+
 /*=== RESPONSIVE ===*/
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px) {
     .menu-area .mobile-nav-toggler {
         display: block;
         padding: 15px 10px;

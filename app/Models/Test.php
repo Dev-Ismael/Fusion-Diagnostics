@@ -11,20 +11,14 @@ class Test extends Model
 
     protected $fillable = [
         'title',
-        'slug',
         'code',
         'time',
         'components',
         'specimen',
         'instructions',
         'billing_codes',
-        'seo',
     ];
 
-
-    protected $casts = [
-        'seo' => 'array',
-    ];
 
 
 }

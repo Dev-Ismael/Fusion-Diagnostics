@@ -212,6 +212,7 @@
     		active: true,
 			smartSpeed: 1000,
 			autoplay: 6000,
+            autoplayTimeout: 10000,
             navText: [ '<span class="icon-19"></span>', '<span class="icon-18"></span>' ],
             responsive:{
                 0:{
