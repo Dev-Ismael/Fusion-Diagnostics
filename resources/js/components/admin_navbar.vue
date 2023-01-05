@@ -20,7 +20,7 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
-                <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                <li class="nav-item font-weight-semibold  d-lg-block ms-0">
                     <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ admin.name }}</span></h1>
                     <h3 class="welcome-sub-text">Your Dashoard For Manage Website Data </h3>
                 </li>
@@ -107,7 +107,7 @@
                         </a>
                     </div>
                 </li> -->
-                <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                <li class="nav-item dropdown  d-lg-block user-dropdown">
                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png" alt="Profile image">
                     </a>

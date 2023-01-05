@@ -142,37 +142,34 @@
 
 <script>
 
-export default {
-    props: {
-        errors: Object,
-        setting: Object,
-    },
-    data() {
-        return {
-            form: {
-                _method: 'put',     // PUT Method
-                address: this.setting.address,
-                location: this.setting.location,
-                footer_content: this.setting.footer_content,
-                email: this.setting.email,
-                phone: this.setting.phone,
-                phone_formatted: this.setting.phone_formatted,
-                linkedin: this.setting.linkedin,
-                facebook: this.setting.facebook,
-                instagram: this.setting.instagram,
-                twitter: this.setting.twitter,
-                youtube: this.setting.youtube,
-            },
-        }
-    },
-    mounted() {
-        console.log(this.setting);
-    },
-    methods: {
-        updateSettings() {
-            this.$inertia.post('/admin/settings/' + this.setting.id, this.form);
-        }
-    },
-}
+    export default {
+        props: {
+            errors: Object,
+            setting: Object,
+        },
+        data() {
+            return {
+                form: {
+                    _method: 'put',     // PUT Method
+                    address: this.setting.address,
+                    location: this.setting.location,
+                    footer_content: this.setting.footer_content,
+                    email: this.setting.email,
+                    phone: this.setting.phone,
+                    phone_formatted: this.setting.phone_formatted,
+                    linkedin: this.setting.linkedin,
+                    facebook: this.setting.facebook,
+                    instagram: this.setting.instagram,
+                    twitter: this.setting.twitter,
+                    youtube: this.setting.youtube,
+                },
+            }
+        },
+        methods: {
+            updateSettings() {
+                this.$inertia.post('/admin/settings/' + this.setting.id, this.form);
+            }
+        },
+    }
 
 </script>

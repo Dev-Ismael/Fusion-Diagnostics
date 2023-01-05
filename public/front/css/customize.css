@@ -61,7 +61,7 @@
 
 .menu-right-content input {
     border: 2px solid #0065cb5e;
-    padding: 7px 10px;
+    padding: 7px 10px 7px 20px;
     border-radius: 50px;
     min-width: 320px;
 }
@@ -102,7 +102,7 @@
 #absolute-icons .contact-icons {
     z-index: 999999999;
     position: fixed;
-    bottom: 8%;
+    bottom: 5%;
     right: 20px;
 }
 
@@ -123,8 +123,11 @@
 
 /*====== Responsive ========*/
 @media (max-width: 576px) {
-    #absolute-icons .fa-arrow-alt-circle-up {
-        font-size: 35px;
+    #absolute-icons .contact-icons a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
     }
 
 }
@@ -269,7 +272,7 @@
 }
 
 .pad-service {
-    padding-top: 120px;
+    padding-top: 180px;
 }
 
 
@@ -291,7 +294,6 @@
     .menu-area .mobile-nav-toggler {
         display: block;
         padding: 15px 10px;
-        margin-top: 15px;
         border-radius: 5px;
     }
 }

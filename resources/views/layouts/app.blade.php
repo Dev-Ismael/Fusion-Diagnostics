@@ -328,7 +328,7 @@
             </div>
         </section>
 
-        
+
     </div>
 
 
@@ -349,6 +349,9 @@
 
     <!-- main-js -->
     <script src='{{ asset('front/js/script.js') }}'></script>
+
+    <!-- custom-js -->
+    <script src='{{ asset('front/js/custom.js') }}'></script>
 
 
 </body>

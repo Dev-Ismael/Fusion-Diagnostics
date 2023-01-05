@@ -57,8 +57,7 @@
   .menu-area .mobile-nav-toggler {
     display: block;
     padding: 10px;
-    margin-top: 15px;
-  }
+}
 
   .megamenu ul li:first-child{
     display: none;

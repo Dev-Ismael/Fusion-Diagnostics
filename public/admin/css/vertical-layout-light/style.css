@@ -19342,7 +19342,7 @@ input:focus {
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(230deg, #759bff, #2569b1);
+  background: linear-gradient(230deg, #0065cb96, #0065cb);
 }
 
 .bg-gradient-secondary {

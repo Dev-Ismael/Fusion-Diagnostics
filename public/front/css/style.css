@@ -822,7 +822,7 @@ img {
   float:left;
   z-index:2;
   padding:18px 0px;
-  margin: 0px 15px;
+  margin: 0px 10px;
   -webkit-transition:all 300ms ease;
   -moz-transition:all 300ms ease;
   -ms-transition:all 300ms ease;
@@ -2572,7 +2572,7 @@ div#mCSB_1_container{
   background: #ffffff;
   padding: 63px 70px 70px 70px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px #e2e8ea;
+  box-shadow: 0 10px 30px #00000045;
 }
 
 .testimonial-section .inner-content .sec-title{
@@ -5686,7 +5686,7 @@ h4 a:hover{
 
 .main-header.style-four .menu-right-content li.search-btn button{
   color: #142441;
-  font-size: 22px;
+  font-size: 30px;
   transition: all 500ms ease;
 }
 
@@ -8461,13 +8461,7 @@ h4 a:hover{
   margin-bottom: 26px;
 }
 
-.event-details-content .text p{
-  line-height: 30px;
-}
 
-.event-details-content .content-one .text p{
-  margin-bottom: 26px;
-}
 
 .event-details-content .content-one{
   position: relative;
