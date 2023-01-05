@@ -586,4 +586,16 @@
 
 
 
+    /* ==========================================================================
+        Key search link
+    ========================================================================== */
+    $('.recent-searches .keyword-link').each(function () {
+        $(this).click(function (event) {
+            event.preventDefault();
+            var link_value = $(this).text();
+            $('#search-input').val(link_value);
+            $('#search-test-form').trigger('submit');
+        });
+    });
+
 })(window.jQuery);

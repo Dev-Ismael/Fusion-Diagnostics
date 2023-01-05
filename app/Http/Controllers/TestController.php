@@ -15,12 +15,14 @@ class TestController extends Controller
      */
     public function search(Request $request)
     {
-        
+
         // validate search and redirect back
         $this->validate($request, [
             'search'   =>  ['required', 'string', 'max:55'],
         ]);
-        $tests   = Test::where('title', 'like', "%{$request->search}%")->paginate( 10 );
+
+        $tests  = Test::where('title', 'like', "%{$request->search}%")->
+            orWhere('code', 'like', "%{$request->search}%")->paginate( 10 );
         return view('tests', compact('tests'));
     }
 }

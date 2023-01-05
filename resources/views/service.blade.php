@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="event-details sec-pad-2">
+    <section class="event-details pad-service">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 content-side">

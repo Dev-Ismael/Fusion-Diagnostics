@@ -21,7 +21,6 @@ class SubscriberController extends Controller
         // save all request in one variable
         $requestData = $request->all();
 
-
         try {
 
             // store row in table
@@ -40,6 +39,7 @@ class SubscriberController extends Controller
         } catch (\Exception $e) {
             return abort(500, 'Whatever you were looking for, look somewhere else');
         }
+
     }
 
 }

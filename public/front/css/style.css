@@ -1412,6 +1412,7 @@ img {
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  text-align: left;
 }
 
 .mobile-menu .navigation li ul li > a{
@@ -1613,10 +1614,10 @@ div#mCSB_1_container{
 .search-popup .search-form fieldset input[type="search"]{
   position:relative;
   height:70px;
-  padding:20px 250px 20px 30px;
+  padding:20px 110px 20px 30px;
   background:#ffffff;
   line-height:30px;
-  font-size:24px;
+  font-size:18px;
   color:#233145;
   border-radius:7px;
 }
@@ -1627,8 +1628,6 @@ div#mCSB_1_container{
   right:0px;
   top:0px;
   text-align:center;
-  width:220px;
-  height:70px;
   padding:20px 10px 20px 10px;
   color:#ffffff !important;
   line-height:30px;

@@ -46,12 +46,6 @@
 <body>
     <div id="app" class="boxed_wrapper">
 
-        @php
-            $services  = App\Models\Service::get();
-            $locations = App\Models\location::get();
-            $settings  = App\Models\Setting::where('id',1)->first();
-        @endphp
-
         <!-- preloader -->
         <div class="loader-wrap">
             <div class="preloader">
@@ -72,22 +66,20 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form action="{{ route("test.search") }}" method="POST">
+                    <form id="search-test-form" action="{{ route("test.search") }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <fieldset>
-                                <input type="search" class="form-control" name="search" placeholder="Search For Test..." required/>
+                                <input type="search" class="form-control" id="search-input" name="search" placeholder="Type Test Name Or Test Code..." required/>
                                 <input type="submit" value="Search Now!" class="theme-btn style-four">
                             </fieldset>
                         </div>
                     </form>
                     <h3>Recent Search Keywords</h3>
                     <ul class="recent-searches">
-                        <li><a href="index.html">Finance</a></li>
-                        <li><a href="index.html">Idea</a></li>
-                        <li><a href="index.html">Service</a></li>
-                        <li><a href="index.html">Growth</a></li>
-                        <li><a href="index.html">Plan</a></li>
+                        @foreach ( $recentSearchKeywords as $keyword )
+                            <li> <a href="#" class="keyword-link"> {{ $keyword->title }} </a> </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -117,21 +109,31 @@
                                     <li><a href="{{ route("about") }}">About</a></li>
                                     <li class="dropdown"><a href="#">Services</a>
                                         <ul>
-                                            @foreach ( $services as $service )
+                                            @foreach ( $nav_services as $service )
                                                 <li><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route("contact") }}">Contact</a></li>
+                                    <li>
+                                        <a href="https://fusion.labsvc.net/labgen" class="theme-btn-one"> Physician Portal </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://fusion.labsvc.net/patientportal" class="theme-btn-one"> Patient Portal </a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
                     <ul class="menu-right-content clearfix">
-                        <li class="search-btn">
+                        <form action="{{ route("test.search") }}" method="POST"  class="search-form d-none-md">
+                            @csrf
+                            <div class="form-group">
+                                <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
+                                <button type="submit"><i class="icon-1"></i></button>
+                            </div>
+                        </form>
+                        <li class="search-btn d-block-md">
                             <button type="button" class="search-toggler">
-                                Test Directory
-                                &nbsp;
                                 <i class="icon-1"></i>
                             </button>
                         </li>
@@ -149,13 +151,20 @@
                             </nav>
                         </div>
                         <ul class="menu-right-content pull-right clearfix">
-                            <li class="search-btn">
+                            {{-- <li class="search-btn">
                                 <button type="button" class="search-toggler">
                                     Test Directory
                                     &nbsp;
                                     <i class="icon-1"></i>
                                 </button>
-                            </li>
+                            </li> --}}
+                            <form action="{{ route("test.search") }}" method="POST"  class="search-form mt-3 d-none-md">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
+                                    <button type="submit"><i class="icon-1"></i></button>
+                                </div>
+                            </form>
                         </ul>
                     </div>
                 </div>
@@ -169,7 +178,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="{{ route('home') }}"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -180,11 +189,11 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="{{ $settings->twitter }}" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="{{ $settings->facebook }}" target="_blank"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="{{ $settings->linkedin }}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
+                        <li><a href="{{ $settings->instagram }}" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="{{ $settings->youtube }}" target="_blank"><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -210,12 +219,12 @@
                             <form action="{{ route("location.search") }}" method="POST" >
                                 @csrf
                                 <div class="row d-flex h-100">
-                                    <div class="col-md-8 justify-content-center align-self-center">
+                                    <div class="col-md-8 justify-content-center align-self-center mt-2">
                                         <div class="input__box">
                                             <input type="text"  name="search" class="w-100" placeholder="Type Location Title Here..." autocomplete="nope" required/>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 justify-content-center align-self-center">
+                                    <div class="col-md-4 justify-content-center align-self-center text-center mt-2">
                                         <button type="submit" class="theme-btn-one">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             Search
@@ -243,11 +252,10 @@
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget">
-                                <div class="footer-logo">
+                                <div class="footer-logo text-center">
                                     <figure class="logo"><a href="{{ route("home") }}"><img src="{{ asset('front/images/logo.png') }}" alt="fusion-logo"></a></figure>
                                 </div>
                                 <div class="text">
-                                    {{-- <p>A state of the art, quality oriented, full services medical laboratory.</p> --}}
                                     <ul class="info clearfix">
                                         <li><i class="icon-26"></i> <a href="{{ $settings->location }}"> {{ $settings->address }} </a> </li>
                                         <li><i class="icon-24"></i> Call Us: <a href="tel:{{ $settings->phone_formatted }}">{{ $settings->phone }}</a> </li>
