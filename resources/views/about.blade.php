@@ -41,7 +41,7 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <figure class="image-box">
-                                    <img src="{{ asset("front/images/resource/research-1.png") }}" alt="">
+                                    <img src="{{ asset("front/images/resource/research-1.jpg") }}" alt="">
                                     <h5>01</h5>
                                 </figure>
                                 <div class="text">
@@ -55,7 +55,7 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <figure class="image-box">
-                                    <img src="{{ asset("front/images/resource/research-2.png") }}" alt="">
+                                    <img src="{{ asset("front/images/resource/research-2.jpg") }}" alt="">
                                     <h5>02</h5>
                                 </figure>
                                 <div class="text">
@@ -69,7 +69,7 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <figure class="image-box">
-                                    <img src="{{ asset("front/images/resource/research-3.png") }}" alt="">
+                                    <img src="{{ asset("front/images/resource/research-3.jpg") }}" alt="">
                                     <h5>03</h5>
                                 </figure>
                                 <div class="text">
@@ -83,7 +83,7 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <figure class="image-box">
-                                    <img src="{{ asset("front/images/resource/research-4.png") }}" alt="">
+                                    <img src="{{ asset("front/images/resource/research-4.jpg") }}" alt="">
                                     <h5>04</h5>
                                 </figure>
                                 <div class="text">

@@ -144,7 +144,7 @@
                                 <ul class="category-list clearfix">
                                     <li><a href="{{ route('home') }}"> Home Page </a></li>
                                     <li><a href="{{ route('about') }}"> About Fusion </a></li>
-                                    <li><a href="{{ route('contact') }}"> Contact US </a></li>
+                                    <li><a href="{{ route('contact') }}"> Contact Us </a></li>
                                 </ul>
                             </div>
                         </div>

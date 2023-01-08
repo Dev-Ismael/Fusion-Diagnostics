@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
-Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 
 // Service
 Route::get('/service/{slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
@@ -35,6 +34,10 @@ Route::post('/subscriber', [App\Http\Controllers\SubscriberController::class, 's
 
 // Test
 Route::get('/tests', [App\Http\Controllers\TestController::class, 'search'])->name('test.search');
+
+// Contact
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::post('/contact/send', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
 
 
 /*===========================================================================

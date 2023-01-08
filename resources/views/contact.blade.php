@@ -60,22 +60,38 @@
                 <h2>Have Any Questins Contact With Us</h2>
             </div>
             <div class="form-inner">
-                <form method="post" action="sendemail.php" id="contact-form" class="default-form">
+                <form action="{{ route("contact.send") }}" method="POST" id="contact-form" class="default-form">
                     <div class="row clearfix">
+                        @csrf
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="username" placeholder="Full Name" required="">
+                            <input type="text" name="name" placeholder="Full Name..." class="@error('name') is-invalid @enderror" value="{{ old("name") }}" />
+                            @error('name')
+                                <div class="invalid-feedback d-block">{{ $message }}.</div>
+                            @enderror
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="email" name="email" placeholder="Email Address" required="">
+                            <input type="email" name="email" placeholder="Email Address..." class="@error('email') is-invalid @enderror" value="{{ old("email") }}" />
+                            @error('email')
+                                <div class="invalid-feedback d-block">{{ $message }}.</div>
+                            @enderror
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="phone" required="" placeholder="Phone">
+                            <input type="text" name="phone" placeholder="Phone Number..." class="@error('phone') is-invalid @enderror" value="{{ old("phone") }}" />
+                            @error('phone')
+                                <div class="invalid-feedback d-block">{{ $message }}.</div>
+                            @enderror
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="subject" required="" placeholder="Subject">
+                            <input type="text" name="subject" placeholder="Subject..." class="@error('subject') is-invalid @enderror" value="{{ old("subject") }}" />
+                            @error('subject')
+                                <div class="invalid-feedback d-block">{{ $message }}.</div>
+                            @enderror
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <textarea name="message" placeholder="Your Message"></textarea>
+                            <textarea name="body" placeholder="Your Message" class="@error('body') is-invalid @enderror" >{{ old("body") }}</textarea>
+                            @error('body')
+                                <div class="invalid-feedback d-block">{{ $message }}.</div>
+                            @enderror
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
                             <button class="theme-btn-one" type="submit" name="submit-form"> Send Message </button>
