@@ -221,7 +221,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 justify-content-center align-self-center">
-                            <form action="{{ route("location.search") }}" method="POST" >
+                            <form action="{{ route("location.search") }}" method="GET" >
                                 @csrf
                                 <div class="row d-flex h-100">
                                     <div class="col-md-8 justify-content-center align-self-center mt-2">

@@ -27,9 +27,8 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])
 Route::get('/service/{slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
 
 // Location
-Route::post('/location', [App\Http\Controllers\LocationController::class, 'search'])->name('location.search');
+Route::get('/location', [App\Http\Controllers\LocationController::class, 'search'])->name('location.search');
 Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 'show'])->name('location.show');
-
 
 // Subscriber
 Route::post('/subscriber', [App\Http\Controllers\SubscriberController::class, 'store'])->name('subscriber.store');

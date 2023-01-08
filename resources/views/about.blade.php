@@ -5,7 +5,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred" style="background-image: url(/front/images/background/page-title.jpg);">
+    <section class="page-title centred" style="background-image: url(/front/images/background/contact-header.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">

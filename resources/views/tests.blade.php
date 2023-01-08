@@ -6,7 +6,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred" style="background-image: url(/front/images/background/page-title.jpg);">
+    <section class="page-title centred" style="background-image: url(/front/images/background/test-header.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
@@ -28,99 +28,99 @@
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                     <div class="mb-5">
-                        <!----------------- If No Locations ------------------>
+                        <!----------------- If No tests ------------------>
                         <h4 class="title"> <i class="fa-solid fa-magnifying-glass" style="color:#0d3050"></i>
-                            '{{ $tests->total() }}' Results Found "{{ Request::input('search') }}"
+                            '{{ $tests->total() }}' Results Found with "{{ Request::input('search') }}"
                         </h4>
-
                     </div>
 
-                    <!----------------- If Exist Locations ------------------>
-                    <div class="blog-grid-content">
-                        <div class="row clearfix">
-                            @foreach ( $tests as $test )
-                                <div class="col-lg-12 col-md-12 col-sm-12 news-block">
-                                    <div class="news-block-one">
-                                        <div class="inner-box ">
-                                            <h4 class="text-center"> <i class="fa-solid fa-tag"></i> {{ $test->title }} </h4>
-                                            <p>
-                                                <i class="fa-solid fa-hashtag"></i>
-                                                <span class="font-weight-bold type"> Code: </span>
-                                                <span>
-                                                    @if ( $test->code === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->code }}
-                                                    @endif
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-clock"></i>
-                                                <span class="font-weight-bold type"> Turnaround Time: </span>
-                                                <span>
-                                                    @if ( $test->time === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->time }}
-                                                    @endif
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-flask"></i>
-                                                <span class="font-weight-bold type"> Component: </span>
-                                                <span>
-                                                    @if ( $test->components === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->components }}
-                                                    @endif
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-vials"></i>
-                                                <span class="font-weight-bold type"> Specimen: </span>
-                                                <span>
-                                                    @if ( $test->specimen === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->specimen }}
-                                                    @endif
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <i class="fa-brands fa-42-group"></i>
-                                                <span class="font-weight-bold type"> Instructions: </span>
-                                                <span>
-                                                    @if ( $test->instructions === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->instructions }}
-                                                    @endif
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-money-bill-wave"></i>
-                                                <span class="font-weight-bold type"> Billing Codes: </span>
-                                                <span>
-                                                    @if ( $test->billing_codes === Null )
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    @else
-                                                        {{ $test->billing_codes }}
-                                                    @endif
-                                                </span>
-                                            </p>
+                    <!----------------- If No tests ------------------>
+                    @if ( !$tests->isEmpty())
+                        <div class="blog-grid-content">
+                            <div class="row clearfix">
+                                @foreach ( $tests as $test )
+                                    <div class="col-lg-12 col-md-12 col-sm-12 news-block">
+                                        <div class="news-block-one">
+                                            <div class="inner-box ">
+                                                <h4 class="text-center"> <i class="fa-solid fa-tag"></i> {{ $test->title }} </h4>
+                                                <p>
+                                                    <i class="fa-solid fa-hashtag"></i>
+                                                    <span class="font-weight-bold type"> Code: </span>
+                                                    <span>
+                                                        @if ( $test->code === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->code }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-clock"></i>
+                                                    <span class="font-weight-bold type"> Turnaround Time: </span>
+                                                    <span>
+                                                        @if ( $test->time === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->time }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-flask"></i>
+                                                    <span class="font-weight-bold type"> Component: </span>
+                                                    <span>
+                                                        @if ( $test->components === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->components }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-vials"></i>
+                                                    <span class="font-weight-bold type"> Specimen: </span>
+                                                    <span>
+                                                        @if ( $test->specimen === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->specimen }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-brands fa-42-group"></i>
+                                                    <span class="font-weight-bold type"> Instructions: </span>
+                                                    <span>
+                                                        @if ( $test->instructions === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->instructions }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                                    <span class="font-weight-bold type"> Billing Codes: </span>
+                                                    <span>
+                                                        @if ( $test->billing_codes === Null )
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        @else
+                                                            {{ $test->billing_codes }}
+                                                        @endif
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+                            <div class="pagination-wrapper text-center">
+                                <ul class="pagination clearfix">
+                                    {{  $tests->appends(['search' => Request::input('search')])->links('pagination::bootstrap-4') }}
+                                </ul>
+                            </div>
                         </div>
-                        <div class="pagination-wrapper text-center">
-                            <ul class="pagination clearfix">
-                                {{  $tests->appends(['search' => Request::input('search')])->links('pagination::bootstrap-4') }}
-                            </ul>
-                        </div>
-                    </div>
-
+                    @endif
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="blog-sidebar">

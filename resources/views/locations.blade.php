@@ -6,7 +6,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
+    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/location-header.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
@@ -28,18 +28,15 @@
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
 
+                    <div class="mb-5">
+                        <!----------------- If No Locations ------------------>
+                        <h4 class="title"> <i class="fa-solid fa-magnifying-glass" style="color:#0d3050"></i>
+                            '{{ $locations->total() }}' Results Found with "{{ Request::input('search') }}"
+                        </h4>
+                    </div>
+
                     <!----------------- If No Locations ------------------>
-                    @if ($locations->isEmpty())
-
-                        @if( preg_match('(search)', url()->current()) == 1 )  <!---- in search Page ---->
-                            <h4 class="title"> <i class="fa-solid fa-magnifying-glass" style="color:#0d3050"></i> '0' Results Found "{{ Request::input('search') }}" </h4>
-                        @else
-                            <h4>  No Locations Found </h4>
-                        @endif
-
-                    <!----------------- If Exist Locations ------------------>
-                    @else
-
+                    @if ( !$locations->isEmpty())
                         <div class="blog-grid-content">
                             <div class="row clearfix">
                                 @foreach ( $locations as $location )
@@ -60,7 +57,7 @@
                             </div>
                             <div class="pagination-wrapper text-center">
                                 <ul class="pagination clearfix">
-                                    {{ $locations->links('pagination::bootstrap-4') }}
+                                    {{  $locations->appends(['search' => Request::input('search')])->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
@@ -72,7 +69,7 @@
                             <div class="widget-title">
                                 <h3>Search</h3>
                             </div>
-                            <form action="{{ route("location.search") }}" method="POST"  class="search-form">
+                            <form action="{{ route("location.search") }}" method="GET"  class="search-form">
                                 @csrf
                                 <div class="form-group">
                                     <input type="search" name="search" placeholder="Search Here..."  autocomplete="nope" required/>
