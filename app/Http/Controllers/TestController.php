@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Test;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -22,7 +22,8 @@ class TestController extends Controller
         ]);
 
         $tests  = Test::where('title', 'like', "%{$request->search}%")->
-            orWhere('code', 'like', "%{$request->search}%")->paginate( 10 );
+            orWhere('code', 'like', "%{$request->search}%")
+            ->paginate(10);
         return view('tests', compact('tests'));
     }
 }

@@ -35,7 +35,7 @@ Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 
 Route::post('/subscriber', [App\Http\Controllers\SubscriberController::class, 'store'])->name('subscriber.store');
 
 // Test
-Route::post('/test', [App\Http\Controllers\TestController::class, 'search'])->name('test.search');
+Route::get('/tests', [App\Http\Controllers\TestController::class, 'search'])->name('test.search');
 
 
 /*===========================================================================

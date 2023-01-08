@@ -20,7 +20,7 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
-                <li class="nav-item font-weight-semibold  d-lg-block ms-0">
+                <li class="nav-item font-weight-semibold d-lg-block ms-0">
                     <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ admin.name }}</span></h1>
                     <h3 class="welcome-sub-text">Your Dashoard For Manage Website Data </h3>
                 </li>

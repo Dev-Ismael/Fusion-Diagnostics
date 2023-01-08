@@ -6,7 +6,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
+    <section class="page-title centred" style="background-image: url(/front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
@@ -116,7 +116,7 @@
                         </div>
                         <div class="pagination-wrapper text-center">
                             <ul class="pagination clearfix">
-                                {{ $tests->links('pagination::bootstrap-4') }}
+                                {{  $tests->appends(['search' => Request::input('search')])->links('pagination::bootstrap-4') }}
                             </ul>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                             <div class="widget-title">
                                 <h3>Search</h3>
                             </div>
-                            <form action="{{ route("test.search") }}" method="POST"  class="search-form">
+                            <form action="{{ route("test.search") }}" method="GET"  class="search-form">
                                 @csrf
                                 <div class="form-group">
                                     <input type="search" name="search" placeholder="Search Here..."  autocomplete="nope" required/>

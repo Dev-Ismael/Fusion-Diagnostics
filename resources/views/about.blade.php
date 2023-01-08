@@ -5,15 +5,14 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred mt-7" style="background-image: url(/front/images/background/page-title.jpg);">
+    <section class="page-title centred" style="background-image: url(/front/images/background/page-title.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
                     <h1>About Fusion</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
-                                        <li><a href="{{ route("home") }}">Home</a></li>
-</li>
+                    <li><a href="{{ route("home") }}">Home</a></li>
                     <li>About Fusion</li>
                 </ul>
             </div>

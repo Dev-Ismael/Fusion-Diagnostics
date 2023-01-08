@@ -10,10 +10,14 @@
 /*=======================================================
 ============ Global Properties
 ========================================================*/
-.mt-7 {
+.page-title{
     margin-top: 7rem;
 }
-
+@media (max-width: 768px) {
+    .page-title{
+        margin-top: 12rem;
+    }
+}
 .service-section {
     padding: 0px;
 }

@@ -69,7 +69,7 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form id="search-test-form" action="{{ route("test.search") }}" method="POST">
+                    <form id="search-test-form" action="{{ route("test.search") }}" method="GET">
                         @csrf
                         <div class="form-group">
                             <fieldset>
@@ -113,10 +113,11 @@
                                     <li class="dropdown"><a href="#">Services</a>
                                         <ul>
                                             @foreach ( $nav_services as $service )
-                                                <li><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></li>
+                                            <li><a href="{{ route("service.show", $service->slug ) }}"> {{ $service->title }} </a></li>
                                             @endforeach
                                         </ul>
                                     </li>
+                                    <li><a href="{{ route("contact") }}">Contact</a></li>
                                     <li>
                                         <a href="https://fusion.labsvc.net/labgen" class="theme-btn-one"> Physician Portal </a>
                                     </li>
@@ -128,7 +129,7 @@
                         </nav>
                     </div>
                     <ul class="menu-right-content clearfix">
-                        <form action="{{ route("test.search") }}" method="POST"  class="search-form d-none-md">
+                        <form action="{{ route("test.search") }}" method="GET"  class="search-form d-none-md">
                             @csrf
                             <div class="form-group">
                                 <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
@@ -161,7 +162,7 @@
                                     <i class="icon-1"></i>
                                 </button>
                             </li> --}}
-                            <form action="{{ route("test.search") }}" method="POST"  class="search-form mt-3 d-none-md">
+                            <form action="{{ route("test.search") }}" method="GET"  class="search-form mt-3 d-none-md">
                                 @csrf
                                 <div class="form-group">
                                     <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
