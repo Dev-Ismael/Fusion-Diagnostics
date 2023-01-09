@@ -57,9 +57,9 @@
     }
 
     #pagination li a.active {
-        background-color: #4caf50;
+        background-color: #0e6dcd;
         color: #fff;
-        border: 1px solid #a1a1a1 !important;
+        border: 1px solid #0e6dcd !important;
     }
 
     #pagination li a:hover:not(.active) {
@@ -102,7 +102,7 @@
     }
 
     #border-pagination li a.active {
-        background-color: #4caf50;
+        background-color: #0e6dcd;
         color: #fff;
     }
 

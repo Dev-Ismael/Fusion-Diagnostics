@@ -23,7 +23,7 @@
                                         <!------ Title ------->
                                         <div class="form-group">
                                             <label for="subject">
-                                                <i class="ti-form-pin"></i>
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                                 Newsletter Subject
                                             </label>
                                             <input type="text" name="subject" id="subject" class="form-control"

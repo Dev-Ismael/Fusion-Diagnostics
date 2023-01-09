@@ -117,9 +117,9 @@
                             <p class="mb-1 mt-3 font-weight-semibold">{{ admin.name }}</p>
                             <p class="fw-light text-muted mb-0">{{ admin.email }}</p>
                         </div>
-                        <Link  href="/admin/profile" class="dropdown-item"><i
+                        <!-- <Link  href="/admin/profile" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
-                        </Link >
+                        </Link > -->
                         <Link  href="/admin/messege" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
                             Messages</Link >

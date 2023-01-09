@@ -24,7 +24,7 @@
                                         <!------ Title ------->
                                         <div class="form-group">
                                             <label for="title">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                                 Test Title
                                             </label>
                                             <input type="text" name="title" id="title" class="form-control"
@@ -36,7 +36,7 @@
                                         <!------ Code ------->
                                         <div class="form-group">
                                             <label for="code">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-hashtag"></i>
                                                 Code
                                             </label>
                                             <input type="text" name="code" id="code" class="form-control"
@@ -49,7 +49,7 @@
                                         <!------ time ------->
                                         <div class="form-group">
                                             <label for="time">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-clock"></i>
                                                 Time
                                             </label>
                                             <input type="text" name="time" id="time" class="form-control"
@@ -62,7 +62,7 @@
                                         <!------ components ------->
                                         <div class="form-group">
                                             <label for="components">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-flask"></i>
                                                 Components
                                             </label>
                                             <input type="text" name="components" id="components" class="form-control"
@@ -76,7 +76,7 @@
                                         <!------ specimen ------->
                                         <div class="form-group">
                                             <label for="specimen">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-vials"></i>
                                                 Specimen
                                             </label>
                                             <input type="text" name="specimen" id="specimen" class="form-control"
@@ -91,7 +91,7 @@
                                         <!------ instructions ------->
                                         <div class="form-group">
                                             <label for="instructions">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-brands fa-42-group"></i>
                                                 Instructions
                                             </label>
                                             <input type="text" name="instructions" id="instructions" class="form-control"
@@ -105,7 +105,7 @@
                                         <!------ billing_codes ------->
                                         <div class="form-group">
                                             <label for="billing_codes">
-                                                <i class="ti-test-pin"></i>
+                                                <i class="fa-solid fa-money-bill-wave"></i>
                                                 Billing Codes
                                             </label>
                                             <input type="text" name="billing_codes" id="billing_codes" class="form-control"

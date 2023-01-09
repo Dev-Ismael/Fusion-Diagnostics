@@ -165,6 +165,7 @@
     </section>
     <!-- banner-section end -->
 
+    
     <!-- feature-section strat -->
     <section class="feature-section alternat-2 centred">
         <div class="auto-container">
@@ -292,6 +293,23 @@
         </section>
         <!-- service-section end -->
     @endif
+
+
+    <!-- video-section -->
+    <section class="video-style-two centred">
+        <div class="auto-container">
+            <div class="inner-box" style="background-image: url(front/images/background/video-2.jpg);">
+                <div class="content-box">
+                    <div class="video-btn">
+                        <a href="https://www.youtube.com/watch?v=vC-LmWFogEE" class="lightbox-image" data-caption=""><i class="icon-4"></i></a>
+                    </div>
+                    <h3>Lets Watch Our Recent Work</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- video-section -->
+
 
 
     <!-- testimonial-section -->

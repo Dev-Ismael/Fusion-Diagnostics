@@ -577,4 +577,16 @@
         });
     });
 
+
+    /* ==========================================================================
+        location search
+    ========================================================================== */
+    let inputBox = document.querySelector(".input-box"),
+    searchIcon = document.querySelector(".icon"),
+    closeIcon = document.querySelector(".fa-xmark");
+
+    searchIcon.addEventListener("click", () => inputBox.classList.add("open"));
+    closeIcon.addEventListener("click", () => inputBox.classList.remove("open"));
+
+
 })(window.jQuery);

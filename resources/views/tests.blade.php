@@ -120,6 +120,16 @@
                                 </ul>
                             </div>
                         </div>
+                    @else
+                        <div class="blog-grid-content">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                    <figure class="image-box">
+                                        <img src="{{ asset("admin/images/nodata-found.png") }}" alt="no-data" class="img">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
                     @endif
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -131,7 +141,7 @@
                             <form action="{{ route("test.search") }}" method="GET"  class="search-form">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="search" name="search" placeholder="Search Here..."  autocomplete="nope" required/>
+                                    <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
                                     <button type="submit"><i class="icon-1"></i></button>
                                 </div>
                             </form>

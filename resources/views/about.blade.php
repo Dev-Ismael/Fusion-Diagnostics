@@ -23,10 +23,10 @@
 
 
     <!-- research-style-two -->
-    <section class="research-style-two centred bg-color-1">
+    <section class="research-style-two centred ">
         <div class="pattern-layer">
-            <div class="pattern-1" style="background-image: url(/front/images/shape/shape-65.png);"></div>
-            <div class="pattern-2" style="background-image: url(/front/images/shape/shape-66.png);"></div>
+            <div class="pattern-1" style="background-image: url(/front/images/shape/shape-3.png);"></div>
+            <div class="pattern-2" style="background-image: url(/front/images/shape/shape-4.png);"></div>
         </div>
         <div class="auto-container">
             <div class="sec-title centred">
@@ -152,6 +152,71 @@
         </div>
     </section>
     <!-- funfact-style-two end -->
+
+
+
+
+
+
+    <!-- faq-section -->
+    <section class="faq-section sec-pad">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_8">
+                        <div class="content-box">
+                            <div class="sec-title">
+                                <h6>FAQ’S</h6>
+                                <h2>Frequently <br />Asked Questions.</h2>
+                            </div>
+                            <ul class="accordion-box">
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <div class="icon-outer"><i class="icon-47"></i></div>
+                                        <h4>How is The Test Used?</h4>
+                                    </div>
+                                    <div class="acc-content">
+                                        <p>Lorem ipsum dolor sit amet consectur adipiscing elitus mod tempor incidunt labore dolore magna aliquaenim minim.</p>
+                                    </div>
+                                </li>
+                                <li class="accordion block active-block">
+                                    <div class="acc-btn active">
+                                        <div class="icon-outer"><i class="icon-47"></i></div>
+                                        <h4>What does The Test Result Mean?</h4>
+                                    </div>
+                                    <div class="acc-content current">
+                                        <p>Lorem ipsum dolor sit amet consectur adipiscing elitus mod tempor incidunt labore dolore magna aliquaenim minim.</p>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                        <div class="acc-btn">
+                                        <div class="icon-outer"><i class="icon-47"></i></div>
+                                        <h4>Where Can I Get Tested?</h4>
+                                    </div>
+                                    <div class="acc-content">
+                                        <p>Lorem ipsum dolor sit amet consectur adipiscing elitus mod tempor incidunt labore dolore magna aliquaenim minim.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image_block_5">
+                        <div class="image-box">
+                            <div class="shape">
+                                <div class="shape-1" style="background-image: url(front/images/shape/shape-27.png);"></div>
+                                <div class="shape-2" style="background-image: url(front/images/shape/shape-27.png);"></div>
+                            </div>
+                            <figure class="image image-1 paroller"><img src="front/images/resource/faq-1.jpg" alt=""></figure>
+                            <figure class="image image-2 paroller-2"><img src="front/images/resource/faq-2.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- faq-section end -->
 
 
 

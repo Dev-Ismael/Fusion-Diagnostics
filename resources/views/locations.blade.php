@@ -61,6 +61,16 @@
                                 </ul>
                             </div>
                         </div>
+                    @else
+                        <div class="blog-grid-content">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                    <figure class="image-box">
+                                        <img src="{{ asset("admin/images/nodata-found.png") }}" alt="no-data" class="img">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
                     @endif
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">

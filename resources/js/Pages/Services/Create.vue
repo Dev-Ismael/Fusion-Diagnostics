@@ -15,16 +15,16 @@
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-0">Create form</h4>
+                                    <h4 class="card-title mb-0"> <i class="fa-solid fa-plus"></i> Create form</h4>
                                     <p class="card-description">
-                                        Add new branch Service
+                                        Add new Service For Fusion
                                     </p>
                                     <form class="forms-sample" @submit.prevent="storeService()">
 
                                         <!------ Title ------->
                                         <div class="form-group">
                                             <label for="title">
-                                                <i class="ti-form-pin"></i>
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                                 Service Title
                                             </label>
                                             <input type="text" name="title" id="title" class="form-control"
@@ -36,7 +36,7 @@
 
                                         <!-- seo_title -->
                                         <div class="form-group">
-                                            <label for="seo_title" class="col-form-label"> <i class="ti-search"></i>
+                                            <label for="seo_title" class="col-form-label"> <i class="fa-brands fa-searchengin"></i>
                                                 SEO Title </label>
                                             <textarea name="seo[title]" v-model="form.seo.title" class="form-control"
                                                 :class="errors[`seo.title`] ? 'border-danger' : ''" id="seo_title"
@@ -50,7 +50,7 @@
 
                                         <!-- seo_keywords -->
                                         <div class="form-group">
-                                            <label for="seo_keywords" class="col-form-label"> <i class="ti-search"></i>
+                                            <label for="seo_keywords" class="col-form-label"> <i class="fa-brands fa-searchengin"></i>
                                                 SEO Keywords </label>
                                             <textarea name="seo[keywords]" v-model="form.seo.keywords"
                                                 class="form-control"
@@ -64,8 +64,7 @@
 
                                         <!-- seo_description -->
                                         <div class="form-group">
-                                            <label for="seo_description" class="col-form-label"> <i
-                                                    class="ti-search"></i>
+                                            <label for="seo_description" class="col-form-label"> <i class="fa-brands fa-searchengin"></i>
                                                 SEO Description </label>
                                             <textarea name="seo[description]" v-model="form.seo.description"
                                                 class="form-control"
@@ -125,8 +124,8 @@
                                         </div>
 
                                         <!------ Buttons ------->
-                                        <button type="submit" class="btn btn-primary me-2">Submit</button>
-                                        <Link href="/admin/service" class="btn btn-light">Cancel</Link>
+                                        <button type="submit" class="btn btn-primary me-2"> <i class="fa-solid fa-floppy-disk"></i> Submit</button>
+                                        <Link href="/admin/service" class="btn btn-light"> <i class="fa-solid fa-ban"></i> Cancel</Link>
 
                                     </form>
                                 </div>

@@ -20,7 +20,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-title"></i>
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                                 Name
                                             </label>
                                         </div>
@@ -31,7 +31,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-align-left"></i>
+                                                <i class="fa-solid fa-envelope"></i>
                                                 Email
                                             </label>
                                         </div>
@@ -42,7 +42,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-title"></i>
+                                                <i class="fa-solid fa-phone"></i>
                                                 phone
                                             </label>
                                         </div>
@@ -64,7 +64,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-align-left"></i>
+                                                <i class="fa-solid fa-message"></i>
                                                 Messege
                                             </label>
                                         </div>

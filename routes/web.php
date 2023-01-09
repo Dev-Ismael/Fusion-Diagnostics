@@ -45,7 +45,7 @@ Route::post('/contact/send', [App\Http\Controllers\ContactController::class, 'se
 ===========================================================================*/
 
 
-Route::group([ "prefix" => "admin" ,  "middleware" => "auth" , "as" => "admin." ] , function(){
+Route::group([ "prefix" => "admin",  "middleware" => "auth", "as" => "admin." ] , function(){
 
 
     // Locations

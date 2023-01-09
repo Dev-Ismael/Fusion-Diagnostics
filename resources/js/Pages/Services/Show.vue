@@ -19,7 +19,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="mdi mdi-format-title"></i>
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                                 Service title
                                             </label>
                                         </div>
@@ -30,7 +30,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
+                                                <i class="fa-brands fa-searchengin"></i>
                                                 SEO Title
                                             </label>
                                         </div>
@@ -41,7 +41,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
+                                                <i class="fa-brands fa-searchengin"></i>
                                                 SEO Description
                                             </label>
                                         </div>
@@ -52,7 +52,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-3">
                                             <label class="card-title">
-                                                <i class="ti-search"></i>
+                                                <i class="fa-brands fa-searchengin"></i>
                                                 SEO Keywords
                                             </label>
                                         </div>
