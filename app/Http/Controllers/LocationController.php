@@ -41,4 +41,12 @@ class LocationController extends Controller
         return view('locations', compact('locations','all_locations'));
 
     }
+
+    public function opening_hours()
+    {
+        $locations = Location::all("title", "working_hours", "slug");
+
+        return view('opening_hours', compact("locations"));
+    }
+
 }

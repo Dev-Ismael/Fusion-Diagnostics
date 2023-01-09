@@ -165,7 +165,7 @@
     </section>
     <!-- banner-section end -->
 
-    
+
     <!-- feature-section strat -->
     <section class="feature-section alternat-2 centred">
         <div class="auto-container">
@@ -193,7 +193,7 @@
                         <div class="feature-block-one">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-33"></i></div>
-                                <h4><a href="index-2.html">Opening Hours</a></h4>
+                                <h4><a href="{{ route("opening_hours") }}">Opening Hours</a></h4>
                                 <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
                             </div>
                         </div>

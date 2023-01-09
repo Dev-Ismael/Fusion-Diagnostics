@@ -220,8 +220,9 @@
             <div class="inner-box clearfix">
                 <div class="auto-container text-center">
                     <div class="search-location-box p-3 rounded text-center">
-                        <h3 class="font-weight-bold title"> <i class="fa-solid fa-map-location-dot"></i> Search
-                            Nearest Location To Visit </h3>
+                        <h3 class="font-weight-bold title"> <i class="fa-solid fa-map-location-dot"></i>
+                            Search Our Locations
+                        </h3>
                     </div>
                     <form action="{{ route('location.search') }}" class="text-center" method="GET">
                         @csrf

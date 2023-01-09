@@ -7538,14 +7538,14 @@ h4 a:hover{
   background: #e5e5e5;
   width: 1px;
   height: 100%;
-  left: 228px;
+  left: 100px;
   top: 0px;
 }
 
 .books-page-section .inner-content .inner-box{
   position: relative;
-  padding-left: 410px;
-  margin-bottom: 110px;
+  padding-left: 300px;
+  margin-bottom: 50px;
 }
 
 .books-page-section .inner-content .inner-box:last-child{
@@ -7556,7 +7556,7 @@ h4 a:hover{
   position: relative;
   display: block;
   background: #fff;
-  padding: 31px 30px 57px 160px;
+  padding: 75px;
   border: 1px solid #e4e4e4;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -7609,7 +7609,7 @@ h4 a:hover{
   height: 25px;
   border-radius: 50%;
   top: 4px;
-  left: 216px;
+  left: 90px;
   box-shadow: 0 0px 20px 15px #edf2f2;
 }
 
@@ -7620,12 +7620,12 @@ h4 a:hover{
   height: 15px;
   border-radius: 50%;
   top: 9px;
-  left: 221px;
+  left: 95px;
 }
 
 .books-page-section .inner-content .inner-box .arrow{
   position: absolute;
-  left: 117px;
+  left: -5px;
   top: 11px;
   width: 223px;
   height: 11px;
