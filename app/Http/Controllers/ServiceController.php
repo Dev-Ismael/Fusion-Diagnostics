@@ -15,6 +15,11 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+        $services = Service::all('title', 'slug', 'summary', 'icon');
+        return view('services', compact("services"));
+    }
     public function show($slug)
     {
         $service = Service::where('slug',$slug)->first();

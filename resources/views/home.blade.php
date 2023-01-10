@@ -175,7 +175,7 @@
                         <div class="feature-block-one">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-31"></i></div>
-                                <h4><a href="index-2.html">Laboratory Services</a></h4>
+                                <h4><a href="{{ route("service.index") }}">Laboratory Services</a></h4>
                                 <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
                             </div>
                         </div>
@@ -183,8 +183,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one">
                             <div class="inner-box">
-                                <div class="icon-box"><i class="icon-32"></i></div>
-                                <h4><a href="index-2.html">Professionals Area</a></h4>
+                                <div class="icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <h4><a href="{{ route("location.index") }}">Laboratory Locations</a></h4>
                                 <p>Excepteur sint ocecat pro dent sunt in culpa qui officia.</p>
                             </div>
                         </div>

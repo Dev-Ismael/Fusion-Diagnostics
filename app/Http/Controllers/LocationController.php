@@ -15,6 +15,14 @@ class LocationController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+        $locations = Location::paginate(6);
+        $all_locations = Location::get();
+        return view('locations', compact('locations','all_locations'));
+    }
+
+
     public function show($slug)
     {
         $location = Location::where('slug',$slug)->first();
@@ -33,11 +41,8 @@ class LocationController extends Controller
         $this->validate($request, [
             'search'     =>  ['required', 'string', 'max:55'],
         ]);
-
-        $locations     = Location::where('title', 'like', "%{$request->search}%")->paginate( 10 );
-
+        $locations     = Location::where('title', 'like', "%{$request->search}%")->paginate(6);
         $all_locations = Location::get();
-
         return view('locations', compact('locations','all_locations'));
 
     }
@@ -45,7 +50,6 @@ class LocationController extends Controller
     public function opening_hours()
     {
         $locations = Location::all("title", "working_hours", "slug");
-
         return view('opening_hours', compact("locations"));
     }
 

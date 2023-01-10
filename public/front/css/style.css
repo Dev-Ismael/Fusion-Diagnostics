@@ -972,7 +972,7 @@ img {
   padding:7px 0px;
   line-height:24px;
   font-weight:600;
-  font-size:15px;
+  font-size:14px;
   font-family: 'Sora', sans-serif;
   text-transform:capitalize;
   color:#142441;
@@ -1957,7 +1957,6 @@ div#mCSB_1_container{
   margin-bottom: 10px;
   transition: all 500ms ease;
     border-radius: 10px;
-    z-index: 9999;
     background-color: #FFF;
     padding: 3PX;
 }
@@ -2993,7 +2992,7 @@ div#mCSB_1_container{
   line-height: 26px;
   font-weight: 700;
   margin-bottom: 12px;
-  height: 100px;
+  height: 120px;
 }
 
 .news-block-one .inner-box .lower-content h4 a{

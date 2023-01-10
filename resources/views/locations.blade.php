@@ -21,18 +21,23 @@
     </section>
     <!-- End Page Title -->
 
-
-
     <section class="sidebar-page-container sec-pad-2">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
 
                     <div class="mb-5">
-                        <!----------------- If No Locations ------------------>
-                        <h4 class="title"> <i class="fa-solid fa-magnifying-glass" style="color:#0d3050"></i>
-                            '{{ $locations->total() }}' Results Found with "{{ Request::input('search') }}"
-                        </h4>
+                        @if ( Request::input('search') )
+                            <h4 class="title">
+                                <i class="fa-solid fa-magnifying-glass" style="color:#0d3050"></i>
+                                '{{ $locations->total() }}' Results Found with "{{ Request::input('search') }}"
+                            </h4>
+                        @else
+                            <h4 class="title">
+                                <i class="fa-solid fa-map-location-dot" style="color:#0d3050"></i>
+                                Our Locations
+                            </h4>
+                        @endif
                     </div>
 
                     <!----------------- If No Locations ------------------>
@@ -72,6 +77,8 @@
                             </div>
                         </div>
                     @endif
+
+                    
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="blog-sidebar">

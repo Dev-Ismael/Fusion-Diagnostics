@@ -23,16 +23,16 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 
 // Service
+Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('service.index');
 Route::get('/service/{slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
 
 // Location
+Route::get('/locations', [App\Http\Controllers\LocationController::class, 'index'])->name('location.index');
 Route::get('/location', [App\Http\Controllers\LocationController::class, 'search'])->name('location.search');
 Route::get('/location/{slug}', [App\Http\Controllers\LocationController::class, 'show'])->name('location.show');
 
-
 // Opening Hours
 Route::get('/opening-hours', [App\Http\Controllers\LocationController::class, 'opening_hours'])->name('opening_hours');
-
 
 // Subscriber
 Route::post('/subscriber', [App\Http\Controllers\SubscriberController::class, 'store'])->name('subscriber.store');
@@ -43,7 +43,6 @@ Route::get('/tests', [App\Http\Controllers\TestController::class, 'search'])->na
 // Contact
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::post('/contact/send', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
-
 
 
 /*===========================================================================
