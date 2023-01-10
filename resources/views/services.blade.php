@@ -3,8 +3,6 @@
 @section('content')
 
 
-
-
     <!-- Page Title -->
     <section class="page-title centred" style="background-image: url(/front/images/background/test-header.jpg);">
         <div class="auto-container">
@@ -47,6 +45,5 @@
     </section>
     <!-- service-section end -->
 
-
-
+    
 @endsection

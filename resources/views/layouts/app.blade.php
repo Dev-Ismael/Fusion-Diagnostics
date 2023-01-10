@@ -269,6 +269,20 @@
                                                 href="mailto:{{ $settings->email }}">{{ $settings->email }}</a> </li>
                                     </ul>
                                 </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="{{ $settings->twitter }}" target="_blank"><span
+                                                    class="fab fa-twitter"></span></a></li>
+                                        <li><a href="{{ $settings->facebook }}" target="_blank"><span
+                                                    class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="{{ $settings->linkedin }}" target="_blank"><span
+                                                    class="fab fa-linkedin"></span></a></li>
+                                        <li><a href="{{ $settings->instagram }}" target="_blank"><span
+                                                    class="fab fa-instagram"></span></a></li>
+                                        <li><a href="{{ $settings->youtube }}" target="_blank"><span
+                                                    class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <hr class="d-block-md">
@@ -295,9 +309,12 @@
                                         @csrf
                                         <div class="form-group">
                                             <input type="email" name="email" placeholder="Your Email Address..."
-                                                required />
+                                                value="{{ old('email') }}" required />
                                             <button type="submit"><i class="icon-27"></i></button>
                                         </div>
+                                        @error('email')
+                                            <div class="invalid-feedback d-block">{{ $message }}.</div>
+                                        @enderror
                                     </form>
                                 </div>
                             </div>
@@ -308,11 +325,24 @@
             <div class="footer-bottom centred">
                 <div class="auto-container">
                     <div class="copyright">
-                        <p>
-                            <a href="{{ route('home') }}"> Fusion Diagnostics </a> ©
-                            {{ \Carbon\Carbon::now()->format('Y') }}
-                            All Right Reserved
-                        </p>
+                        <div class="row">
+                            <div class="col-md-6 text-lg-left text-center">
+                                <p>
+                                    <a href="{{ route('home') }}"> Fusion Diagnostics </a> ©
+                                    {{ \Carbon\Carbon::now()->format('Y') }}
+                                    All Right Reserved
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-lg-right text-center">
+                                <p>
+                                    Powered By
+                                    <a href="http://bluskyint.com/">
+                                        <img src="{{ asset("front/BluSky-logo.png") }}" width="32" alt="blusky-logo">
+                                        Bluskyint.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -322,16 +352,23 @@
 
         <!-- Absolute Icons -->
         <section id="absolute-icons">
-            <div class="arrow-icon">
-                <i class="fas fa-arrow-alt-circle-up"></i>
-            </div>
             <div class="contact-icons">
-                <a href="https://fusion.labsvc.net/patientportal" target="_blank">
-                    <i class="fa-solid fa-hospital-user"></i>
-                </a>
-                <a href="https://fusion.labsvc.net/labgen" target="_blank">
-                    <i class="fa-solid fa-user-doctor"></i>
-                </a>
+                <div class="patient box">
+                    <div class="discription">
+                        Patient Portal
+                    </div>
+                    <a href="https://fusion.labsvc.net/patientportal" target="_blank">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </a>
+                </div>
+                <div class="doctor box">
+                    <div class="discription">
+                        Physician Portal
+                    </div>
+                    <a href="https://fusion.labsvc.net/patientportal" target="_blank">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
