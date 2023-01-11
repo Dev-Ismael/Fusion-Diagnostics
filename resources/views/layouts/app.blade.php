@@ -110,7 +110,7 @@
                                 <ul class="navigation clearfix">
                                     <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
-                                    <li class="dropdown"><a href="#">Services</a>
+                                    <li class="dropdown"><a href="{{ route("service.index") }}">Services</a>
                                         <ul>
                                             @foreach ($nav_services as $service)
                                                 <li><a href="{{ route('service.show', $service->slug) }}">

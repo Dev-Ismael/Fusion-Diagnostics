@@ -1927,6 +1927,8 @@ div#mCSB_1_container{
   padding: 50px 30px 50px 30px;
   box-shadow: 0 10px 30px #edf2f2;
   transition: all 0.3s ease-in-out;
+  max-width: 280px;
+  margin: 0px auto;
 }
 
 .service-block-one .inner-box:before{

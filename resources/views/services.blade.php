@@ -4,7 +4,7 @@
 
 
     <!-- Page Title -->
-    <section class="page-title centred" style="background-image: url(/front/images/background/test-header.jpg);">
+    <section class="page-title centred" style="background-image: url(/front/images/background/services-header.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title">
@@ -45,5 +45,5 @@
     </section>
     <!-- service-section end -->
 
-    
+
 @endsection

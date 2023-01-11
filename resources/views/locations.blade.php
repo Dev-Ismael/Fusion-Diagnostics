@@ -71,14 +71,14 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                                     <figure class="image-box">
-                                        <img src="{{ asset("admin/images/nodata-found.png") }}" alt="no-data" class="img">
+                                        <img src="{{ asset("front/no-data.png") }}" alt="no-data" class="img" style="max-width: 420px">
                                     </figure>
                                 </div>
                             </div>
                         </div>
                     @endif
 
-                    
+
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="blog-sidebar">

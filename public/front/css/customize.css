@@ -149,7 +149,7 @@ textarea.is-invalid:focus{
 /*====== Responsive ========*/
 @media (max-width: 576px) {
     #absolute-icons .contact-icons a {
-        padding: 12px 15px;
+        padding: 12px 18px;
         font-size: 18px;
     }
 }
@@ -250,6 +250,24 @@ textarea.is-invalid:focus{
 /*=======================================================
 ============ Service
 ========================================================*/
+.event-details-content .content-one .image img{
+    border-radius: 20px;
+    animation-name: up-down-animation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes up-down-animation {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+  }
+
 .service-summary {
     font-size: 14px;
     line-height: 18px;
@@ -342,6 +360,11 @@ textarea.is-invalid:focus{
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%);
+}
+@media (max-width: 576px) {
+    .location-search .fa-xmark{
+        display: none;
+    }
 }
 .location-search .input-box.open .fa-xmark{
   opacity: 1;
