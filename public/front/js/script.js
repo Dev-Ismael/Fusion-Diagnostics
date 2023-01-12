@@ -566,7 +566,7 @@
 
 
     /* ==========================================================================
-        Key search link
+        (Test Search) KeyWord Link
     ========================================================================== */
     $('.recent-searches .keyword-link').each(function () {
         $(this).click(function (event) {
@@ -577,16 +577,61 @@
         });
     });
 
+    /* ==========================================================================
+        (Test Search) in Main Form
+    ========================================================================== */
+    $('.submit-test-form').each(function (e) {  // at click submit BTN
+        $(this).click(function (e) {
+
+            var main_test_form  = $("form#main-test-form");
+            var child_form_val  = $(this).siblings('input[name="search"]').val();
+
+            main_test_form.find('input[name="search"]').val(child_form_val);
+
+            if( child_form_val !== '' ){
+                // Submit main hidden form
+                e.preventDefault();
+                main_test_form.trigger('submit');
+            }
+
+        });
+    });
 
     /* ==========================================================================
         location search
     ========================================================================== */
-    let inputBox = document.querySelector(".input-box"),
-    searchIcon = document.querySelector(".icon"),
-    closeIcon = document.querySelector(".fa-xmark");
+    $(".input-box.location .icon").click(function(e){
+        $(".input-box.location").addClass('open');
+    });
 
-    searchIcon.addEventListener("click", () => inputBox.classList.add("open"));
-    closeIcon.addEventListener("click", () => inputBox.classList.remove("open"));
+    $(".input-box.location .fa-xmark").click(function(e){
+        $(".input-box.location").removeClass('open');
+        $(this).parent().siblings('input[name="search"]').val('');
+    });
+
+
+
+    /* ==========================================================================
+        (location Search) in Main Form
+    ========================================================================== */
+    $('.submit-location-form').each(function (e) {  // at click submit BTN
+        $(this).click(function (e) {
+
+            var main_location_form  = $("form#main-location-form");
+            var child_form_val  = $(this).siblings('input[name="search"]').val();
+
+            main_location_form.find('input[name="search"]').val(child_form_val);
+
+            if( child_form_val !== '' ){
+                // Submit main hidden form
+                e.preventDefault();
+                main_location_form.trigger('submit');
+            }
+
+        });
+    });
+
+
 
 
 })(window.jQuery);

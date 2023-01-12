@@ -44,6 +44,7 @@
 <body>
     <div id="app" class="boxed_wrapper">
 
+
         <!------- If Home Page ------>
         @if (Route::is('home'))
             <!-- preloader -->
@@ -67,16 +68,24 @@
             <div class="popup-inner">
                 <div class="overlay-layer"></div>
                 <div class="search-form">
-                    <form id="search-test-form" action="{{ route('test.search') }}" method="GET">
+
+                    <!---- Main test Form (hidden) ---->
+                    <form id="main-test-form" action="{{ route('test.search') }}" method="GET" class="d-none">
                         @csrf
+                        <input type="text" name="search"/>
+                    </form>
+
+                    <!---- child test Form ---->
+                    <form class="child-test-form" action="#" method="GET">
                         <div class="form-group">
                             <fieldset>
                                 <input type="search" class="form-control" id="search-input" name="search"
                                     placeholder="Type Test Name Or Test Code..." required />
-                                <input type="submit" value="Search Now!" class="theme-btn style-four">
+                                <input type="submit" class="submit-test-form" value="Search Now!" class="theme-btn style-four">
                             </fieldset>
                         </div>
                     </form>
+
                     <h3>Recent Search Keywords</h3>
                     <ul class="recent-searches">
                         @foreach ($recentSearchKeywords as $keyword)
@@ -132,11 +141,10 @@
                         </nav>
                     </div>
                     <ul class="menu-right-content clearfix">
-                        <form action="{{ route('test.search') }}" method="GET" class="search-form d-none-md">
-                            @csrf
+                        <form class="child-test-form d-none-md" action="#" method="GET">
                             <input type="search" name="search" placeholder="Search Test By Name Or Code..."
                                 autocomplete="nope" required />
-                            <button type="submit"><i class="icon-1"></i></button>
+                            <button type="submit" class="submit-test-form"><i class="icon-1"></i></button>
                         </form>
                         <li class="search-btn d-block-md">
                             <button type="button" class="search-toggler">
@@ -157,12 +165,10 @@
                             </nav>
                         </div>
                         <ul class="menu-right-content pull-right clearfix ">
-                            <form action="{{ route('test.search') }}" method="GET"
-                                class="search-form d-none-md mt-3">
-                                @csrf
+                            <form class="child-test-form d-none-md mt-3" action="#" method="GET">
                                 <input type="search" name="search" placeholder="Search Test By Name Or Code..."
                                     autocomplete="nope" required />
-                                <button type="submit"><i class="icon-1"></i></button>
+                                <button type="submit" class="submit-test-form"><i class="icon-1"></i></button>
                             </form>
                         </ul>
                     </div>
@@ -210,6 +216,7 @@
         </div>
         <!-- End Mobile Menu -->
 
+
         <main>
             @yield('content')
         </main>
@@ -224,19 +231,26 @@
                             Search Our Locations
                         </h3>
                     </div>
-                    <form action="{{ route('location.search') }}" class="text-center" method="GET">
+
+                    <!---- Main location Form (hidden) ---->
+                    <form id="main-location-form" action="{{ route('location.search') }}" method="GET" class="d-none">
                         @csrf
-                        <div class="input-box">
+                        <input type="text" name="search"/>
+                    </form>
+
+                    <form class="child-location-form" action="#" method="GET">
+                        <div class="input-box location">
                             <input type="text" name="search" class="w-100"
                                 placeholder="Type Location Title Here..." autocomplete="nope" required />
-                            <span class="icon">
+                            <button class="icon submit-location-form" type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <button type="submit">
-                                <i class="fa-solid fa-xmark"></i>
                             </button>
+                            <span>
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
                         </div>
                     </form>
+
                 </div>
             </div>
         </section>
@@ -394,8 +408,6 @@
     <!-- main-js -->
     <script src='{{ asset('front/js/script.js') }}'></script>
 
-    <!-- custom-js -->
-    <script src='{{ asset('front/js/custom.js') }}'></script>
 
 
 </body>

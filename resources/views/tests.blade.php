@@ -138,11 +138,10 @@
                             <div class="widget-title">
                                 <h3>Search</h3>
                             </div>
-                            <form action="{{ route("test.search") }}" method="GET"  class="search-form">
-                                @csrf
+                            <form class="child-test-form search-form" action="#" method="GET">
                                 <div class="form-group">
                                     <input type="search" name="search" placeholder="Search Test By Name Or Code..."  autocomplete="nope" required/>
-                                    <button type="submit"><i class="icon-1"></i></button>
+                                    <button type="submit" class="submit-test-form"><i class="icon-1"></i></button>
                                 </div>
                             </form>
                         </div>
